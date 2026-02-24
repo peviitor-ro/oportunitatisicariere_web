@@ -2357,7 +2357,7 @@ main section {
   gap: 4rem;
   flex-wrap: wrap;
   min-height: 41rem;
-  background-image: url("/assets/Homepage/offer.png");
+  background-image: url("../assets/Homepage/offer.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2438,11 +2438,11 @@ main section {
 }
 
 .about-hero {
-  background-image: url("/assets/About/hero.png");
+  background-image: url("../assets/About/hero.png");
 }
 
 .contact-hero {
-  background-image: url("/assets/Contact/hero.png");
+  background-image: url("../assets/Contact/hero.png");
 }
 
 .about-achievements ul,

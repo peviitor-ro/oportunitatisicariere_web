@@ -2,11 +2,11 @@
 
 @mixin button-rose {
   padding: 1.2rem 2.4rem;
-  color: $white;
+  color: $neutral-100;
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
-  border: 2px solid $rose-500;
-  background-color: $rose-500;
+  border: 2px solid $mint-600;
+  background-color: $mint-600;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
@@ -18,16 +18,42 @@
 
 @mixin button-rose-outline {
   padding: 1.2rem 1.6rem;
-  color: $rose-500;
+  color: $mint-600;
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
-  border: 2px solid $rose-500;
-  background-color: $white;
+  border: 2px solid $mint-600;
+  background-color: $neutral-100;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: $rose-500;
-    color: $white;
+    background-color: $mint-400;
+    border-color: $mint-400;
+    color: $neutral-100;
+  }
+}
+
+@mixin discrete-icon-button($padding: 0.75rem, $radius: 50%) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: $padding;
+  border-radius: $radius;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease-in-out;
+
+  &:hover {
+    background-color: $neutral-200;
+  }
+
+  &:active {
+    transform: scale(0.92);
+    background-color: $neutral-300;
   }
 }

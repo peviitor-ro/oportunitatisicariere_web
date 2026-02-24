@@ -3,7 +3,6 @@
 
 .main-contact {
   @include flex(column, center, center);
-
   gap: 6rem;
 
   section {
@@ -12,7 +11,6 @@
 
   .contact-form {
     @include flex(row, center, center);
-
     padding: 1rem;
     gap: 4rem;
 
@@ -25,7 +23,6 @@
 
     &__wrapper {
       @include flex(column, space-between, start);
-
       gap: 4rem;
 
       h2 {

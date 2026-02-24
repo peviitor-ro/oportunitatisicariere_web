@@ -37,7 +37,7 @@
     height: 23rem;
 
     h1 {
-      color: $white;
+      color: $neutral-100;
       font-size: 5rem;
       font-weight: $font-weight-bold;
     }
@@ -70,7 +70,7 @@
       thead {
         background-color: $neutral-500;
         text-transform: uppercase;
-        color: $white;
+        color: $neutral-100;
       }
 
       tbody {
@@ -140,7 +140,7 @@
         padding: 2rem;
         width: clamp(300px, 100%, 500px);
         background-color: $neutral-500;
-        color: $white;
+        color: $neutral-100;
 
         ul {
           width: 100%;

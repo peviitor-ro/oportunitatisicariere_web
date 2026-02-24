@@ -110,7 +110,7 @@
             width: 22px;
             height: 22px;
             border-radius: 50%;
-            background-color: $white;
+            background-color: $neutral-100;
             border: 2px solid $neutral-200;
             transition:
               background-color 0.2s ease,
@@ -166,12 +166,12 @@
             width: 100%;
             padding: 0.75rem 1rem;
             border: 2px solid $neutral-300;
-            background-color: $white;
+            background-color: $neutral-100;
             text-align: left;
             font-size: $font-size-lg;
             color: $neutral-500;
             cursor: pointer;
-            background-image: url('../../assets/Header/down-chevron.png');
+            background-image: url('../assets/Header/down-chevron.png');
             background-repeat: no-repeat;
             background-position: right 1rem center;
             background-size: 1rem;
@@ -184,7 +184,7 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background-color: $white;
+            background-color: $neutral-100;
             border: 1px solid $neutral-300;
             border-top: none;
             z-index: 100;
@@ -216,7 +216,7 @@
 
               &.is-selected .dropdown-option-btn {
                 background-color: $rose-500;
-                color: $white;
+                color: $neutral-100;
                 font-weight: bold;
               }
             }
@@ -256,7 +256,7 @@
 
           .active {
             background: $rose-500;
-            color: $white;
+            color: $neutral-100;
           }
         }
 

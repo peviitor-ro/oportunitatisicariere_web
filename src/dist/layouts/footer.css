@@ -1,1 +1,182 @@
-.footer{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;padding-top:4rem}.footer__benefits{display:flex;flex-direction:column;justify-content:center;align-items:start;flex-wrap:wrap;width:100%;padding:4rem 2rem;gap:3.2rem;background-image:url("../../assets/Footer/separator.png");background-position:center;background-size:cover;background-repeat:no-repeat}.footer__benefits h2{max-width:1440px;width:100%;margin:0 auto;text-align:start;font-size:1.9rem;font-weight:700;color:#fff}.footer__benefits ul{display:flex;flex-direction:row;justify-content:space-between;align-items:center;max-width:1440px;margin:0 auto;flex-wrap:wrap;width:100%;gap:2rem;row-gap:4rem}.footer__benefits ul li{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:2rem}.footer__benefits ul li img{width:6rem;height:6rem}.footer__benefits ul li p,.footer__benefits ul li a{font-size:1.7rem;font-weight:500;color:#fff;width:210px;line-height:1.6}.footer__grid{width:100%;width:clamp(300px,100%,1440px);padding:4rem 2rem;display:grid;gap:4rem;column-gap:2rem;grid-template-columns:repeat(3, 1fr);grid-template-areas:"links links contact" "shipping shipping contact";font-size:1.5rem;font-weight:500}.footer__grid h3{font-size:1.7rem;font-weight:700;margin-bottom:.75rem}.footer__grid .footer-links{grid-area:links;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;gap:2rem 14rem}.footer__grid .footer-links .link-list{padding:0;margin-bottom:2.5rem}.footer__grid .footer-links .link-list:last-child{margin-bottom:0}.footer__grid .footer-links .link-list li{padding-bottom:.75rem}.footer__grid .footer__shipping{grid-area:shipping}.footer__grid .footer__contact{grid-area:contact}.footer__grid .footer__contact .contact-intro{margin-bottom:2rem}.footer__grid .footer__contact .contact-details{display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;gap:1rem;padding:0}.footer__grid .footer__contact .contact-details li{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;gap:1rem;margin-bottom:1.5rem;width:48%}.footer__grid .footer__contact .contact-details li a,.footer__grid .footer__contact .contact-details li p{margin:0}.footer__copyright{padding:2rem 0;font-size:1.5rem;color:#bfbfbf;font-weight:500}@media screen and (max-width: 1439px){.footer__grid .footer-links{column-gap:10rem}.footer__grid .footer__contact .contact-details{flex-direction:column}.footer__grid .footer__contact .contact-details li{width:auto}}@media screen and (max-width: 1023px){.footer__grid{grid-template-columns:repeat(2, 1fr);grid-template-areas:"links contact" "shipping shipping"}.footer__grid .footer-links{flex-direction:column}}@media screen and (max-width: 767px){.footer__benefits h2{text-align:center}.footer__benefits ul{flex-direction:column}.footer__grid{grid-template-columns:1fr;grid-template-areas:"links" "shipping" "contact"}}@media screen and (min-width: 768px)and (width <= 1260px){.footer__benefits h2{max-width:768px}.footer__benefits ul{max-width:768px}.footer__benefits ul li{justify-content:start;width:45%}}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 4rem;
+}
+.footer__benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4rem 2rem;
+  gap: 3.2rem;
+  background-image: url("../assets/Footer/separator.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer__benefits h2 {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: start;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.footer__benefits ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2rem;
+  row-gap: 4rem;
+}
+.footer__benefits ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.footer__benefits ul li img {
+  width: 6rem;
+  height: 6rem;
+}
+.footer__benefits ul li p,
+.footer__benefits ul li a {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #ffffff;
+  width: 210px;
+  line-height: 1.6;
+}
+.footer__grid {
+  width: 100%;
+  width: clamp(300px, 100%, 1440px);
+  padding: 4rem 2rem;
+  display: grid;
+  gap: 4rem;
+  column-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "links links contact" "shipping shipping contact";
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.footer__grid h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.footer__grid .footer-links {
+  grid-area: links;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem 14rem;
+}
+.footer__grid .footer-links .link-list {
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+.footer__grid .footer-links .link-list:last-child {
+  margin-bottom: 0;
+}
+.footer__grid .footer-links .link-list li {
+  padding-bottom: 0.75rem;
+}
+.footer__grid .footer__shipping {
+  grid-area: shipping;
+}
+.footer__grid .footer__contact {
+  grid-area: contact;
+}
+.footer__grid .footer__contact .contact-intro {
+  margin-bottom: 2rem;
+}
+.footer__grid .footer__contact .contact-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+}
+.footer__grid .footer__contact .contact-details li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  width: 48%;
+}
+.footer__grid .footer__contact .contact-details li a,
+.footer__grid .footer__contact .contact-details li p {
+  margin: 0;
+}
+.footer__copyright {
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  color: #f3f3f3;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1439px) {
+  .footer__grid .footer-links {
+    column-gap: 10rem;
+  }
+  .footer__grid .footer__contact .contact-details {
+    flex-direction: column;
+  }
+  .footer__grid .footer__contact .contact-details li {
+    width: auto;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "links contact" "shipping shipping";
+  }
+  .footer__grid .footer-links {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer__benefits h2 {
+    text-align: center;
+  }
+  .footer__benefits ul {
+    flex-direction: column;
+  }
+  .footer__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "links" "shipping" "contact";
+  }
+}
+@media screen and (min-width: 768px) and (width <= 1260px) {
+  .footer__benefits h2 {
+    max-width: 768px;
+  }
+  .footer__benefits ul {
+    max-width: 768px;
+  }
+  .footer__benefits ul li {
+    justify-content: start;
+    width: 45%;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

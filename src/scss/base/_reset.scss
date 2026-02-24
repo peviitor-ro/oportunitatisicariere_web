@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   font-family: Montserrat, sans-serif;
   line-height: 1.5;
-  background-color: $white;
+  background-color: $neutral-100;
 }
 
 body.no-scroll {
@@ -39,4 +39,12 @@ a {
 
 ul {
   list-style: none;
+}
+
+.highlight-mint {
+  color: $mint-500;
+}
+
+.highlight-blue {
+  color: $blue-500;
 }

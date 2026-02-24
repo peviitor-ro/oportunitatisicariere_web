@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .map(
           (item) => `
         <div class="top-seller-card">
-          <a href="/html/product.html?id=${item.id}">
+          <a href="./html/product.html?id=${item.id}">
             <img src="${item.imageUrl}" alt="${item.name}">
           </a>
           <div class="top-seller-card__info">

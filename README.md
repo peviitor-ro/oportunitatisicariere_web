@@ -1,9 +1,8 @@
-**"AoC 2.0**
+**AoC 2.0**
 
-This is the next generation of the [OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/) website WIP
+This is the next generation of the [OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/) website **WIP**
 
-Figma [Design](https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0)
-
+---
 
 **Prerequisites**
 
@@ -36,21 +35,34 @@ To start the development server and work on the project, run the following comma
 This command will do two things simultaneously:
 
 **It will start Sass** in "watch" mode, automatically compiling any changes from src/scss into the src/dist/main.css file.
-
-**It will start lite-server**, which opens the project in a local browser and automatically reloads the page whenever you make changes to HTML, JS, or CSS files.
-
+**It will start live-server**, which opens the project in a local browser and automatically reloads the page whenever you make changes to HTML, JS, or CSS files.
 The project will be accessible at http://localhost:3000.
+
+---
 
 **Installed Packages (Dependencies)**
 
 This project uses the following development dependencies (devDependencies):
 
 **sass:** The official Dart Sass compiler, used to transpile SCSS code into CSS.
-
-**lite-server:** A lightweight, Node.js-based development server that provides live-reloading.
-
+**live-server:** A lightweight, Node.js-based development server that provides live-reloading.
 **concurrently:** A utility that allows running multiple NPM commands in parallel (e.g., sass-watch and lite-server at the same time).
-
 **eslint:** A "linting" tool to analyze JavaScript code, find problems, and enforce a consistent coding style.
-
 **stylelint:** A "linting" tool to analyze SCSS/CSS code and enforce a consistent coding style.
+
+---
+
+### 👥 The Team
+
+| Role | Member | GitHub |
+| --- | --- | --- |
+| **Product Owner** | Sebastian Boga | [@sebiboga](https://github.com/sebiboga) |
+| **Project Lead** | Adelina Moroaca | [@AdelinaMoroaca](https://github.com/AdelinaMoroaca) |
+| **Project Lead** | Andrei Barari | [@AndreiBarari](https://github.com/AndreiBarari) |
+
+---
+
+### 🎨 Design Resources
+
+* **Figma:** [View Design Prototype](https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0)
+

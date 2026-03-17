@@ -2,294 +2,352 @@
 @use '../components/buttons' as *;
 
 .main-home {
-  @include flex(column, center, center);
-
-  section {
-    padding: 6rem;
-    width: 100%;
-    background-color: $neutral-100;
-  }
-
-  p {
-    font-size: $font-size-xl;
-    font-weight: $font-weight-medium;
-  }
-
   .hero {
-    @include flex(row, center, center);
-
+    @include flex(column, center, center);
+    gap: 4.8rem;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+
     background-color: $neutral-100;
-    padding: 6rem;
 
-    h1 {
-      font-size: 4rem;
-      line-height: 1.2;
-      font-weight: $font-weight-bold;
+    &__container {
+      @include flex(column-reverse, center, center);
+      gap: 4rem;
+      padding: 2.4rem 2.4rem;
+
+      @media (min-width: $breakpoint-md) {
+        @include flex(row, center, center);
+        padding: 4.8rem 2.4rem 13.2rem 2.4rem;
+      }
     }
 
-    h2 {
-      font-size: 3.6rem;
-      font-weight: $font-weight-bold;
-    }
+    &__content {
+      flex: 1;
+      text-align: left;
 
-    p {
-      font-size: $font-size-xxl;
-      line-height: 1.2;
-    }
-
-    &__description {
-      @include flex(column, space-evenly, start);
-
-      max-width: 540px;
-      gap: 3rem;
+      @media (min-width: $breakpoint-lg) {
+        max-width: 600px;
+      }
 
       a {
+        width: fit-content;
         @include primary-btn;
       }
     }
 
-    &__image {
-      background-image: url('../assets/Homepage/hero-image.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      max-width: 648px;
-      width: 100%;
-      height: 424px;
+    &__title {
+      font-size: clamp(2.4rem, 4vw, 4.8rem);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+
+      .brand-first {
+        color: $mint-500;
+      }
+      .brand-second {
+        color: $blue-500;
+      }
     }
 
-    &__discount {
-      @include flex(row, center, center);
+    &__subtitle {
+      max-width: 440px;
+      font-size: 1.8rem;
+      font-weight: $font-weight-semibold;
+      color: $black;
+      margin-bottom: 3.2rem;
+      line-height: 1.6;
+    }
 
-      width: clamp(320px, 100%, 1280px);
-      min-height: 640px;
-      background-color: $neutral-100;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
-      position: absolute;
-      top: 85%;
-      left: 50%;
-      transform: translateX(-50%);
+    &__illustration {
+      flex: 1;
+      width: 100%;
+      max-width: 240px;
 
-      .left-column,
-      .right-column {
-        flex: 1;
-        padding: 4rem 2rem;
-        width: 100%;
-        min-height: 64rem;
-        height: 100%;
-      }
-
-      h3 {
-        font-size: $h3-font-size;
-        font-weight: $font-weight-bold;
+      @media (min-width: $breakpoint-md) {
+        max-width: 360px;
       }
 
       img {
-        width: 8rem;
-        height: 8rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    // 2. Project Showcase
+    .project-showcase {
+      position: relative;
+      width: clamp(300px, 100%, 1024px);
+      margin: 0 auto;
+      @include wrapping-shadow;
+
+      @media (min-width: $breakpoint-md) {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
-      .left-column {
-        @include flex(column, flex-start, flex-start);
+      &__card {
+        background: #ffffff;
+        padding: 2.4rem;
+        @include flex(column, flex-start, center);
+        overflow: hidden;
 
-        gap: 3rem;
-
-        .discount-card {
-          @include flex(row, flex-start, flex-start);
-
-          gap: 1rem;
-
-          &__description {
-            @include flex(column, center, start);
-
-            gap: 1rem;
-            height: 100%;
-          }
+        @media (min-width: $breakpoint-md) {
+          @include flex(row, space-between, stretch);
         }
       }
 
-      .right-column {
-        @include flex(column, center, start);
+      &__content {
+        flex: 1;
+        padding-bottom: 4rem;
 
-        color: $neutral-100;
-        gap: 3rem;
-        background-image: url('../assets/Homepage/discount.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        @media (min-width: $breakpoint-md) {
+          padding-right: 4rem;
+          padding-bottom: 6rem;
+        }
 
         a {
-          @include primary-btn;
+          @include secondary-btn;
+          width: fit-content;
         }
       }
-    }
-  }
 
-  .travel-suitcases,
-  .selected,
-  .new-products,
-  .reviews {
-    @include flex(column, center, center);
+      &__tag {
+        @include flex(column-reverse, center, center);
+        gap: 0.8rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 1.6rem;
+        background: $neutral-50;
+        padding: 0.8rem 1.6rem;
 
-    gap: 1rem;
+        @media (min-width: $breakpoint-sm) {
+          @include flex(row, start, center);
+        }
 
-    h2 {
-      font-size: 3.8rem;
-      font-weight: $font-weight-bold;
-    }
-
-    &__wrapper {
-      @include flex(row, center, center);
-
-      gap: 4rem;
-      margin-top: 4rem;
-    }
-  }
-
-  .travel-suitcases {
-    overflow: hidden;
-    margin-top: 60rem;
-
-    p {
-      font-size: $font-size-lg;
-    }
-
-    &__wrapper {
-      transition: transform 0.4s ease-in-out;
-
-      h3,
-      p {
-        display: none;
-        color: $neutral-100;
-        z-index: 2;
-        pointer-events: none;
+        .tag-icon {
+          width: 96px;
+          height: 96px;
+        }
       }
 
-      p,
-      span {
-        font-size: $font-size-xxl;
+      &__title {
+        display: flex;
+        font-size: 3.2rem;
+        color: $mint-500;
+        margin-bottom: 1.6rem;
       }
 
-      .travel-card {
-        position: relative;
+      &__desc {
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        line-height: 1.6;
+        margin-bottom: 3.2rem;
+      }
 
-        @include flex(column, flex-end, start);
-
-        gap: 2rem;
-        padding: 2rem;
-        width: 310px;
-        height: 600px;
+      &__image {
+        flex: 1;
+        @include flex(row, center, flex-start);
+        background-image: url('../../assets/Homepage/bubble-background.png');
         background-repeat: no-repeat;
-        background-size: 100%;
         background-position: center;
-        transition: all 0.2s ease-in-out;
-        user-select: none;
-
-        h3,
-        p {
-          display: none;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgb(0 0 0 / 0%);
-          transition: all 0.2s ease-in-out;
-        }
-
-        h3 {
-          font-size: $h2-font-size;
-        }
-
-        &:hover {
-          background-size: 110%;
-          box-shadow: 2px 2px 6px rgb(0 0 0 / 35%);
-
-          &::before {
-            background-color: rgb(0 0 0 / 50%);
-          }
-
-          h3,
-          p {
-            display: block;
-          }
-        }
-      }
-    }
-  }
-
-  .selected__wrapper,
-  .new-products__wrapper,
-  .reviews__wrapper {
-    flex-wrap: wrap;
-  }
-
-  .reviews {
-    &__wrapper {
-      article {
-        @include flex(column, center, center);
-
-        gap: 2rem;
-        max-width: 38rem;
-        padding: 4rem;
-        text-align: center;
-        background-color: $neutral-100;
-        box-shadow: 0 2rem 8rem #c1c7d470;
+        background-size: contain;
+        width: clamp(300px, 100%, 596px);
 
         img {
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
+          width: 100%;
+          max-width: 240px;
+          height: auto;
+          max-height: 596px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  // 3. CTA Banner
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    margin: 0 auto;
+    background: url('../../assets/Homepage/volunteer.png') no-repeat center center;
+    background-size: cover;
+    @include flex(column, center, center);
+
+    @media (min-width: $breakpoint-md) {
+      margin-top: 54rem;
+      height: 480px;
+    }
+
+    &__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    &__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+
+      h2 {
+        font-size: 4.2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+
+      .bounce-icon {
+        font-size: 4rem;
+        display: inline-block;
+        animation:
+          icon-move 3s ease-in-out infinite,
+          icon-pulse 1.5s ease-in-out infinite;
+      }
+    }
+  }
+
+  // 4. Cum Poti Ajuta Section
+  .roles-section {
+    padding: 8rem 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+
+    &__header {
+      @include flex(column, center, center);
+      max-width: 700px;
+      margin: 0 auto 5rem;
+
+      h2 {
+        font-size: 3.6rem;
+        color: $blue-900;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: $font-size-base;
+        line-height: 1.6;
+        color: $black;
+        margin-bottom: 3rem;
+        text-wrap: pretty;
+      }
+    }
+
+    &__filter {
+      display: flex;
+      justify-content: center;
+
+      .search-wrapper {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid $mint-500;
+        border-radius: 3rem;
+        width: 100%;
+        max-width: 350px;
+
+        .roles-search-input {
+          flex: 1;
+          background: transparent;
+          border: none;
+          padding: 1rem 1.6rem;
+          font-size: $font-size-base;
+          color: $blue-900;
+          outline: none;
+          width: 100%;
+
+          &::placeholder {
+            color: $neutral-800;
+          }
+        }
+
+        .search-icon-btn {
+          width: 4rem;
+          height: 4rem;
+          background: $mint-500;
+          border-radius: 47%;
+          border: none;
+          cursor: pointer;
+          @include flex(row, center, center);
+          color: #ffffff;
+          transition: background-color 0.2s;
+          flex-shrink: 0;
+
+          &:hover {
+            background-color: $mint-600;
+          }
+
+          i {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .roles-swiper {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0 6rem;
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        height: auto;
+        transition: transform 0.4s ease;
+
+        .role-card {
+          @include role-card;
+          width: 100%;
+          transition:
+            transform 0.5s ease,
+            box-shadow 0.5s ease;
+        }
+      }
+
+      @media (min-width: $breakpoint-lg) {
+        .swiper-slide-active {
+          .role-card {
+            transform: scale(1.1);
+            z-index: 10;
+          }
+        }
+      }
+    }
+  }
+
+  // 5. Features Banner Bottom
+  .features-banner {
+    background-color: $neutral-800;
+    padding: 4rem 2rem;
+
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      @include flex(column, center, center);
+      gap: 3rem;
+
+      @media (min-width: $breakpoint-md) {
+        @include flex(row, space-around, center);
+        gap: 1rem;
+      }
+
+      .feature-item {
+        @include flex(row, center, center);
+        gap: 1.2rem;
+        color: #ffffff;
+
+        i {
+          font-size: 2.8rem;
         }
 
         span {
-          font-weight: $font-weight-bold;
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: ($breakpoint-lg - 1px)) {
-    section {
-      padding: 6rem 2rem;
-    }
-
-    .hero {
-      padding: 6rem 2rem;
-      flex-direction: column-reverse;
-
-      &__discount {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        flex-direction: column;
-        margin-top: 2rem;
-      }
-    }
-
-    .travel-suitcases {
-      margin-top: 0;
-    }
-  }
-
-  @media screen and (max-width: ($breakpoint-md - 1px)) {
-    .selected,
-    .new-products {
-      &__wrapper {
-        row-gap: 8rem;
-      }
-    }
-
-    .offer {
-      .left-column {
-        h3 {
-          font-size: 12rem;
+          font-size: 1.8rem;
+          font-weight: 600;
         }
       }
     }

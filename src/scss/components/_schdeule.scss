@@ -1,0 +1,595 @@
+@use '../base' as *;
+@use '../components/buttons' as *;
+
+.header {
+  background: $neutral-50;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
+  &.scrolled {
+    box-shadow: 0 4px 12px #00000010;
+  }
+
+  .nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  // Desktop Navigation
+  .logo-row {
+    @include flex(row, space-between, center);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid $neutral-200;
+
+    @media (min-width: $breakpoint-md) {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      padding: 1.2rem 0;
+    }
+
+    .social-icons {
+      gap: 1.2rem;
+      .social-link {
+        @include icon-animation;
+      }
+    }
+
+    .desktop-socials {
+      display: none;
+      @media (min-width: $breakpoint-md) {
+        @include flex(row, flex-start, center);
+      }
+    }
+
+    .logo-img {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .actions {
+      @include flex(row, flex-end, center);
+      gap: 2.4rem;
+
+      .btn-calendar {
+        @include flex(row, center, center);
+        color: $mint-500;
+        font-size: 2.8rem;
+        width: 4.8rem;
+        height: 4.8rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border-radius: 50%;
+
+        &:hover {
+          color: $mint-500;
+          transform: scale(1.1);
+        }
+
+        &.is-alerting {
+          animation: pulse-alert 1.2s infinite ease-in-out;
+          background-color: rgba(0, 194, 136, 0.15);
+        }
+      }
+
+      .btn-join {
+        @include primary-btn;
+      }
+    }
+  }
+
+  // Mobile Menu
+  .nav-row {
+    border-bottom: 1px solid $neutral-200;
+    @media (min-width: $breakpoint-md) {
+      border-bottom: none;
+    }
+
+    .mobile-toggle {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.6rem 0;
+      font-size: 3.6rem;
+      color: #000;
+      cursor: pointer;
+      text-align: center;
+
+      @media (min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+
+    .main-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: calc(100dvh - 100%);
+      background-color: $neutral-50;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+
+      &.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      @media (min-width: $breakpoint-md) {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        overflow-y: visible;
+      }
+
+      .nav-content {
+        padding: 3.2rem;
+        @include flex(column, null, center);
+        min-height: 100%;
+
+        @media (min-width: $breakpoint-md) {
+          padding: 2.4rem 0;
+          @include flex(row, center, center);
+        }
+      }
+
+      .nav-menu {
+        @include flex(column, null, flex-start);
+        width: 100%;
+        gap: 2.4rem;
+
+        @media (min-width: $breakpoint-md) {
+          @include flex(row, center, center);
+          width: auto;
+          gap: 4rem;
+        }
+
+        .nav-item {
+          width: 100%;
+          position: relative;
+          @media (min-width: $breakpoint-md) {
+            width: auto;
+          }
+
+          .nav-link,
+          .nav-trigger {
+            font-weight: $font-weight-medium;
+            font-size: $font-size-lg;
+            color: $black;
+            cursor: pointer;
+            @include flex(row, null, center);
+            gap: 0.5rem;
+            transition: color 0.2s;
+            &.active,
+            &:hover {
+              color: $mint-500;
+            }
+          }
+
+          .association-link {
+            @include flex(column, null, flex-start);
+            line-height: 1;
+            @media (min-width: $breakpoint-md) {
+              @include flex(row, null, center);
+            }
+            .brand-first {
+              color: $mint-500;
+            }
+            .brand-second {
+              color: $blue-500;
+            }
+          }
+
+          // Dropdown menu
+          .dropdown {
+            display: none;
+            padding-left: 1.6rem;
+            margin-top: 1.6rem;
+            @include flex(column, null, flex-start);
+
+            @media (min-width: $breakpoint-md) {
+              display: flex;
+              position: absolute;
+              top: 100%;
+              left: 100%;
+              transform: translateX(-50%) translateY(10px);
+              background: #fff;
+              min-width: 240px;
+              padding: 0;
+              margin-top: 1rem;
+              border-radius: 8px;
+              border-left: 1px solid $mint-500;
+              box-shadow: 0 2px 8px #00000010;
+              opacity: 0;
+              visibility: hidden;
+              pointer-events: none;
+              transition: all 0.3s ease;
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: -15px;
+                left: 0;
+                width: 100%;
+                height: 15px;
+              }
+            }
+
+            .dropdown-link {
+              font-size: 1.6rem;
+              font-weight: 500;
+              color: $blue-900;
+              padding: 1.2rem 0;
+              width: 100%;
+              border-bottom: 1px solid $neutral-200;
+              text-decoration: none;
+
+              @media (min-width: $breakpoint-md) {
+                padding: 1.4rem 2.4rem;
+                transition: all 0.2s ease;
+                &:first-child {
+                  border-radius: 8px 8px 0 0;
+                }
+                &:last-child {
+                  border-bottom: none;
+                  border-radius: 0 0 8px 8px;
+                }
+                &:hover,
+                &.active {
+                  color: $mint-500;
+                  background-color: with-alpha($neutral-100, 0.75);
+                }
+              }
+            }
+          }
+
+          &.is-expanded .dropdown {
+            display: flex;
+          }
+
+          @media (min-width: $breakpoint-md) {
+            &:hover .dropdown {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: auto;
+              transform: translateX(-50%) translateY(0);
+            }
+          }
+        }
+      }
+
+      .mobile-socials {
+        margin-top: auto;
+        @include flex(row, center, center);
+        width: 100%;
+        gap: 2.4rem;
+
+        .social-link {
+          color: $black;
+          font-size: 2.4rem;
+          width: 3.6rem;
+          height: 3.6rem;
+          @include flex(row, center, center);
+        }
+
+        @media (min-width: $breakpoint-md) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .schedule-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+    border: none;
+    border-radius: 1.2rem;
+    padding: 0;
+    width: 95%;
+    max-width: 900px;
+    background: $neutral-50;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    &::backdrop {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-content {
+      position: relative;
+      padding: 3rem 1.5rem;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 4rem 3rem;
+      }
+
+      .modal-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        font-size: 2.8rem;
+        color: $black;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        @media (min-width: $breakpoint-md) {
+          top: 1.5rem;
+          right: 1.5rem;
+          font-size: 3.2rem;
+        }
+
+        &:hover {
+          color: $mint-500;
+        }
+      }
+
+      .schedule-header {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        @media (min-width: $breakpoint-md) {
+          margin-bottom: 3rem;
+        }
+
+        .title {
+          font-size: 2.4rem;
+          color: $black;
+          margin-bottom: 0.5rem;
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 2.8rem;
+          }
+        }
+      }
+
+      .schedule-section {
+        .schedule-days {
+          @include flex(row, space-between, stretch);
+          width: 100%;
+          gap: 0.8rem;
+
+          @media (min-width: $breakpoint-md) {
+            gap: 1.2rem;
+          }
+
+          .schedule-day {
+            flex: 1;
+            height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background-color: #ffffff;
+            border: none;
+            border-left: 1px solid $mint-300;
+            border-radius: 1.6rem;
+            @include soft-shadow;
+
+            color: $black;
+            cursor: pointer;
+            transition: all 0.25s ease-out;
+            letter-spacing: 0.5px;
+            @include flex(row, center, center);
+            padding: 0 0.5rem;
+
+            @media (min-width: $breakpoint-md) {
+              height: 6rem;
+              font-size: 1.6rem;
+              letter-spacing: 1px;
+              padding: 0 1rem;
+            }
+
+            .day-short {
+              display: inline;
+              @media (min-width: $breakpoint-md) {
+                display: none;
+              }
+            }
+
+            .day-long {
+              display: none;
+              @media (min-width: $breakpoint-md) {
+                display: inline;
+              }
+            }
+
+            &.active {
+              background-color: $mint-300;
+              border-color: $mint-300;
+              color: #ffffff;
+            }
+
+            &:hover:not(.active),
+            &:focus:not(.active) {
+              background-color: $mint-500;
+              color: #ffffff;
+              border-color: $mint-500;
+            }
+          }
+        }
+
+        .schedule-cards {
+          @include flex(column, flex-start, stretch);
+          margin-top: 2rem;
+          gap: 1rem;
+
+          @media (min-width: $breakpoint-md) {
+            @include flex(row, flex-start, stretch);
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            gap: 1.2rem;
+          }
+
+          .schedule-card,
+          .weekend-card {
+            position: relative;
+            @include flex(column, center, center);
+            background-color: #ffffff;
+            min-height: 10rem;
+            width: 100%;
+            text-align: center;
+
+            border: none;
+            border-left: 1px solid $mint-300;
+            border-radius: 1.6rem;
+            padding: 1.5rem;
+            overflow: hidden;
+            @include soft-shadow;
+
+            @media (min-width: $breakpoint-md) {
+              min-height: 12rem;
+              flex: 1 1 calc(33.33% - 1.2rem);
+              max-width: 100%;
+            }
+          }
+
+          .schedule-card {
+            cursor: pointer;
+            transition: all 0.25s ease-out;
+            text-decoration: none;
+
+            &__top {
+              font-size: 1.4rem;
+              font-weight: 600;
+              color: $black;
+              margin-bottom: 0.25rem;
+              letter-spacing: 1px;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 1.6rem;
+              }
+            }
+
+            &__middle {
+              font-size: 1.6rem;
+              font-weight: 700;
+              letter-spacing: 1px;
+              color: $mint-600;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 1.8rem;
+              }
+            }
+
+            &__bottom {
+              margin-top: 0.6rem;
+              font-size: 2rem;
+              font-weight: 700;
+              letter-spacing: 1px;
+              color: $black;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 2.2rem;
+              }
+            }
+
+            &.active {
+              background: $mint-300;
+              border-left-color: $mint-300;
+
+              .schedule-card__top,
+              .schedule-card__bottom {
+                color: $blue-500;
+              }
+              .schedule-card__middle {
+                color: #ffffff;
+              }
+            }
+
+            &::after {
+              position: absolute;
+              content: attr(data-label);
+              top: 20%;
+              left: 0;
+              width: 100%;
+              text-align: center;
+              color: #ffffff;
+              font-size: 1.8rem;
+              font-weight: 700;
+              opacity: 0;
+              transition: opacity 0.2s;
+              z-index: 2;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 2.2rem;
+              }
+            }
+
+            &::before {
+              position: absolute;
+              content: '';
+              bottom: 15%;
+              left: 50%;
+              transform: translateX(-50%);
+              background: url('../assets/Icons/round-table.png') no-repeat center center;
+              background-size: contain;
+              width: 4rem;
+              height: 4rem;
+              opacity: 0;
+              transition: opacity 0.2s;
+              z-index: 2;
+
+              @media (min-width: $breakpoint-md) {
+                width: 5rem;
+                height: 5rem;
+              }
+            }
+
+            &:hover,
+            &:focus {
+              background-color: $mint-600;
+              border-left-color: #ffffff;
+
+              .schedule-card__top,
+              .schedule-card__middle,
+              .schedule-card__bottom {
+                visibility: hidden;
+              }
+
+              &::after,
+              &::before {
+                opacity: 1;
+              }
+            }
+          }
+
+          .weekend-card {
+            padding: 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 600;
+
+            @media (min-width: $breakpoint-md) {
+              font-size: 1.8rem;
+              line-height: 2.8rem;
+            }
+
+            span {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

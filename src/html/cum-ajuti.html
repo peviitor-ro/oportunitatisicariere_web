@@ -5,110 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="../dist/main.css" />
+        <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
-      <div class="utility">
-        <div class="utility__media">
-          <ul class="media-list">
-            <li>
-              <a
-                class="media-link"
-                href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
-                target="_blank"
-              >
-                <img src="../assets/MediaIcons/bxl-linkedin-square.svg" alt="linkedin-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://www.instagram.com/peviitor.ro/" target="_blank">
-                <img src="../assets/MediaIcons/bxl-instagram-alt.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://discord.gg/KPMkdUfQNu" target="_blank">
-                <img src="../assets/MediaIcons/bxl-discord-alt.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="media-link"
-                href="https://github.com/peviitor-ro/oportunitatisicariere/issues"
-                target="_blank"
-              >
-                <img src="../assets/MediaIcons/bxl-github.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://meet.jit.si/PEVIITOR.RO" target="_blank">
-                <img src="../assets/MediaIcons/bxl-jitsi.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="media-link"
-                href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
-                target="_blank"
-              >
-                <img src="../assets/MediaIcons/bxl-dev-to.svg" alt="instagram-logo" />
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <a href="//index.html" class="utility__logo">
-          <img src="../assets/Header/logo.png" alt="asociatia-oportunitati-si-cariere-logo" />
-          <div class="company-title">
-            <span class="highlight-mint">ASOCIAȚIA</span>
-            <span class="highlight-blue">OPORTUNITĂȚI </span>
-            <span class="highlight-mint">ȘI CARIERE</span>
+      <div class="nav-container">
+        <div class="logo-row">
+          <div class="social-icons desktop-socials">
+            <a href="https://www.instagram.com/peviitor.ro/" class="social-link" target="_blank" title="Instagram"><i class="ri-instagram-fill"></i></a>
+            <a href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/" class="social-link" target="_blank" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://discord.gg/KPMkdUfQNu" class="social-link" target="_blank" title="Discord"><i class="ri-discord-fill"></i></a>
+            <a href="https://github.com/peviitor-ro/oportunitatisicariere" class="social-link" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
+            <a href="https://meet.jit.si/PEVIITOR.RO" class="social-link" target="_blank" title="Jitsi"><i class="ri-chat-smile-2-fill"></i></i></a>
+            <a href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal" class="social-link" target="_blank" title="Dev.to"><i class="ri-code-box-fill"></i></a>
           </div>
-        </a>
 
-        <div class="utility__acount-group">
-          <button>
-            <img id="user" src="../assets/Header/user.png" alt="user-settings" />
-          </button>
-          <a id="cart" href="./cart.html">
-            <img src="../assets/Header/cart.png" alt="cart" />
+          <a href="/" class="logo-link">
+            <img
+              src="./assets/Header/logo.png"
+              alt="Asociația Oportunităților si Cariere"
+              class="logo-img"
+            />
           </a>
 
-          <button class="join-btn">Alătură-te</button>
+          <div class="actions">
+            <button class="btn-calendar" aria-label="Calendar">
+              <i class="ri-calendar-event-line"></i>
+            </button>
+            <a href="#" class="btn-join">Alătură-te</a>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="ri-menu-line"></i>
+          </button>
+
+          <nav class="main-nav" id="mainNavigation">
+            <div class="nav-content">
+              <ul class="nav-menu">
+                <li class="nav-item">
+                  <a href="#home" class="nav-link association-link">
+                    <span class="brand-first">Asociația</span>
+                    <span class="brand-second">Oportunități și Cariere</span>
+                  </a>
+                </li>
+
+                <li class="nav-item has-dropdown">
+                  <div class="nav-trigger" tabindex="0">
+                    Despre noi <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                  <div class="dropdown">
+                    <a href="./html/misiune.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./html/cum-ajuti.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./html/echipa.html" class="dropdown-link">Echipă</a>
+                  </div>
+                </li>
+
+                <li class="nav-item"><a href="./html/povesti-de-succes.html" class="nav-link">Povești de succes</a></li>
+                <li class="nav-item"><a href="./html/intalniri.html" class="nav-link">Întâlniri</a></li>
+              </ul>
+
+              <div class="social-icons mobile-socials">
+                <a href="https://www.instagram.com/peviitor.ro/" class="social-link" target="_blank" title="Instagram"><i class="ri-instagram-fill"></i></a>
+                <a href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/" class="social-link" target="_blank" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://discord.gg/KPMkdUfQNu" class="social-link" target="_blank" title="Discord"><i class="ri-discord-fill"></i></a>
+                <a href="https://github.com/peviitor-ro/oportunitatisicariere" class="social-link" target="_blank" title="GitHub"><i class="ri-github-fill"></i></a>
+                <a href="https://meet.jit.si/PEVIITOR.RO" class="social-link" target="_blank" title="Jitsi"><i class="ri-chat-smile-2-fill"></i></i></a>
+                <a href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal" class="social-link" target="_blank" title="Dev.to"><i class="ri-code-box-fill"></i></a>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
-
-      <nav class="navigation" aria-label="main-navigation">
-        <ul class="nav-list">
-          <li>
-            <a href="../index.html">Început</a>
-          </li>
-
-          <li class="dropdown">
-            <a class="dropdown__link" href="./catalog.html">Despre noi</a>
-
-            <ul class="dropdown__content">
-              <li class="mobile-only">
-                <a href="./catalog.html">All Products</a>
-              </li>
-              <li>
-                <a href="./catalog.html?category=carry-ons">Misiunea noastră</a>
-              </li>
-              <li>
-                <a href="./catalog.html?category=suitcases">Cum poți ajuta?</a>
-              </li>
-              <li>
-                <a href="./catalog.html?category=luggage sets">De ce să ajuți?</a>
-              </li>
-              <li>
-                <a href="./catalog.html?category=kids' luggage">Echipă</a>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="./about.html">Povești de succes</a></li>
-          <li><a class="active" href="./contact.html">Întâlniri</a></li>
-        </ul>
-      </nav>
     </header>
 
     <main class="main-contact">
@@ -346,6 +318,6 @@
     </footer>
 
     <script src="../js/main.js" defer></script>
+        <script src="./js/header.js" defer></script>
   </body>
-  <./html>
 </html>

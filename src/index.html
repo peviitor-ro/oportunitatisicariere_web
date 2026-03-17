@@ -5,409 +5,401 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="./dist/main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
-  <body>
+  <body id="home">
     <header class="header">
-      <div class="utility">
-        <div class="utility__media">
-          <ul class="media-list">
-            <li>
-              <a
-                class="media-link"
-                href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
-                target="_blank"
-              >
-                <img src="./assets/MediaIcons/bxl-linkedin-square.svg" alt="linkedin-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://www.instagram.com/peviitor.ro/" target="_blank">
-                <img src="./assets/MediaIcons/bxl-instagram-alt.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://discord.gg/KPMkdUfQNu" target="_blank">
-                <img src="./assets/MediaIcons/bxl-discord-alt.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="media-link"
-                href="https://github.com/peviitor-ro/oportunitatisicariere/issues"
-                target="_blank"
-              >
-                <img src="./assets/MediaIcons/bxl-github.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a class="media-link" href="https://meet.jit.si/PEVIITOR.RO" target="_blank">
-                <img src="./assets/MediaIcons/bxl-jitsi.svg" alt="instagram-logo" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="media-link"
-                href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
-                target="_blank"
-              >
-                <img src="./assets/MediaIcons/bxl-dev-to.svg" alt="instagram-logo" />
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <a href="//index.html" class="utility__logo">
-          <img src="./assets/Header/logo.png" alt="asociatia-oportunitati-si-cariere-logo" />
-          <div class="company-title">
-            <span class="highlight-mint">ASOCIAȚIA</span>
-            <span class="highlight-blue">OPORTUNITĂȚI </span>
-            <span class="highlight-mint">ȘI CARIERE</span>
+      <div class="nav-container">
+        <div class="logo-row">
+          <div class="social-icons desktop-socials">
+            <a
+              href="https://www.instagram.com/peviitor.ro/"
+              class="social-link"
+              target="_blank"
+              title="Instagram"
+              ><i class="ri-instagram-fill"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
+              class="social-link"
+              target="_blank"
+              title="LinkedIn"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
+            <a
+              href="https://discord.gg/KPMkdUfQNu"
+              class="social-link"
+              target="_blank"
+              title="Discord"
+              ><i class="ri-discord-fill"></i
+            ></a>
+            <a
+              href="https://github.com/peviitor-ro/oportunitatisicariere"
+              class="social-link"
+              target="_blank"
+              title="GitHub"
+              ><i class="ri-github-fill"></i
+            ></a>
+            <a
+              href="https://meet.jit.si/PEVIITOR.RO"
+              class="social-link"
+              target="_blank"
+              title="Jitsi"
+              ><i class="ri-chat-smile-2-fill"></i
+            ></a>
+            <a
+              href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+              class="social-link"
+              target="_blank"
+              title="Dev.to"
+              ><i class="ri-code-box-fill"></i
+            ></a>
           </div>
-        </a>
 
-        <div class="utility__acount-group">
-          <button>
-            <img id="user" src="./assets/Header/user.png" alt="user-settings" />
-          </button>
-          <a id="cart" href="./html/cart.html">
-            <img src="./assets/Header/cart.png" alt="cart" />
+          <a href="/" class="logo-link">
+            <img
+              src="./assets/Header/logo.png"
+              alt="Asociația Oportunităților si Cariere"
+              class="logo-img"
+            />
           </a>
 
-          <button class="join-btn">Alătură-te</button>
+          <div class="actions">
+            <button class="btn-calendar" aria-label="Calendar">
+              <i class="ri-calendar-event-line"></i>
+            </button>
+            <a href="#" class="btn-join">Alătură-te</a>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="ri-menu-line"></i>
+          </button>
+
+          <nav class="main-nav" id="mainNavigation">
+            <div class="nav-content">
+              <ul class="nav-menu">
+                <li class="nav-item">
+                  <a href="#home" class="nav-link association-link">
+                    <span class="brand-first">Asociația</span>
+                    <span class="brand-second">Oportunități și Cariere</span>
+                  </a>
+                </li>
+
+                <li class="nav-item has-dropdown">
+                  <div class="nav-trigger" tabindex="0">
+                    Despre noi <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                  <div class="dropdown">
+                    <a href="./html/misiune.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./html/cum-ajuti.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./html/echipa.html" class="dropdown-link">Echipă</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a href="./html/povesti-de-succes.html" class="nav-link">Povești de succes</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./html/intalniri.html" class="nav-link">Întâlniri</a>
+                </li>
+              </ul>
+
+              <div class="social-icons mobile-socials">
+                <a
+                  href="https://www.instagram.com/peviitor.ro/"
+                  class="social-link"
+                  target="_blank"
+                  title="Instagram"
+                  ><i class="ri-instagram-fill"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
+                  class="social-link"
+                  target="_blank"
+                  title="LinkedIn"
+                  ><i class="ri-linkedin-fill"></i
+                ></a>
+                <a
+                  href="https://discord.gg/KPMkdUfQNu"
+                  class="social-link"
+                  target="_blank"
+                  title="Discord"
+                  ><i class="ri-discord-fill"></i
+                ></a>
+                <a
+                  href="https://github.com/peviitor-ro/oportunitatisicariere"
+                  class="social-link"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="ri-github-fill"></i
+                ></a>
+                <a
+                  href="https://meet.jit.si/PEVIITOR.RO"
+                  class="social-link"
+                  target="_blank"
+                  title="Jitsi"
+                  ><i class="ri-chat-smile-2-fill"></i
+                ></a>
+                <a
+                  href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+                  class="social-link"
+                  target="_blank"
+                  title="Dev.to"
+                  ><i class="ri-code-box-fill"></i
+                ></a>
+              </div>
+            </div>
+          </nav>
         </div>
       </div>
 
-      <nav class="navigation" aria-label="main-navigation">
-        <ul class="nav-list">
-          <li>
-            <a href="./index.html" class="active">Început</a>
-          </li>
+      <dialog id="scheduleModal" class="schedule-modal">
+        <div class="modal-content">
+          <button class="modal-close-btn" id="closeScheduleModal" aria-label="Închide modalul">
+            <i class="ri-close-line"></i>
+          </button>
 
-          <li class="dropdown">
-            <a class="dropdown__link" href="./html/catalog.html">Despre noi</a>
+          <div class="schedule-header">
+            <h2 class="title">Întâlniri săptămânale</h2>
+          </div>
 
-            <ul class="dropdown__content">
-              <li class="mobile-only">
-                <a href="./html/catalog.html">All Products</a>
-              </li>
-              <li>
-                <a href="./html/catalog.html?category=carry-ons">Misiunea noastră</a>
-              </li>
-              <li>
-                <a href="./html/catalog.html?category=suitcases">Cum poți ajuta?</a>
-              </li>
-              <li>
-                <a href="./html/catalog.html?category=luggage sets">De ce să ajuți?</a>
-              </li>
-              <li>
-                <a href="./html/catalog.html?category=kids' luggage">Echipă</a>
-              </li>
-            </ul>
-          </li>
-
-          <li><a href="./html/about.html">Povești de succes</a></li>
-          <li><a href="./html/contact.html">Întâlniri</a></li>
-        </ul>
-      </nav>
+          <div class="schedule-section">
+            <div class="schedule-days"></div>
+            <div class="schedule-cards"></div>
+          </div>
+        </div>
+      </dialog>
     </header>
 
     <main class="main-home">
-      <dialog id="auth-dialog">
-        <div class="dialog-wrapper" id="sign-in-view">
-          <button class="dialog-close-btn" type="button" aria-label="Închide dialogul">
-            &times;
-          </button>
-          <h2>Sign in</h2>
-          <form action="" id="sign-in-form" novalidate>
-            <div class="input-group">
-              <label for="sign-in-email">Email Address <span class="highlight-rose">*</span></label>
-              <input
-                type="email"
-                name="email"
-                id="sign-in-email"
-                required
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                title="Use a valid email address"
-                autocomplete="email"
-              />
-              <span class="form-error-message" aria-live="polite"></span>
+      <!-- Hero Section -->
+      <section class="hero" id="home-hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <span class="brand-first font-gelasio">ASOCIAȚIA</span><br />
+              <span class="brand-second">OPORTUNITĂȚI ȘI CARIERE</span>
+            </h1>
+            <p class="hero__subtitle">
+              De la proiecte Open Source la inițiative cu impact real, transformăm tehnologia în
+              binele comun.
+            </p>
+            <a href="./html/misiune.html" target="_blank">Află mai mult</a>
+          </div>
+          <div class="hero__illustration">
+            <img src="./assets/Header/logo.png" alt="Ilustrație colaborare mâini" />
+          </div>
+        </div>
+
+        <!-- peViitor Section -->
+        <article class="project-showcase">
+          <div class="project-showcase__card shade">
+            <div class="project-showcase__content">
+              <div class="project-showcase__tag">
+                <img
+                  src="./assets/Homepage/rocket-peViitor.png"
+                  alt="Icon obiectiv"
+                  class="tag-icon"
+                />
+                <h2 class="title">Obiectivul nostru</h2>
+              </div>
+              <h2 class="project-showcase__title">
+                <span class="highlight-mint">pe</span>
+                <span class="highlight-blue">Viitor.ro </span>
+              </h2>
+              <p class="project-showcase__desc">
+                Construim cea mai mare bază de date open-source care agreghează oportunitățile de
+                carieră din toată țara. Simplificăm căutarea, eliminăm barierele și aducem
+                transparență pe piața muncii.
+              </p>
+              <a href="https://peviitor.ro" target="_blank">Află cum funcționează</a>
             </div>
-            <div class="input-group">
-              <label for="sign-in-password">Password <span class="highlight-rose">*</span></label>
+            <div class="project-showcase__image">
+              <img src="./assets/Homepage/phone-image.png" alt="Aplicația peViitor pe telefon" />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Banner -->
+      <div class="banner">
+        <div class="banner__overlay"></div>
+        <div class="banner__content">
+          <h2>Vrei să te implici?</h2>
+          <i class="ri-arrow-down-s-line bounce-icon"></i>
+        </div>
+      </div>
+
+      <!-- Cum Poti Ajuta Section -->
+      <section class="roles-section" id="cum-ajuti">
+        <div class="roles-section__header">
+          <h2 class="title">Cum poți ajuta?</h2>
+          <p>
+            Schimbăm lumea, linie cu linie. Pune-ți talentul în valoare pentru o cauză nobilă!
+            Căutăm voluntari din diverse arii — de la Tech și QA la Marketing sau HR — gata să
+            transforme expertiza în impact real. Alătură-te unei comunități unde skill-urile tale
+            construiesc viitorul.
+          </p>
+          <div class="roles-section__filter">
+            <div class="search-wrapper">
               <input
-                type="password"
-                name="password"
-                id="sign-in-password"
-                required
-                autocomplete="current-password"
+                type="text"
+                id="rolesSearch"
+                class="roles-search-input"
+                placeholder="Poziții disponibile"
+                aria-label="Caută poziții disponibile"
               />
-              <button class="toggle-visibility" type="button">
-                <img src="./assets/hidden.png" alt="password-hidden" />
+              <button class="search-icon-btn" aria-label="Caută">
+                <i class="ri-search-line"></i>
               </button>
-              <span class="form-error-message" aria-live="polite"></span>
             </div>
-            <div class="options-group">
-              <div>
-                <input type="checkbox" name="remember" id="remember" />
-                <label for="remember" class="highlight-neutral">Remember me</label>
-              </div>
-              <a href="#">Forgot password?</a>
-            </div>
-            <button type="submit">Log in</button>
-          </form>
-
-          <p>Don't have an account? <button class="form-toggle">Sign up</button></p>
-        </div>
-      </dialog>
-
-      <section class="hero">
-        <div class="hero__discount">
-          <div class="left-column">
-            <div class="discount-card">
-              <img src="./assets/Homepage/cmo.png" alt="cmo" loading="lazy" />
-              <div class="discount-card__description">
-                <h3>Lillian Bennett</h3>
-                <p>Chef Marketing Officer</p>
-              </div>
-            </div>
-
-            <h2>
-              Aliquam Faucibus
-              <br />
-              Odionecom.
-            </h2>
-
-            <p>
-              Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis
-              rutrum non risus in imperdiet. Proin molestie accumsan nulla sit.
-            </p>
-
-            <p>
-              Namaki duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi
-              urna.
-            </p>
-          </div>
-          <div class="right-column">
-            <h2>25% Discount</h2>
-            <p>
-              Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in
-              vulputate.
-            </p>
-
-            <a href="#">Get discount</a>
           </div>
         </div>
-        <div class="hero__description">
-          <h1>
-            Smart styles for
-            <br />
-            Every destination
-          </h1>
 
-          <p>
-            Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim. Nullam
-            pulvinar felis at metus.
-          </p>
-
-          <a href="./html/catalog.html">View All Items</a>
-        </div>
-        <div class="hero__image"></div>
-      </section>
-
-      <section class="travel-suitcases">
-        <h2>Travel Suitcases</h2>
-        <p>Duis vestibulum elit vel neque pharetra</p>
-        <div class="travel-suitcases__wrapper"></div>
-      </section>
-
-      <section class="selected">
-        <h2>Selected Products</h2>
-        <p>Duis vestibulum elit vel neque pharetra</p>
-        <div class="selected__wrapper"></div>
-      </section>
-
-      <section class="offer" aria-labelledby="offer-heading">
-        <div class="left-column">
-          <h3>50%</h3>
-          <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
-        </div>
-        <div class="right-column">
-          <h3 id="offer-heading">Offer of the month</h3>
-          <p>
-            Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in
-            vulputate.
-          </p>
-          <a href="#">Get Offer Today</a>
+        <div class="swiper roles-swiper" id="rolesSwiperContainer">
+          <div class="swiper-wrapper" id="rolesCarousel"></div>
         </div>
       </section>
 
-      <section class="new-products">
-        <h2>New Products Arrival</h2>
-        <p>Duis vestibulum elit vel neque pharetra</p>
-        <div class="new-products__wrapper"></div>
-      </section>
-
-      <section class="reviews">
-        <h2>Our Grateful Customers</h2>
-        <p>Duis vestibulum elit vel neque pharetra</p>
-        <ul class="reviews__wrapper">
-          <li>
-            <article>
-              <img
-                src="./assets/Homepage/customer-one.png"
-                alt="Testimonial from Ethan Wade"
-                loading="lazy"
-              />
-              <p>
-                Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in
-                vulputate.
-              </p>
-              <span class="highlight-rose">Ethan Wade, New York</span>
-            </article>
-          </li>
-          <li>
-            <article>
-              <img
-                src="./assets/Homepage/customer-two.png"
-                alt="Testimonial from Jane Reyes"
-                loading="lazy"
-              />
-              <p>
-                Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in
-                vulputate.
-              </p>
-              <span class="highlight-rose">Jane Reyes, California</span>
-            </article>
-          </li>
-          <li>
-            <article>
-              <img
-                src="./assets/Homepage/customer-three.png"
-                alt="Testimonial from Erica Banks"
-                loading="lazy"
-              />
-              <p>
-                Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut mperdiet et leo in
-                vulputate.
-              </p>
-              <span class="highlight-rose">Erica Banks, Miami</span>
-            </article>
-          </li>
-        </ul>
-      </section>
+      <div class="features-banner">
+        <div class="features-banner__container">
+          <div class="feature-item">
+            <i class="ri-eye-line"></i>
+            <span>Transparență</span>
+          </div>
+          <div class="feature-item">
+            <i class="ri-git-branch-line"></i>
+            <span>Colaborare</span>
+          </div>
+          <div class="feature-item">
+            <i class="ri-global-line"></i>
+            <span>Accesibilitate</span>
+          </div>
+          <div class="feature-item">
+            <i class="ri-lightbulb-flash-line"></i>
+            <span>Inovație</span>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-      <div class="footer__benefits">
-        <h2>Our Benefits</h2>
-        <ul>
-          <li>
-            <img src="./assets/Footer/travel.png" alt="shield-logo" />
-            <p>
-              Velit nisl sodales eget <br />
-              donec quis. volutpat orci.
-            </p>
-          </li>
-          <li>
-            <img src="./assets/Footer/truck.png" alt="shield-logo" />
-            <p>Dolor eu varius. Morbi<br />fermentum velit nisl.</p>
-          </li>
-          <li>
-            <img src="./assets/Footer/coins.png" alt="shield-logo" />
-            <p>Malesuada fames ac ante<br />ipsum primis in faucibus.</p>
-          </li>
-          <li>
-            <img src="./assets/Footer/student-hat.png" alt="shield-logo" />
-            <p>
-              Nisl sodales eget donec<br />
-              quis. volutpat orci.
-            </p>
-          </li>
-        </ul>
-      </div>
+      <div class="footer__container">
+        <div class="footer__logo">
+          <a href="#home" class="footer__logo-link">
+            <span class="brand-first">Asociația</span>
+            <span class="brand-second">Oportunități și Cariere</span>
+          </a>
+          <p id="current-year">&copy; 2025</p>
+        </div>
 
-      <div class="footer__grid">
-        <nav class="footer-links" aria-label="Footer navigation links">
-          <ul class="link-list">
+        <nav class="footer__nav" aria-label="Footer Navigation">
+          <ul class="footer__links">
+            <li><a href="./html/misiune.html" class="footer__link">Misiunea noastră</a></li>
             <li>
-              <h3>
-                <a href="./html/about.html"> About Us </a>
-              </h3>
+              <a href="./html/povesti-de-succes.html" class="footer__link">Povești de succes</a>
             </li>
-            <li><a href="#">Organisation</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Clients</a></li>
-          </ul>
-
-          <ul class="link-list">
-            <li><h3>Interesting Links</h3></li>
-            <li><a href="#">Photo Gallery</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Socials</a></li>
-          </ul>
-
-          <ul class="link-list">
-            <li><h3>Achievements</h3></li>
-            <li><a href="#">Winning Awards</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Our Amazing Clients</a></li>
+            <li><a href="./html/cum-ajuti.html" class="footer__link">Cum poți tu ajuta?</a></li>
+            <li><a href="./html/intalniri.html" class="footer__link">Întâlniri</a></li>
+            <li><a href="./html/echipa.html" class="footer__link">Echipă</a></li>
           </ul>
         </nav>
 
-        <section class="footer__shipping">
-          <h3>Shipping Information</h3>
-          <p>
-            Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec
-            nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim
-            elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat
-            tincidunt aliquam.
-          </p>
-        </section>
-
-        <section class="footer__contact">
-          <h3>
-            <a href="./html/contact.html"> Contact Us </a>
-          </h3>
-          <p class="contact-intro">
-            Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum
-            felis, tristique egestas et, convallis ac velitn consequat nec luctus.
-          </p>
-
-          <ul class="contact-details">
+        <div class="footer__social">
+          <ul class="social-icons">
             <li>
-              <img src="./assets/Footer/phone.png" alt="" />
-              <a href="tel:+632366322">Phone: (+63) 236 6322</a>
+              <a
+                href="https://www.instagram.com/peviitor.ro/"
+                class="social-link"
+                target="_blank"
+                title="Instagram"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
             </li>
             <li>
-              <img src="./assets/Footer/email.png" alt="" />
-              <a href="mailto:public@news.com">public@news.com</a>
+              <a
+                href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
+                class="social-link"
+                target="_blank"
+                title="LinkedIn"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
             </li>
             <li>
-              <img src="./assets/Footer/schedule.png" alt="" />
-              <p>
-                Mon - Fri: 10am - 6pm
-                <br />
-                Sat - Sun: 10am - 6pm
-              </p>
+              <a
+                href="https://discord.gg/KPMkdUfQNu"
+                class="social-link"
+                target="_blank"
+                title="Discord"
+              >
+                <i class="ri-discord-fill"></i>
+              </a>
             </li>
             <li>
-              <img src="./assets/Footer/location.png" alt="" />
-              <p>
-                639 Jade Valley, <br />
-                Washington Dc
-              </p>
+              <a
+                href="https://github.com/peviitor-ro/oportunitatisicariere"
+                class="social-link"
+                target="_blank"
+                title="GitHub"
+              >
+                <i class="ri-github-fill"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://meet.jit.si/PEVIITOR.RO"
+                class="social-link"
+                target="_blank"
+                title="Jitsi"
+              >
+                <i class="ri-chat-smile-2-fill"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+                class="social-link"
+                target="_blank"
+                title="Dev.to"
+              >
+                <i class="ri-code-box-fill"></i>
+              </a>
             </li>
           </ul>
-        </section>
-      </div>
+        </div>
 
-      <div class="footer__copyright">
-        <p>&copy; Copywright 2025</p>
+        <div class="footer__info-links">
+          <ul>
+            <li><a target="_blank" href="https://peviitor.ro/">peViitor</a></li>
+            <li><a target="_blank" href="https://onboarding.peviitor.ro/">Onboarding</a></li>
+            <li>
+              <a target="_blank" href="https://peviitor.ro/#/conditii-de-utilizare"
+                >Condiții de utilizare</a
+              >
+            </li>
+            <li>
+              <a target="_blank" href="https://peviitor.ro/#/politica-de-confidentialitate"
+                >Confidențialitate</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
 
-    <script src="./js/main.js" defer></script>
-    <script src="./js/home.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/header.js" defer></script>
+    <script src="./js/schedule.js" defer></script>
+    <script src="./js/jobCarousel.js" defer></script>
   </body>
-  <./html>
 </html>

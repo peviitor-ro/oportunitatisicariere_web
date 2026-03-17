@@ -1,5 +1,6 @@
 @use './base' as *;
 @use './base/reset';
+@use './components/schdeule';
 @use './layouts/header';
 @use './layouts/footer';
 @use './components/buttons' as *;
@@ -21,240 +22,38 @@ main {
   }
 }
 
-#cart {
-  position: relative;
-
-  .cart-quantity {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    @include flex(row, center, center);
-
-    width: 1.6rem;
-    height: 1.6rem;
-    padding: 0.5rem;
-    border-radius: 50%;
-    border: 3px solid $rose-500;
-    background-color: $neutral-100;
-    color: $rose-500;
-    font-size: $font-size-base;
-    font-weight: $font-weight-bold;
+// Schedule alert animation
+@keyframes pulse-alert {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 136, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 194, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 136, 0);
   }
 }
 
-.highlight-rose {
-  color: $rose-500;
-}
-
-.highlight-amber {
-  color: $amber-500;
-}
-
-.highlight-neutral {
-  color: $neutral-500;
-}
-
-.dialog-wrapper.fade-in {
-  animation: fade-in 0.3s ease-out forwards;
-}
-
-.dialog-wrapper.fade-out {
-  animation: fade-out 0.3s ease-in forwards;
-}
-
-.flash-message {
-  position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translate(-50%, -150%);
-  padding: 1.5rem 3rem;
-  border-radius: 8px;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
-  color: $neutral-100;
-  z-index: 1004;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-
-  &.is-visible {
-    transform: translate(-50%, 0);
+// Down arrow icon animations
+@keyframes icon-move {
+  0%,
+  100% {
+    translate: 0 0;
   }
-
-  &.flash-message--success {
-    background-color: #28a745;
-  }
-
-  &.flash-message--danger {
-    background-color: #dc3545;
+  50% {
+    translate: 0 16px;
   }
 }
 
-.loading-message,
-.error-message {
-  font-size: 1.8rem;
-  text-align: center;
-  padding: 4rem 0;
-  color: $neutral-500;
-}
-
-.error-message {
-  color: $rose-500;
-}
-
-// Offer section for homepage and abbout
-.offer {
-  margin: 12rem 0;
-  padding: 6rem 2rem;
-
-  @include flex(row, space-evenly, center);
-
-  gap: 4rem;
-  flex-wrap: wrap;
-  min-height: 41rem;
-  background-image: url('../assets/Homepage/offer.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 2rem 8rem #c1c7d470;
-  color: $neutral-100;
-
-  p {
-    font-size: $font-size-xxl;
+@keyframes icon-pulse {
+  0%,
+  100% {
+    scale: 0.8;
+    opacity: 0.6;
   }
-
-  .left-column,
-  .right-column {
-    @include flex(column, center, flex-start);
-
-    gap: 2rem;
-    max-width: 510px;
-    width: 100%;
-  }
-
-  .left-column {
-    h3 {
-      font-size: 20rem;
-      font-weight: $font-weight-bold;
-      line-height: 1;
-    }
-  }
-
-  .right-column {
-    gap: 3rem;
-
-    h3 {
-      font-size: 3.8rem;
-      font-weight: $font-weight-bold;
-    }
-
-    a {
-      @include primary-btn;
-    }
-  }
-
-  @media screen and (max-width: ($breakpoint-md - 1px)) {
-    .left-column {
-      h3 {
-        font-size: 12rem;
-      }
-    }
-  }
-}
-
-// Hero section for about and contact
-.about-hero,
-.contact-hero {
-  @include flex(column, center, center);
-
-  width: 100%;
-  max-width: none;
-  gap: 2rem;
-  padding: 2rem;
-  height: 540px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: $neutral-100;
-  text-align: center;
-
-  h1 {
-    font-size: 5rem;
-    font-weight: $font-weight-bold;
-  }
-
-  p {
-    font-size: $font-size-xxl;
-    max-width: 440px;
-  }
-}
-
-.about-hero {
-  background-image: url('../assets/About/hero.png');
-}
-
-.contact-hero {
-  background-image: url('../assets/Contact/hero.png');
-}
-
-// Achievemts section for about and contact
-.about-achievements,
-.contact-schedule {
-  ul {
-    @include flex(row, space-between, center);
-
-    flex-wrap: wrap;
-    gap: 4rem;
-    padding: 0 2rem;
-
-    li {
-      @include flex(column, center, center);
-
-      gap: 2rem;
-      max-width: 280px;
-      width: 100%;
-      text-align: center;
-
-      h2 {
-        font-size: $h1-font-size;
-        font-weight: $font-weight-bold;
-      }
-
-      p {
-        font-size: $font-size-xxl;
-      }
-    }
-  }
-
-  @media screen and (max-width: ($breakpoint-lg - 1px)) {
-    ul {
-      justify-content: center;
-    }
-  }
-}
-
-// Keyframes
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-
-  to {
+  50% {
+    scale: 1.2;
     opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(0.98);
   }
 }

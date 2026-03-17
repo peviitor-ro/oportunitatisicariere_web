@@ -1,46 +1,60 @@
 @use '../base' as *;
 
 @mixin primary-btn {
+  @include flex(row, center, center);
+  gap: 0.8rem;
   padding: 1.2rem 2.4rem;
-  color: $neutral-100;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  border: 2px solid $mint-600;
-  background-color: $mint-600;
+  border-radius: 26px;
+  color: $white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  letter-spacing: 1px;
+  background-color: $mint-500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: $rose-600;
-    border-color: $rose-600;
+    background-color: $mint-700;
+    box-shadow: 0 0 0 1px $mint-200;
+  }
+
+  i {
+    font-size: 1.2em;
+    line-height: 1;
   }
 }
 
-@mixin primary-btn-outline {
-  padding: 1.2rem 1.6rem;
-  color: $mint-600;
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  border: 2px solid $mint-600;
-  background-color: $neutral-100;
+@mixin secondary-btn {
+  @include flex(row, center, center);
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 26px;
+  color: $mint-500;
+  border: 2px solid $mint-500;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  letter-spacing: 1px;
+  background-color: transparent;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: $mint-400;
-    border-color: $mint-400;
-    color: $neutral-100;
+    background-color: $mint-500;
+    color: $white;
+  }
+
+  i {
+    font-size: 1.2em;
+    line-height: 1;
   }
 }
 
-@mixin discrete-icon-button($padding: 0.75rem, $radius: 50%) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+@mixin icon-btn($padding: 0.75rem, $radius: 50%) {
+  @include flex(row, center, center);
   padding: $padding;
   border-radius: $radius;
   background-color: transparent;
+  color: $neutral-900;
   border: none;
   cursor: pointer;
 

@@ -261,7 +261,7 @@
         }
 
         button {
-          @include primary-btn-outline;
+          @include secondary-btn;
 
           border-radius: 10px;
         }

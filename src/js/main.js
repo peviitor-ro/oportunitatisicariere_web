@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('.header');
-  const utility = document.querySelector('.utility');
-  const utilityMedia = document.querySelector('.utility__media');
-  const navigation = document.querySelector('.navigation');
-  const dropdownLinks = document.querySelectorAll('.dropdown__link');
   const userBtn = document.getElementById('user');
   const cartBtn = document.getElementById('cart');
 
@@ -39,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.updateCartCounter = function () {
     const cart = window.getCart();
+
+    // Safety check in case cartBtn doesn't exist on this page
+    if (!cartBtn) return;
+
     let counter = cartBtn.querySelector('.cart-quantity');
     if (cart.length > 0) {
       if (!counter) {
@@ -68,16 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   window.getData = fetchAllProducts;
 
-  const burgerBtn = document.createElement('button');
-  burgerBtn.className = 'header__burger-btn';
-  burgerBtn.setAttribute('aria-label', 'Toggle navigation');
-  burgerBtn.setAttribute('aria-expanded', 'false');
-  burgerBtn.innerHTML = '<span></span><span></span><span></span>';
-
-  const mobileMedia = utilityMedia.cloneNode(true);
-  mobileMedia.classList.add('utility__media--mobile');
-  utilityMedia.classList.add('utility__media--desktop');
-
+  // Keeping the header scroll effect since it's just visual styling
   if (header) {
     const handleScroll = () => {
       header.classList.toggle('scrolled', window.scrollY > 0);
@@ -85,33 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
   }
-
-  if (header && utility && navigation) {
-    header.insertBefore(burgerBtn, navigation);
-  }
-  if (navigation) {
-    navigation.appendChild(mobileMedia);
-  }
-
-  if (burgerBtn && navigation) {
-    burgerBtn.addEventListener('click', function () {
-      this.classList.toggle('is-active');
-      navigation.classList.toggle('is-open');
-      document.body.classList.toggle('no-scroll');
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !isExpanded);
-    });
-  }
-
-  dropdownLinks.forEach((link) => {
-    link.addEventListener('click', function (event) {
-      if (window.innerWidth < 768) {
-        event.preventDefault();
-        const dropdownParent = this.closest('.dropdown');
-        dropdownParent?.classList.toggle('is-open');
-      }
-    });
-  });
 
   document.body.addEventListener('click', function (event) {
     const clickedButton = event.target.closest('.add-to-cart');
@@ -304,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (authDialog) {
-    // Close dialog function
     function handleDialogClose(event) {
       if (event.target === authDialog || event.target.closest('.dialog-close-btn')) {
         authDialog.close();
@@ -312,7 +275,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Password visibility toggle
     function handlePasswordToggle(event) {
       const btn = event.target.closest('.toggle-visibility');
       if (!btn) return;
@@ -337,7 +299,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Toggle form type
     function handleAuthViewToggle(event) {
       const btn = event.target.closest('.form-toggle');
       if (!btn) return;

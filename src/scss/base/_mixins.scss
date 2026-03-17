@@ -34,11 +34,11 @@
 }
 
 @mixin soft-shadow {
-  box-shadow: 0px 1px 4px #00000029;
+  box-shadow: 0px 1px 4px with-alpha($black, 0.16);
 }
 
 @mixin wrapping-shadow {
-  box-shadow: 0px 3px 8px #0000003d;
+  box-shadow: 0px 3px 8px with-alpha($black, 0.24);
 }
 
 @mixin role-card {
@@ -49,8 +49,12 @@
   border-radius: 2.4rem;
   overflow: hidden;
   text-decoration: none;
+  background-color: $neutral-50;
   @include soft-shadow;
   transition: box-shadow 0.3s ease;
+
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient($white, $black);
 
   .card-img-wrapper {
     position: absolute;
@@ -58,7 +62,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     background-color: $neutral-200;
 
     img {
@@ -71,11 +74,15 @@
 
   .card-gradient {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
     height: 50%;
-    background: linear-gradient(to top, rgba(16, 24, 40, 0.8) 0%, rgba(16, 24, 40, 0) 100%);
+    background: linear-gradient(
+      to top,
+      with-alpha($blue-900, 0.8) 0%,
+      with-alpha($blue-900, 0) 100%
+    );
     z-index: 1;
     transition: opacity 0.3s ease;
   }
@@ -92,17 +99,14 @@
     z-index: 3;
     padding: 0 1.5rem;
     transition: all 0.3s ease;
+    text-shadow: 0 2px 8px with-alpha($black, 0.6);
   }
 
   .card-hover-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 1rem;
-    backdrop-filter: blur(2px);
+    inset: -2px;
+    background: with-alpha($neutral-50, 0.75);
+    backdrop-filter: blur(1px);
     opacity: 0;
     z-index: 2;
     transition: opacity 0.3s ease;
@@ -117,10 +121,10 @@
       color: $blue-600;
       @include flex(row, center, center);
       gap: 0.8rem;
-      // opacity: 0;
-      // transition:
-      //   opacity 0.15s ease,
-      //   bottom 0.15s ease;
+      opacity: 0;
+      transition:
+        opacity 0.15s ease,
+        bottom 0.15s ease;
 
       i {
         font-size: 2.4rem;
@@ -128,9 +132,19 @@
     }
   }
 
+  &.light-theme {
+    .card-title {
+      color: $blue-900;
+      text-shadow: none;
+    }
+    .card-gradient {
+      background: linear-gradient(to top, with-alpha($white, 0.9) 0%, with-alpha($white, 0) 100%);
+    }
+  }
+
   &:hover,
   &:focus {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px with-alpha($black, 0.15);
 
     .card-img-wrapper img {
       transform: scale(1.1);
@@ -147,14 +161,14 @@
     .card-title {
       color: $blue-600;
       bottom: 45%;
+      text-shadow: none;
     }
 
-    // .apply-btn-mock {
-    //   opacity: 1;
-    //   bottom: 35%;
-    //   transition:
-    //     opacity 0.3s ease 0.2s,
-    //     bottom 0.3s ease 0.2s;
-    // }
+    .apply-btn-mock {
+      opacity: 1;
+      transition:
+        opacity 0.3s ease 0.2s,
+        bottom 0.3s ease 0.2s;
+    }
   }
 }

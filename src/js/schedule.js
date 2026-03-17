@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const todayData = allScheduleData[currentDayIndex - 1];
-    0 - 4 in array;
+    if (isWeekend || allScheduleData.length === 0) {
+      openScheduleBtn?.classList.remove('is-alerting');
+      return;
+    }
     if (!todayData || !todayData.meeting) return;
 
     const activeSchedules = todayData.meeting.filter((m) => m.active);
@@ -78,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function initApp() {
     try {
-      const response = await fetch('../data/schedule.json');
+      const response = await fetch('./data/schedule.json');
       allScheduleData = await response.json();
 
       renderButtons();

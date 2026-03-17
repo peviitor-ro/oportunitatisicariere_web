@@ -2,47 +2,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const rolesContainer = document.getElementById('rolesCarousel');
   const searchInput = document.getElementById('rolesSearch');
   const searchBtn = document.querySelector('.search-icon-btn');
-  const dataUrl = '../data/positions.json';
+  const dataUrl = './data/positions.json';
 
   let allJobs = [];
-  let swiperInstance = null; // Păstrăm instanța caruselului
+  let swiperInstance = null;
 
-  // Funcție pentru inițializarea Swiper
   function initSwiper(jobsCount) {
-    // Dacă există deja un carusel, îl distrugem pentru a-l reface cu noile date
     if (swiperInstance) {
       swiperInstance.destroy(true, true);
     }
 
-    // Swiper are nevoie de minim slide-uri egale cu slidesPerView pentru un loop perfect.
-    // Deoarece afișăm 3 pe desktop, activăm loop-ul infinit doar dacă avem >= 3 joburi.
     const shouldLoop = jobsCount >= 3;
 
     swiperInstance = new Swiper('.roles-swiper', {
-      // Setări de bază
       centeredSlides: true,
-      grabCursor: true, // Arată iconița de "mână" pentru drag
+      grabCursor: true,
       loop: shouldLoop,
 
-      // Rotație automată la timp
       autoplay: {
-        delay: 3500, // Se schimbă la 3.5 secunde
-        disableOnInteraction: false, // Continuă autoplay-ul chiar și după ce tragi de el
+        delay: 3500,
+        disableOnInteraction: false,
       },
 
-      // Setări Responsive (Afișăm maxim 3)
       breakpoints: {
         0: {
-          slidesPerView: 1.2, // Pe mobil arătăm 1 card și o bucată din următorul
+          slidesPerView: 1.6,
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 1.8,
           spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 3, // Afișăm fix 3 pe desktop
-          spaceBetween: 40, // Gap mai mare între carduri
+          slidesPerView: 3,
+          spaceBetween: 40,
         },
       },
     });
@@ -52,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!rolesContainer) return;
     rolesContainer.innerHTML = '';
 
-    // 1. Cazul Empty State (Niciun rezultat)
     if (roles.length === 0) {
-      // Dacă nu sunt rezultate, distrugem swiper-ul să nu se comporte ciudat
       if (swiperInstance) swiperInstance.destroy(true, true);
 
       rolesContainer.innerHTML = `
@@ -67,9 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // 2. Generarea cardurilor
     roles.forEach((job) => {
-      // Swiper necesită ca fiecare element să fie un "swiper-slide"
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
 
@@ -92,11 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
       rolesContainer.appendChild(slide);
     });
 
-    // 3. Inițializăm caruselul după ce am adăugat slide-urile în DOM
     initSwiper(roles.length);
   }
 
-  // Logica de căutare
   function handleSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
 
@@ -120,8 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
       renderRoles(allJobs);
     } catch (error) {
       console.error('Eroare:', error);
+
       if (rolesContainer) {
-        rolesContainer.innerHTML = `<p style="text-align: center;">Nu am putut încărca pozițiile.</p>`;
+        if (swiperInstance) swiperInstance.destroy(true, true);
+
+        rolesContainer.innerHTML = `
+          <div class="empty-state-card shade" style="width: 100%; max-width: 600px; margin: 0 auto; padding: 6rem 2rem; border-radius: 2.4rem; background: #ffffff; text-align: center; border: 1px dashed #ef4444;">
+            <i class="ri-wifi-off-line" style="font-size: 5.6rem; color: #ef4444; margin-bottom: 1rem; display: inline-block;"></i>
+            <h3 style="font-size: 2.4rem; color: #101828; margin-bottom: 1rem;">Hopa! 🔌</h3>
+            <p style="font-size: 1.6rem; color: #667085;">Se pare că am pierdut conexiunea. Te rugăm să reîncarci pagina sau să revii puțin mai târziu!</p>
+          </div>
+        `;
       }
     }
   }

@@ -347,6 +347,7 @@
 
       .schedule-header {
         text-align: center;
+        @include flex(row, center, center);
         margin-bottom: 2rem;
 
         @media (min-width: $breakpoint-md) {

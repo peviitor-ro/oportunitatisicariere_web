@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function initApp() {
     try {
-      const response = await fetch('./data/schedule.json');
+      const response = await fetch('/data/schedule.json');
       allScheduleData = await response.json();
 
       renderButtons();

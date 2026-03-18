@@ -12,6 +12,7 @@
     background-color: $neutral-100;
 
     &__container {
+      width: 100%;
       @include flex(column-reverse, center, center);
       gap: 4rem;
       padding: 2.4rem 2.4rem;

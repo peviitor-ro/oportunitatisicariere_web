@@ -9,16 +9,17 @@
   z-index: 1000;
   box-shadow: none;
   transition: box-shadow 0.3s ease-in-out;
+
   &.scrolled {
-    box-shadow: 0 4px 12px #00000010;
+    box-shadow: 0 4px 12px with-alpha($black, 0.06);
   }
+
   .nav-container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  // Desktop Navigation
   .logo-row {
     @include flex(row, space-between, center);
     padding: 1.2rem 0;
@@ -76,7 +77,6 @@
     }
   }
 
-  //  Mobile Menu
   .nav-row {
     border-bottom: 1px solid $neutral-200;
     @media (min-width: $breakpoint-md) {
@@ -90,7 +90,7 @@
       border: none;
       padding: 1.6rem 0;
       font-size: 3.6rem;
-      color: #000;
+      color: $black;
       cursor: pointer;
       text-align: center;
 
@@ -189,12 +189,12 @@
             }
           }
 
-          // Dropdown menu
           .dropdown {
             display: none;
             padding-left: 1.6rem;
             margin-top: 1.6rem;
-            @include flex(column, null, flex-start);
+            flex-direction: column;
+            align-items: flex-start;
 
             @media (min-width: $breakpoint-md) {
               display: flex;
@@ -202,13 +202,13 @@
               top: 100%;
               left: 100%;
               transform: translateX(-50%) translateY(10px);
-              background: #fff;
+              background: $white;
               min-width: 240px;
               padding: 0;
               margin-top: 1rem;
               border-radius: 8px;
               border-left: 1px solid $mint-500;
-              box-shadow: 0 2px 8px #00000010;
+              box-shadow: 0 2px 8px with-alpha($black, 0.06);
               opacity: 0;
               visibility: hidden;
               pointer-events: none;
@@ -252,11 +252,9 @@
             }
           }
 
-          // Dropdown toggle
           &.is-expanded .dropdown {
             display: flex;
           }
-
           @media (min-width: $breakpoint-md) {
             &:hover .dropdown {
               opacity: 1;

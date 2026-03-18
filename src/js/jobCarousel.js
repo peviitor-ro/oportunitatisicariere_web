@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const rolesContainer = document.getElementById('rolesCarousel');
   const searchInput = document.getElementById('rolesSearch');
   const searchBtn = document.querySelector('.search-icon-btn');
-  const dataUrl = './data/positions.json';
 
   let allJobs = [];
   let swiperInstance = null;
@@ -22,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
 
       breakpoints: {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.className = 'swiper-slide';
 
       slide.innerHTML = `
-        <a href="/html/job-details.html?id=${job.id}" class="role-card">
+        <a href="./html/pozitie.html?id=${job.id}" class="role-card">
           <div class="card-img-wrapper">
             <img src="${job.image || './assets/placeholder.jpg'}" alt="${job.title}">
           </div>
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchAndRenderRoles() {
     try {
-      const response = await fetch(dataUrl);
+      const response = await fetch('/data/positions.json');
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
       allJobs = await response.json();

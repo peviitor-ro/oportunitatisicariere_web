@@ -8,7 +8,7 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 .header.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.062745098);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 .header .nav-container {
   max-width: 1440px;
@@ -131,7 +131,7 @@
   border: none;
   padding: 1.6rem 0;
   font-size: 3.6rem;
-  color: #000;
+  color: #000000;
   cursor: pointer;
   text-align: center;
 }
@@ -254,7 +254,6 @@
   display: none;
   padding-left: 1.6rem;
   margin-top: 1.6rem;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -265,13 +264,13 @@
     top: 100%;
     left: 100%;
     transform: translateX(-50%) translateY(10px);
-    background: #fff;
+    background: #ffffff;
     min-width: 240px;
     padding: 0;
     margin-top: 1rem;
     border-radius: 8px;
     border-left: 1px solid #2f7973;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.062745098);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

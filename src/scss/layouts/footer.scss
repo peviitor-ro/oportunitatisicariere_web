@@ -19,15 +19,17 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         'logo nav'
-        'social legal';
-      align-items: center;
+        'social legal'
+        'copyright copyright';
+      align-items: start;
+      row-gap: 3.2rem;
     }
   }
 
   &__logo {
     grid-area: logo;
     @include flex(column, flex-start, flex-start);
-    gap: 0.8rem;
+    gap: 1.6rem;
 
     .footer__logo-link {
       text-decoration: none;
@@ -43,16 +45,27 @@
         text-transform: uppercase;
       }
     }
-    p {
-      color: $neutral-700;
+
+    .footer__desc {
+      color: $neutral-800;
       font-size: $font-size-sm;
+      line-height: 1.6;
+      max-width: 400px;
+    }
+
+    .footer__btn {
+      @include primary-btn;
+
+      i {
+        font-size: 2rem;
+      }
     }
   }
 
   &__nav {
     grid-area: nav;
     @media (min-width: $breakpoint-md) {
-      @include flex(row, flex-end, center);
+      @include flex(row, flex-end, flex-start);
     }
 
     .footer__links {
@@ -61,7 +74,7 @@
       @media (min-width: $breakpoint-md) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem 4rem;
+        gap: 1.2rem 3.6rem;
       }
 
       li a {
@@ -117,6 +130,19 @@
           }
         }
       }
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    text-align: center;
+    width: 100%;
+    padding-top: 1.6rem;
+    border-top: 1px solid $neutral-200;
+
+    p {
+      color: $neutral-800;
+      font-size: $font-size-sm;
     }
   }
 }

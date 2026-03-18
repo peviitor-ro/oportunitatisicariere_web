@@ -1,19 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="./dist/main.css" />
 
+    <link rel="stylesheet" href="../dist/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>ASOCIAȚIA OPORTUNITĂȚI ȘI CARIERE</title>
   </head>
-  <body id="home">
+
+  <body>
     <header class="header">
       <div class="nav-container">
         <div class="logo-row">
@@ -64,7 +65,7 @@
 
           <a href="/" class="logo-link">
             <img
-              src="./assets/Header/logo.png"
+              src="../assets/Header/logo.png"
               alt="Asociația Oportunităților si Cariere"
               class="logo-img"
             />
@@ -74,12 +75,7 @@
             <button class="btn-calendar" aria-label="Calendar">
               <i class="ri-calendar-event-line"></i>
             </button>
-            <a
-              href="https://discord.com/channels/910541714782048306/910541714782048309"
-              target="_blank"
-              class="btn-join"
-              >Alătură-te</a
-            >
+            <a href="https://discord.gg/KPMkdUfQNu" target="_blank" class="btn-join">Alătură-te</a>
           </div>
         </div>
 
@@ -92,7 +88,7 @@
             <div class="nav-content">
               <ul class="nav-menu">
                 <li class="nav-item">
-                  <a href="#home" class="nav-link association-link">
+                  <a href="/" class="nav-link association-link">
                     <span class="brand-first">Asociația</span>
                     <span class="brand-second">Oportunități și Cariere</span>
                   </a>
@@ -103,17 +99,17 @@
                     Despre noi <i class="ri-arrow-down-s-line"></i>
                   </div>
                   <div class="dropdown">
-                    <a href="./html/misiune.html" class="dropdown-link">Misiunea noastră</a>
-                    <a href="./html/cum-ajuti.html" class="dropdown-link">Cum poți tu ajuta?</a>
-                    <a href="./html/echipa.html" class="dropdown-link">Echipă</a>
+                    <a href="./misiune.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./cum-ajuti.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./echipa.html" class="dropdown-link">Echipă</a>
                   </div>
                 </li>
 
                 <li class="nav-item">
-                  <a href="./html/povesti-de-succes.html" class="nav-link">Povești de succes</a>
+                  <a href="./povesti-de-succes.html" class="nav-link">Povești de succes</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./html/intalniri.html" class="nav-link">Întâlniri</a>
+                  <a href="./intalniri.html" class="nav-link">Întâlniri</a>
                 </li>
               </ul>
 
@@ -171,11 +167,9 @@
           <button class="modal-close-btn" id="closeScheduleModal" aria-label="Închide modalul">
             <i class="ri-close-line"></i>
           </button>
-
           <div class="schedule-header">
             <h2 class="title">Întâlniri săptămânale</h2>
           </div>
-
           <div class="schedule-section">
             <div class="schedule-days"></div>
             <div class="schedule-cards"></div>
@@ -184,153 +178,161 @@
       </dialog>
     </header>
 
-    <main class="main-home">
-      <!-- Hero Section -->
-      <section class="hero" id="home-hero">
-        <div class="hero__container">
-          <div class="hero__content">
-            <h1 class="hero__title">
-              <span class="brand-first font-gelasio">ASOCIAȚIA</span><br />
-              <span class="brand-second">OPORTUNITĂȚI ȘI CARIERE</span>
-            </h1>
-            <p class="hero__subtitle">
-              De la proiecte Open Source la inițiative cu impact real, transformăm tehnologia în
-              binele comun.
-            </p>
-            <a href="./html/misiune.html" target="_blank">Află mai mult</a>
-          </div>
-          <div class="hero__illustration">
-            <img src="./assets/Header/logo.png" alt="Ilustrație colaborare mâini" />
-          </div>
+    <main class="main-content">
+      <div class="container">
+        <div class="back-nav">
+          <a href="/#how-contribute" class="back-nav__link">
+            <i class="ri-arrow-left-s-line"></i>
+            <span class="back-nav__text">Înapoi la Pagina Principală</span>
+          </a>
         </div>
 
-        <!-- peViitor Section -->
-        <article class="project-showcase">
-          <div class="project-showcase__card shade">
-            <div class="project-showcase__content">
-              <div class="project-showcase__tag">
-                <img
-                  src="./assets/Homepage/rocket-peViitor.png"
-                  alt="Icon obiectiv"
-                  class="tag-icon"
-                />
-                <h2 class="title">Obiectivul nostru</h2>
+        <article class="job-card">
+          <div class="job-card__header">
+            <div class="job-card__info">
+              <h1 class="job-card__title" id="job-title"></h1>
+              <div class="job-card__meta">
+                <p id="employer-name">Angajator:&nbsp;</p>
+                <p id="department-name">Departament:&nbsp;</p>
               </div>
-              <h2 class="project-showcase__title">
-                <span class="highlight-mint">pe</span>
-                <span class="highlight-blue">Viitor.ro </span>
-              </h2>
-              <p class="project-showcase__desc">
-                Construim cea mai mare bază de date open-source care agreghează oportunitățile de
-                carieră din toată țara. Simplificăm căutarea, eliminăm barierele și aducem
-                transparență pe piața muncii.
-              </p>
-              <a href="https://peviitor.ro" target="_blank">Află cum funcționează</a>
+
+              <div class="job-card__tags">
+                <div class="tag">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span id="job-location"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-building-line"></i>
+                  <span id="job-type"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-briefcase-line"></i>
+                  <span id="job-experience"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span id="job-salary"></span>
+                </div>
+              </div>
             </div>
-            <div class="project-showcase__image">
-              <img src="./assets/Homepage/phone-image.png" alt="Aplicația peViitor pe telefon" />
+
+            <div class="job-card__badge">
+              <img
+                src="../assets/JobProfile/stamp.png"
+                alt="Stampilă Voluntariat"
+                class="badge-img"
+              />
+              <div class="job-card__actions">
+                <button class="team-btn">Vezi echipa</button>
+                <button
+                  class="join-btn"
+                  onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+                >
+                  Aplică
+                </button>
+              </div>
             </div>
           </div>
-        </article>
-      </section>
 
-      <!-- Banner -->
-      <div class="banner">
-        <div class="banner__overlay"></div>
-        <div class="banner__content">
-          <h2>Vrei să te implici?</h2>
-          <i class="ri-arrow-down-s-line bounce-icon"></i>
-        </div>
-      </div>
+          <div class="job-card__body">
+            <section class="details-section">
+              <h2 class="section-title">Descrierea meseriei</h2>
+              <p class="section-text" id="job-description"></p>
+            </section>
 
-      <!-- Cum Poti Ajuta Section -->
-      <section class="roles-section" id="cum-ajuti">
-        <div class="roles-section__header">
-          <h2 class="title">Cum poți ajuta?</h2>
-          <p>
-            Schimbăm lumea, linie cu linie. Pune-ți talentul în valoare pentru o cauză nobilă!
-            Căutăm voluntari din diverse arii — de la Tech și QA la Marketing sau HR — gata să
-            transforme expertiza în impact real. Alătură-te unei comunități unde skill-urile tale
-            construiesc viitorul.
-          </p>
-          <div class="roles-section__filter">
-            <div class="search-wrapper">
-              <input
-                type="text"
-                id="rolesSearch"
-                class="roles-search-input"
-                placeholder="Poziții disponibile"
-                aria-label="Caută poziții disponibile"
-              />
-              <button class="search-icon-btn" aria-label="Caută">
-                <i class="ri-search-line"></i>
+            <section class="details-section">
+              <h2 class="section-title has-border">Responsabilități</h2>
+              <ul class="section-list" id="job-responsabilities"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Cerințe</h2>
+              <ul class="section-list" id="job-demands"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Ce oferim</h2>
+              <ul class="section-list" id="job-offerings"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Alte informații (opțional)</h2>
+              <ul class="section-list" id="job-general-info"></ul>
+            </section>
+
+            <div class="recruiter-card">
+              <div class="recruiter-card__profile">
+                <img id="recruiter-photo" src="" alt="Recrutor" />
+              </div>
+
+              <div class="recruiter-card__info">
+                <h3 class="recruiter-card__label">Date de contact:</h3>
+                <p class="recruiter-card__name" id="recruiter-name"></p>
+                <p class="recruiter-card__role" id="recruiter-role"></p>
+                <ul class="recruiter-card__contacts">
+                  <li id="recruiter-email">Email:&nbsp;</li>
+                  <li id="recruiter-address">Adresă:&nbsp;</li>
+                  <li id="recruiter-country">Țară:&nbsp;</li>
+                </ul>
+
+                <div class="recruiter-card__socials">
+                  <a
+                    id="recruiter-linkedin"
+                    href="https://www.linkedin.com/in/sebastianboga/"
+                    target="_blank"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                  <a id="recruiter-github" href="https://github.com/sebiboga" target="_blank"
+                    ><i class="ri-github-fill"></i
+                  ></a>
+                  <a
+                    id="recruiter-discord"
+                    href="https://discord.com/users/784091439993847870"
+                    target="_blank"
+                    ><i class="ri-discord-fill"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-card__footer-actions">
+              <button class="team-btn">Vezi echipa</button>
+              <button
+                class="join-btn"
+                onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+              >
+                Aplică
               </button>
             </div>
           </div>
-        </div>
-
-        <div class="swiper roles-swiper" id="rolesSwiperContainer">
-          <div class="swiper-wrapper" id="rolesCarousel"></div>
-        </div>
-      </section>
-
-      <div class="features-banner">
-        <div class="features-banner__container">
-          <div class="feature-item">
-            <i class="ri-eye-line"></i>
-            <span>Transparență</span>
-          </div>
-          <div class="feature-item">
-            <i class="ri-git-branch-line"></i>
-            <span>Colaborare</span>
-          </div>
-          <div class="feature-item">
-            <i class="ri-global-line"></i>
-            <span>Accesibilitate</span>
-          </div>
-          <div class="feature-item">
-            <i class="ri-lightbulb-flash-line"></i>
-            <span>Inovație</span>
-          </div>
-        </div>
+        </article>
       </div>
     </main>
 
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__logo">
-          <a href="#home" class="footer__logo-link">
+          <a href="/" class="footer__logo-link">
             <span class="brand-first">Asociația</span>
             <span class="brand-second">Oportunități și Cariere</span>
           </a>
-
           <p class="footer__desc">
             Reunim o comunitate de profesioniști din Tech, QA și HR, dedicată dezvoltării de soluții
             open-source.
           </p>
-
-          <a
-            href="https://discord.com/channels/910541714782048306/910541714782048309"
-            target="_blank"
-            class="footer__btn"
-          >
-            <i class="ri-service-line"></i>
-            Să ne cunoaștem
+          <a href="./contact.html" class="footer__btn">
+            <i class="ri-service-line"></i> Să ne cunoaștem
           </a>
         </div>
-
         <nav class="footer__nav" aria-label="Footer Navigation">
           <ul class="footer__links">
-            <li><a href="./html/misiune.html" class="footer__link">Misiunea noastră</a></li>
-            <li>
-              <a href="./html/povesti-de-succes.html" class="footer__link">Povești de succes</a>
-            </li>
-            <li><a href="./html/cum-ajuti.html" class="footer__link">Cum poți tu ajuta?</a></li>
-            <li><a href="./html/intalniri.html" class="footer__link">Întâlniri</a></li>
-            <li><a href="./html/echipa.html" class="footer__link">Echipă</a></li>
+            <li><a href="./misiune.html" class="footer__link">Misiunea noastră</a></li>
+            <li><a href="./povesti-de-succes.html" class="footer__link">Povești de succes</a></li>
+            <li><a href="./cum-ajuti.html" class="footer__link">Cum poți tu ajuta?</a></li>
+            <li><a href="./intalniri.html" class="footer__link">Întâlniri</a></li>
+            <li><a href="./echipa.html" class="footer__link">Echipă</a></li>
           </ul>
         </nav>
-
         <div class="footer__social">
           <ul class="social-icons">
             <li>
@@ -339,9 +341,8 @@
                 class="social-link"
                 target="_blank"
                 title="Instagram"
-              >
-                <i class="ri-instagram-fill"></i>
-              </a>
+                ><i class="ri-instagram-fill"></i
+              ></a>
             </li>
             <li>
               <a
@@ -349,9 +350,8 @@
                 class="social-link"
                 target="_blank"
                 title="LinkedIn"
-              >
-                <i class="ri-linkedin-fill"></i>
-              </a>
+                ><i class="ri-linkedin-fill"></i
+              ></a>
             </li>
             <li>
               <a
@@ -359,9 +359,8 @@
                 class="social-link"
                 target="_blank"
                 title="Discord"
-              >
-                <i class="ri-discord-fill"></i>
-              </a>
+                ><i class="ri-discord-fill"></i
+              ></a>
             </li>
             <li>
               <a
@@ -369,9 +368,8 @@
                 class="social-link"
                 target="_blank"
                 title="GitHub"
-              >
-                <i class="ri-github-fill"></i>
-              </a>
+                ><i class="ri-github-fill"></i
+              ></a>
             </li>
             <li>
               <a
@@ -379,9 +377,8 @@
                 class="social-link"
                 target="_blank"
                 title="Jitsi"
-              >
-                <i class="ri-chat-smile-2-fill"></i>
-              </a>
+                ><i class="ri-chat-smile-2-fill"></i
+              ></a>
             </li>
             <li>
               <a
@@ -389,13 +386,11 @@
                 class="social-link"
                 target="_blank"
                 title="Dev.to"
-              >
-                <i class="ri-code-box-fill"></i>
-              </a>
+                ><i class="ri-code-box-fill"></i
+              ></a>
             </li>
           </ul>
         </div>
-
         <div class="footer__info-links">
           <ul>
             <li><a target="_blank" href="https://peviitor.ro/">peViitor</a></li>
@@ -412,16 +407,14 @@
             </li>
           </ul>
         </div>
-
         <div class="footer__copyright">
           <p id="current-year">&copy; 2025</p>
         </div>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/header.js" defer></script>
-    <script src="./js/schedule.js" defer></script>
-    <script src="./js/jobCarousel.js" defer></script>
+    <script src="../js/jobProfile.js" defer></script>
+    <script src="../js/header.js" defer></script>
+    <script src="../js/schedule.js" defer></script>
   </body>
 </html>

@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('rolesSearch');
   const searchBtn = document.querySelector('.search-icon-btn');
 
+  const resolvePath = (targetPath) => {
+    const depth = window.location.pathname.includes('/html/') ? '../' : './';
+    return `${depth}${targetPath}`;
+  };
+
   let allJobs = [];
   let swiperInstance = null;
 
@@ -100,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchAndRenderRoles() {
     try {
-      const response = await fetch('/data/positions.json');
+      const response = await fetch(resolvePath('data/positions.json'));
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
       allJobs = await response.json();

@@ -172,3 +172,32 @@
     }
   }
 }
+
+// Card hover
+@mixin hover-lift($icon-selector: null, $header: null) {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    @include wrapping-shadow;
+
+    @if $icon-selector {
+      #{$icon-selector} {
+        background-color: $mint-500;
+        color: $white;
+
+        i {
+          color: $white;
+        }
+      }
+    }
+
+    @if $header {
+      #{$header} {
+        color: $blue-500;
+      }
+    }
+  }
+}

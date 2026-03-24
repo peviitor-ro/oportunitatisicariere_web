@@ -391,6 +391,7 @@
     .vision-text-block {
       background-color: $white;
       padding: 3.2rem;
+      border-left: 1px solid $mint-500;
       border-radius: 1.6rem;
       @include flex(column);
       gap: 1.6rem;

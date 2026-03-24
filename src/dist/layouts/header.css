@@ -73,7 +73,20 @@
   align-items: center;
   gap: 2.4rem;
 }
-.header .logo-row .actions .btn-calendar {
+.header .logo-row .actions .calendar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rem;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+.header .logo-row .actions .calendar-wrapper .live-panel {
+  display: none;
+}
+.header .logo-row .actions .calendar-wrapper .btn-calendar {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -87,10 +100,67 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
+  z-index: 2;
 }
-.header .logo-row .actions .btn-calendar:hover {
-  color: #2f7973;
-  transform: scale(1.1);
+.header .logo-row .actions .calendar-wrapper .btn-calendar:hover {
+  color: #215652;
+}
+.header .logo-row .actions .calendar-wrapper.is-live .btn-calendar {
+  animation: pulse-alert 2s infinite;
+  background-color: rgba(47, 121, 115, 0.1);
+}
+@media (min-width: 1024px) {
+  .header .logo-row .actions .calendar-wrapper.is-live .live-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin 0.3s ease;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live .live-panel .live-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #215652;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live .live-panel .btn-live-join {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: #2f7973;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live .live-panel .btn-live-join i {
+    font-size: 1.6rem;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live .live-panel .btn-live-join:hover {
+    background-color: #2b6e69;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live:hover {
+    background-color: #eaf2f1;
+    padding-left: 2rem;
+    box-shadow: 0 0 0 1px #9fc1bf;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live:hover .live-panel {
+    max-width: 350px;
+    opacity: 1;
+    margin-right: 0.8rem;
+  }
+  .header .logo-row .actions .calendar-wrapper.is-live:hover .btn-calendar {
+    animation: none;
+    transform: none;
+    background-color: transparent;
+  }
 }
 .header .logo-row .actions .btn-join {
   display: flex;

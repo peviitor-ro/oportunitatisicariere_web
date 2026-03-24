@@ -3,11 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('rolesSearch');
   const searchBtn = document.querySelector('.search-icon-btn');
 
-  const resolvePath = (targetPath) => {
-    const depth = window.location.pathname.includes('/html/') ? '../' : './';
-    return `${depth}${targetPath}`;
-  };
-
   let allJobs = [];
   let swiperInstance = null;
 
@@ -22,26 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
       centeredSlides: true,
       grabCursor: true,
       loop: shouldLoop,
-
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
-
       breakpoints: {
-        0: {
-          slidesPerView: 1.6,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 1.8,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
+        0: { slidesPerView: 1.6, spaceBetween: 20 },
+        768: { slidesPerView: 1.8, spaceBetween: 30 },
+        1024: { slidesPerView: 3, spaceBetween: 40 },
       },
     });
   }
@@ -52,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (roles.length === 0) {
       if (swiperInstance) swiperInstance.destroy(true, true);
-
       rolesContainer.innerHTML = `
         <div class="empty-state-card shade" style="width: 100%; max-width: 600px; margin: 0 auto; padding: 6rem 2rem; border-radius: 2.4rem; background: #ffffff; text-align: center; border: 1px dashed #00c288;">
           <i class="ri-ghost-line" style="font-size: 5.6rem; color: #00c288; margin-bottom: 1rem; display: inline-block;"></i>
@@ -66,11 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     roles.forEach((job) => {
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
+      let imageSrc = '../assets/placeholder.jpg';
+      if (job.image) {
+        imageSrc = '../' + job.image.replace(/^\.\//, '');
+      }
 
       slide.innerHTML = `
-        <a href="./html/job-title.html?id=${job.id}" class="role-card">
+        <a href="./job-title.html?id=${job.id}" class="role-card">
           <div class="card-img-wrapper">
-            <img src="${job.image || './assets/placeholder.jpg'}" alt="${job.title}">
+            <img src="${imageSrc}" alt="${job.title}" loading="lazy">
           </div>
           <div class="card-gradient"></div>
           <div class="card-hover-overlay">
@@ -91,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleSearch() {
     const searchTerm = searchInput.value.trim().toLowerCase();
-
     if (searchTerm.length >= 2) {
       const filteredJobs = allJobs.filter((job) => job.title.toLowerCase().includes(searchTerm));
       renderRoles(filteredJobs);
@@ -100,22 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  searchInput?.addEventListener('input', handleSearch);
-  searchBtn?.addEventListener('click', handleSearch);
+  if (searchInput) searchInput.addEventListener('input', handleSearch);
+  if (searchBtn) searchBtn.addEventListener('click', handleSearch);
 
   async function fetchAndRenderRoles() {
     try {
-      const response = await fetch(resolvePath('data/positions.json'));
+      const response = await fetch('../data/positions.json');
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
       allJobs = await response.json();
       renderRoles(allJobs);
     } catch (error) {
       console.error('Eroare:', error);
-
       if (rolesContainer) {
         if (swiperInstance) swiperInstance.destroy(true, true);
-
         rolesContainer.innerHTML = `
           <div class="empty-state-card shade" style="width: 100%; max-width: 600px; margin: 0 auto; padding: 6rem 2rem; border-radius: 2.4rem; background: #ffffff; text-align: center; border: 1px dashed #ef4444;">
             <i class="ri-wifi-off-line" style="font-size: 5.6rem; color: #ef4444; margin-bottom: 1rem; display: inline-block;"></i>

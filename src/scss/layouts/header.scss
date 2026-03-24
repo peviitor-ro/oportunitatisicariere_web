@@ -54,20 +54,98 @@
       @include flex(row, flex-end, center);
       gap: 2.4rem;
 
-      .btn-calendar {
+      .calendar-wrapper {
         @include flex(row, center, center);
-        color: $mint-500;
-        font-size: 2.8rem;
-        width: 4.8rem;
-        height: 4.8rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        border-radius: 50%;
-        &:hover {
+        border-radius: 4rem;
+        transition: all 0.3s ease;
+        background-color: transparent;
+
+        .live-panel {
+          display: none;
+        }
+
+        .btn-calendar {
+          position: relative;
+          @include flex(row, center, center);
           color: $mint-500;
-          transform: scale(1.1);
+          font-size: 2.8rem;
+          width: 4.8rem;
+          height: 4.8rem;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          border-radius: 50%;
+          z-index: 2;
+
+          &:hover {
+            color: $mint-700;
+          }
+        }
+
+        &.is-live {
+          .btn-calendar {
+            animation: pulse-alert 2s infinite;
+            background-color: with-alpha($mint-500, 0.1);
+          }
+
+          @media (min-width: 1024px) {
+            .live-panel {
+              @include flex(row, center, center);
+              gap: 1.2rem;
+              max-width: 0;
+              opacity: 0;
+              overflow: hidden;
+              white-space: nowrap;
+              transition:
+                max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease,
+                margin 0.3s ease;
+
+              .live-title {
+                font-size: $font-size-sm;
+                font-weight: $font-weight-bold;
+                color: $mint-700;
+              }
+
+              .btn-live-join {
+                @include flex(row, center, center);
+                width: 3.2rem;
+                height: 3.2rem;
+                border-radius: 50%;
+                background-color: $mint-500;
+                color: $white;
+                text-decoration: none;
+                transition: all 0.2s ease;
+
+                i {
+                  font-size: 1.6rem;
+                }
+
+                &:hover {
+                  background-color: $mint-600;
+                }
+              }
+            }
+
+            &:hover {
+              background-color: $mint-50;
+              padding-left: 2rem;
+              box-shadow: 0 0 0 1px $mint-200;
+
+              .live-panel {
+                max-width: 350px;
+                opacity: 1;
+                margin-right: 0.8rem;
+              }
+
+              .btn-calendar {
+                animation: none;
+                transform: none;
+                background-color: transparent;
+              }
+            }
+          }
         }
       }
 

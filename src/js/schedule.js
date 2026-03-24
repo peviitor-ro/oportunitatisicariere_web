@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const scheduleModal = document.getElementById('scheduleModal');
-  const openScheduleBtn = document.querySelector('.btn-calendar');
+  const openScheduleBtn = document.getElementById('openScheduleBtn');
   const closeScheduleBtn = document.getElementById('closeScheduleModal');
+  const calendarWrapper = document.getElementById('calendarActionWrapper');
+  const liveMeetingTitle = document.getElementById('liveMeetingTitle');
+  const liveMeetingLink = document.getElementById('liveMeetingLink');
 
   const resolvePath = (targetPath) => {
     const depth = window.location.pathname.includes('/html/') ? '../' : './';
@@ -12,34 +15,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentDayIndex = new Date().getDay();
     const isWeekend = currentDayIndex === 0 || currentDayIndex === 6;
 
-    if (isWeekend || allScheduleData.length === 0) {
-      openScheduleBtn?.classList.remove('is-alerting');
-      return;
-    }
+    if (calendarWrapper) calendarWrapper.classList.remove('is-live');
+    if (openScheduleBtn) openScheduleBtn.classList.remove('is-alerting');
+
+    if (isWeekend || allScheduleData.length === 0) return;
 
     const todayData = allScheduleData[currentDayIndex - 1];
-    if (isWeekend || allScheduleData.length === 0) {
-      openScheduleBtn?.classList.remove('is-alerting');
-      return;
-    }
     if (!todayData || !todayData.meeting) return;
 
     const activeSchedules = todayData.meeting.filter((m) => m.active);
     const now = getCurrentMinutes();
-    let showAlert = false;
+
+    let currentMeeting = null;
+    let upcomingMeeting = null;
 
     activeSchedules.forEach((meet) => {
       const start = parseTime(meet.hour);
       const end = start + 30;
-      if (now >= start - 10 && now <= end) {
-        showAlert = true;
+
+      if (now >= start && now < end) {
+        currentMeeting = meet;
+      } else if (now >= start - 10 && now < start) {
+        upcomingMeeting = meet;
       }
     });
 
-    if (showAlert) {
-      openScheduleBtn?.classList.add('is-alerting');
-    } else {
-      openScheduleBtn?.classList.remove('is-alerting');
+    const meetingToDisplay = currentMeeting || upcomingMeeting;
+
+    if (meetingToDisplay) {
+      if (openScheduleBtn) openScheduleBtn.classList.add('is-alerting');
+
+      if (calendarWrapper && liveMeetingTitle && liveMeetingLink) {
+        const statusText = currentMeeting ? 'În curs:' : 'Începe curând:';
+        liveMeetingTitle.textContent = `${statusText} ${meetingToDisplay.team}`;
+        liveMeetingLink.href = meetingToDisplay.url;
+
+        calendarWrapper.classList.add('is-live');
+      }
     }
   };
 
@@ -99,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       checkAlertStatus();
-      alertInterval = setInterval(checkAlertStatus, 60000);
+      alertInterval = setInterval(checkAlertStatus, 1000);
     } catch (error) {
       console.error('Eroare la încărcarea datelor programului:', error);
     }

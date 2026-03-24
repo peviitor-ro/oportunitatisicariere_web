@@ -399,10 +399,10 @@
       p {
         font-size: $font-size-base;
         line-height: 1.7;
-        color: $neutral-800;
+        color: $neutral-900;
 
         strong {
-          color: $blue-900;
+          color: $black;
           font-size: $font-size-lg;
           display: block;
           margin-bottom: 0.8rem;
@@ -428,8 +428,6 @@
         @include flex(column, center, flex-start);
         gap: 2.4rem;
         @include soft-shadow;
-
-        // Aici funcționează perfect mixin-ul pentru hover ($mint)
         @include hover-lift('.value-icon', 'h3');
 
         .value-icon {

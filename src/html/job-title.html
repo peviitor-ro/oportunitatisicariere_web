@@ -100,17 +100,17 @@
                     Despre noi <i class="ri-arrow-down-s-line"></i>
                   </div>
                   <div class="dropdown">
-                    <a href="./misiune.html" class="dropdown-link">Misiunea noastră</a>
-                    <a href="./cum-ajuti.html" class="dropdown-link">Cum poți tu ajuta?</a>
-                    <a href="./echipa.html" class="dropdown-link">Echipă</a>
+                    <a href="./mission.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./get-involved.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./team.html" class="dropdown-link">Echipă</a>
                   </div>
                 </li>
 
                 <li class="nav-item">
-                  <a href="./povesti-de-succes.html" class="nav-link">Povești de succes</a>
+                  <a href="./success-stories.html" class="nav-link">Povești de succes</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./intalniri.html" class="nav-link">Întâlniri</a>
+                  <a href="./schedule.html" class="nav-link">Întâlniri</a>
                 </li>
               </ul>
 
@@ -179,201 +179,134 @@
       </dialog>
     </header>
 
-    <main class="main-mission">
+    <main class="main-jobProfile">
       <div class="container">
-        <header class="section-header">
-          <h1 class="title">Misiunea noastră</h1>
-          <p>
-            Unificăm piața muncii din România printr-un agregator inteligent. Misiunea noastră este
-            să simplificăm drumul de la candidat la angajator, oferind acces gratuit și transparent
-            la toate locurile de muncă disponibile, într-un singur loc.
-          </p>
-        </header>
+        <div class="back-nav">
+          <a href="../index.html" class="back-nav__link">
+            <i class="ri-arrow-left-s-line"></i>
+            <span class="back-nav__text">Înapoi la Pagina Principală</span>
+          </a>
+        </div>
 
-        <section class="hero-layout">
-          <div class="hero-image">
-            <div class="illustration">
-              <img src="../assets/Mission/peViitor-rocket.png" alt="peViitor illustration" />
-            </div>
-          </div>
-
-          <div class="features-list">
-            <div class="feature-item">
-              <div class="icon-box">
-                <i class="ri-code-s-slash-line"></i>
+        <article class="job-card">
+          <div class="job-card__header">
+            <div class="job-card__info">
+              <h1 class="job-card__title" id="job-title"></h1>
+              <div class="job-card__meta">
+                <p id="employer-name">Angajator:&nbsp;</p>
+                <p id="department-name">Departament:&nbsp;</p>
               </div>
-              <div class="feature-content">
-                <h3>Tehnologie</h3>
-                <p>
-                  <strong>Motorul de căutare peViitor</strong><br />Dezvoltăm o soluție open-source
-                  care colectează automat toate joburile din România într-o bază de date unică și
-                  gratuită.
-                </p>
-              </div>
-            </div>
 
-            <div class="feature-item">
-              <div class="icon-box">
-                <i class="ri-team-line"></i>
-              </div>
-              <div class="feature-content">
-                <h3>Comunitate</h3>
-                <p>
-                  <strong>Candidatul în prim-plan</strong><br />Oferim o interfață intuitivă ce
-                  elimină barierele digitale, punând întreg ecosistemul pieței muncii la un singur
-                  click distanță.
-                </p>
-              </div>
-            </div>
-
-            <div class="feature-item">
-              <div class="icon-box">
-                <i class="ri-bar-chart-2-line"></i>
-              </div>
-              <div class="feature-content">
-                <h3>Impact</h3>
-                <p>
-                  <strong>Transparență pe piața muncii</strong><br />Democratizăm accesul la
-                  informație pentru a unifica piața muncii și a oferi șanse egale fiecărui
-                  profesionist român.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="mission-section">
-          <div class="brand-side">
-            <div class="brand-content">
-              <h2 class="brand-name title">
-                <span class="highlight-mint">pe</span>
-                <span class="highlight-blue">Viitor</span>
-              </h2>
-              <h2 class="brand-highlight">
-                <span> PIAȚA MUNCII </span>
-                <span> MODELATĂ DE TEHNOLOGIE </span>
-              </h2>
-            </div>
-
-            <div class="btn-group">
-              <a href="https://peviitor.ro/" target="_blank" class="btn-mint">
-                peViitor<i class="ri-space-ship-fill"></i>
-              </a>
-              <a href="#" class="btn-dark">
-                <i class="ri-google-play-fill"></i>
-                Descarcă Aplicația
-              </a>
-            </div>
-
-            <div class="stats-wrapper">
-              <div class="value-card">
-                <div class="value-icon">
-                  <i class="ri-suitcase-line"></i>
+              <div class="job-card__tags">
+                <div class="tag">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span id="job-location"></span>
                 </div>
-                <h3 id="total-jobs"></h3>
-                <p>Locuri de muncă</p>
-              </div>
-              <div class="value-card">
-                <div class="value-icon">
-                  <i class="ri-team-line"></i>
+                <div class="tag">
+                  <i class="ri-building-line"></i>
+                  <span id="job-type"></span>
                 </div>
-                <h3>300+</h3>
-                <p>Voluntari</p>
-              </div>
-              <div class="value-card">
-                <div class="value-icon">
-                  <i class="ri-github-fill"></i>
+                <div class="tag">
+                  <i class="ri-briefcase-line"></i>
+                  <span id="job-experience"></span>
                 </div>
-                <h3>60+</h3>
-                <p>Proiecte</p>
+                <div class="tag">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span id="job-salary"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-card__badge">
+              <img
+                src="../assets/JobProfile/stamp.png"
+                alt="Stampilă Voluntariat"
+                class="badge-img"
+              />
+              <div class="job-card__actions">
+                <button class="team-btn">Vezi echipa</button>
+                <button
+                  class="join-btn"
+                  onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+                >
+                  Aplică
+                </button>
               </div>
             </div>
           </div>
 
-          <div class="mission-text">
-            <h3 class="title">Căutare fără efort</h3>
-            <p>
-              Misiunea noastră este să simplificăm procesul de căutare a locurilor de muncă în
-              România, indiferent de platformă.
-            </p>
-            <p>
-              Astfel, s-a născut site-ul
-              <a href="https://peviitor.ro/" target="_blank" class="brand-link--teal">peviitor.ro</a
-              >, care oferă utilizatorilor posibilitatea de a găsi locuri de muncă de la sute de
-              companii.
-            </p>
-            <p>Echipa noastră de voluntari a dezvoltat motorul de căutare alăturat.</p>
-            <p>
-              Te provocăm să îl încerci și să descoperi următoarea ta oportunitate profesională sau
-              să vezi ce am realizat împreună.
-            </p>
-            <p>
-              <strong>
-                <span class="highlight-blue"> Asociația </span>
-                <span class="highlight-mint"> Oportunități și Cariere </span>
-              </strong>
-              oferă o șansă de a lucra într-un proiect real, atât pentru dezvoltatorii la început de
-              carieră, cât și pentru cei mai experimentați în căutare de provocări profesionale sau
-              dornici să își ofere ajutorul altora.
-            </p>
-          </div>
-        </section>
+          <div class="job-card__body">
+            <section class="details-section">
+              <h2 class="section-title">Descrierea meseriei</h2>
+              <p class="section-text" id="job-description"></p>
+            </section>
 
-        <section class="vision-section">
-          <h2 class="title">Viziune și Valori</h2>
-          <p>
-            Digitalizăm piața muncii din România pentru a oferi fiecărui candidat acces instantaneu
-            la toate oportunitățile, într-un singur punct de contact.
-          </p>
+            <section class="details-section">
+              <h2 class="section-title has-border">Responsabilități</h2>
+              <ul class="section-list" id="job-responsabilities"></ul>
+            </section>
 
-          <div class="vision-text-block">
-            <p>
-              <strong>Viziune</strong> Implicită din secțiunile noastre de lucru. Ne bazăm pe
-              principii de etică și profesionalism pentru a construi un viitor digital accesibil
-              tuturor candidaților.
-            </p>
-            <p>
-              Contrar credinței populare, succesul nu este doar rezultatul muncii individuale, ci al
-              unei colaborări strânse între tehnologie și comunitate. Suntem aici pentru a asigura
-              acea legătură durabilă.
-            </p>
-          </div>
+            <section class="details-section">
+              <h2 class="section-title has-border">Cerințe</h2>
+              <ul class="section-list" id="job-demands"></ul>
+            </section>
 
-          <div class="values-grid">
-            <div class="value-card">
-              <div class="value-icon">
-                <i class="ri-eye-line"></i>
+            <section class="details-section">
+              <h2 class="section-title has-border">Ce oferim</h2>
+              <ul class="section-list" id="job-offerings"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Alte informații (opțional)</h2>
+              <ul class="section-list" id="job-general-info"></ul>
+            </section>
+
+            <div class="recruiter-card">
+              <div class="recruiter-card__profile">
+                <img id="recruiter-photo" src="" alt="Recrutor" />
               </div>
-              <h3>Transparență</h3>
-              <p>
-                Toate datele sunt publice și actualizate în timp real pentru a asigura
-                corectitudinea procesului.
-              </p>
+
+              <div class="recruiter-card__info">
+                <h3 class="recruiter-card__label">Date de contact:</h3>
+                <p class="recruiter-card__name" id="recruiter-name"></p>
+                <p class="recruiter-card__role" id="recruiter-role"></p>
+                <ul class="recruiter-card__contacts">
+                  <li id="recruiter-email">Email:&nbsp;</li>
+                  <li id="recruiter-address">Adresă:&nbsp;</li>
+                  <li id="recruiter-country">Țară:&nbsp;</li>
+                </ul>
+
+                <div class="recruiter-card__socials">
+                  <a
+                    id="recruiter-linkedin"
+                    href="https://www.linkedin.com/in/sebastianboga/"
+                    target="_blank"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                  <a id="recruiter-github" href="https://github.com/sebiboga" target="_blank"
+                    ><i class="ri-github-fill"></i
+                  ></a>
+                  <a
+                    id="recruiter-discord"
+                    href="https://discord.com/users/784091439993847870"
+                    target="_blank"
+                    ><i class="ri-discord-fill"></i
+                  ></a>
+                </div>
+              </div>
             </div>
 
-            <div class="value-card">
-              <div class="value-icon">
-                <i class="ri-global-line"></i>
-              </div>
-              <h3>Accesibilitate</h3>
-              <p>
-                Zero costuri pentru utilizatori, indiferent de dispozitivul de pe care accesează
-                platforma.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <div class="value-icon">
-                <i class="ri-line-chart-line"></i>
-              </div>
-              <h3>Evoluție</h3>
-              <p>
-                Îmbunătățim algoritmii zilnic pentru a oferi cele mai bune rezultate și experiențe
-                de utilizare.
-              </p>
+            <div class="job-card__footer-actions">
+              <button class="team-btn">Vezi echipa</button>
+              <button
+                class="join-btn"
+                onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+              >
+                Aplică
+              </button>
             </div>
           </div>
-        </section>
+        </article>
       </div>
     </main>
 
@@ -394,11 +327,11 @@
         </div>
         <nav class="footer__nav" aria-label="Footer Navigation">
           <ul class="footer__links">
-            <li><a href="./misiune.html" class="footer__link">Misiunea noastră</a></li>
-            <li><a href="./povesti-de-succes.html" class="footer__link">Povești de succes</a></li>
-            <li><a href="./cum-ajuti.html" class="footer__link">Cum poți tu ajuta?</a></li>
-            <li><a href="./intalniri.html" class="footer__link">Întâlniri</a></li>
-            <li><a href="./echipa.html" class="footer__link">Echipă</a></li>
+            <li><a href="./mission.html" class="footer__link">Misiunea noastră</a></li>
+            <li><a href="./success-stories.html" class="footer__link">Povești de succes</a></li>
+            <li><a href="./get-involved.html" class="footer__link">Cum poți tu ajuta?</a></li>
+            <li><a href="./schedule.html" class="footer__link">Întâlniri</a></li>
+            <li><a href="./team.html" class="footer__link">Echipă</a></li>
           </ul>
         </nav>
         <div class="footer__social">
@@ -481,8 +414,8 @@
       </div>
     </footer>
 
+    <script src="../js/jobProfile.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/schedule.js" defer></script>
-    <script src="../js/mission.js" defer></script>
   </body>
 </html>

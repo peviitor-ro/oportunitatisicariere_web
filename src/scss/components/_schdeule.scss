@@ -100,7 +100,6 @@
             font-weight: 700;
             background-color: #ffffff;
             border: none;
-            border-left: 1px solid $mint-300;
             border-radius: 1.6rem;
             @include soft-shadow;
 
@@ -169,7 +168,6 @@
             text-align: center;
 
             border: none;
-            border-left: 1px solid $mint-300;
             border-radius: 1.6rem;
             padding: 1.5rem;
             overflow: hidden;
@@ -224,7 +222,6 @@
 
             &.active {
               background: $mint-300;
-              border-left-color: $mint-300;
 
               .schedule-card__top,
               .schedule-card__bottom {
@@ -277,7 +274,6 @@
             &:hover,
             &:focus {
               background-color: $mint-600;
-              border-left-color: #ffffff;
 
               .schedule-card__top,
               .schedule-card__middle,

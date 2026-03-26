@@ -167,7 +167,6 @@
       @include wrapping-shadow;
       width: 100%;
       margin: 0 auto;
-      border-left: 1px solid $mint-500;
 
       @media (min-width: $breakpoint-md) {
         padding: 6rem;

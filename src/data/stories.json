@@ -16,7 +16,7 @@
   {
     "name": "Andrei Cojocaru",
     "avatar": "./assets/contributors/andrei-cojocaru.webp",
-    "role": "Scraper Developer",
+    "role": "Scraper",
     "icon": "ri-robot-2-line",
     "text": "Proiectul peviitor.ro a fost o adevărată schimbare de direcție pentru mine. Prin resursele și sprijinul oferit, am reușit să învăț programare, o abilitate pe care o consideram greu accesibilă înainte. Lecțiile structurate și exemplele practice m-au ajutat să înțeleg concepte complicate, iar comunitatea mi-a oferit încrederea de a pune întrebări și de a progresa constant."
   },
@@ -42,7 +42,7 @@
     "text": "Un curs de testare manuală m-a făcut să-mi doresc o schimbare. Iar Asociația Oportunități și Cariere a făcut posibil ca acest vis să devină realitate. Am găsit aici o echipă de oameni faini, pasionați și dispuși să împărtășească din cunoștințele lor. Am testat și aplicat de pe peviitor.ro și de mai puțin de o lună lucrez ca și QA Engineer. Peviitor.ro - investești în viitorul tău!"
   },
   {
-    "name": "Dan Paun",
+    "name": "Dan Păun",
     "avatar": "./assets/contributors/dan-paun.webp",
     "role": "QA Engineer",
     "icon": "ri-shield-check-line",
@@ -68,5 +68,19 @@
     "role": "QA Engineer",
     "icon": "ri-shield-check-line",
     "text": "Participarea la proiectul peviitor.ro a fost o experiență extraordinară, pe care o recomand cu toată încrederea. Echipa este grozavă, iar Diana (QA Lead), a avut un rol esențial în dezvoltarea mea, oferindu-mi sprijinul și încrederea necesara pentru a reuși în acest domeniu. Această experiență a fost unul din pașii făcuți către primul meu job ca și QA Engineer."
+  },
+  {
+    "name": "Lavinia Avram",
+    "avatar": "./assets/contributors/avram-lavinia.webp",
+    "role": "Cyber Security Analyst",
+    "icon": "ri-fingerprint-line",
+    "text": "Peviitor.ro a fost o experiență valoroasă, chiar și pentru cineva cu background în IT. Ca pentester în cadrul proiectului, am avut ocazia să lucrez într-o echipă dedicată și să contribui activ la comunitate. Acum sunt Data Engineer și mă pregătesc să revin în zona de cybersecurity, acolo unde mă simt cel mai în largul meu. Platforma m-a ajutat să cresc, să colaborez și să dau mai departe din ce știu."
+  },
+  {
+    "name": "Andreea Dima",
+    "avatar": "./assets/contributors/andreea-dima.webp",
+    "role": "QA Engineer",
+    "icon": "ri-shield-check-line",
+    "text": "Experiența mea de voluntariat pe testare manuală la acest ONG a fost extrem de valoroasă și de mare ajutor în parcursul meu profesional. Am avut privilegiul să lucrez într-o echipă fantastică, unde toți colegii au fost extrem de dispuși să ajute și au demonstrat o pasiune contagioasă pentru IT. Am lucrat aplicând metodologia Agile, ceea ce mi-a oferit o înțelegere practică și aprofundată a managementului taskurilor si   a proceselor de testare. Această experiență hands-on a fost crucială și m-a ajutat să-mi găsesc un nou job în domeniul tehnic. Recomand cu drag această oportunitate oricui dorește să își consolideze cunoștințele și să capete experiență practică!"
   }
 ]

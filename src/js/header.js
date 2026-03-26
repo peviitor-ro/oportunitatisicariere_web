@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleIcon = menuToggleBtn.querySelector('i');
   const mainNavigation = document.getElementById('mainNavigation');
   const body = document.body;
+  const yearElement = document.getElementById('current-year');
+
+  // Footer copyright
+  if (yearElement) {
+    const currentYear = new Date().getFullYear();
+    yearElement.innerHTML = `&copy; ${currentYear}`;
+  }
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {

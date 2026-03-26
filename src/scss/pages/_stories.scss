@@ -46,7 +46,7 @@
       gap: 4rem;
       width: 100%;
 
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: 1240px) {
         display: grid;
         grid-template-columns: minmax(0, 7fr) minmax(320px, 3fr);
         align-items: stretch;
@@ -204,13 +204,13 @@
     .stories-nav {
       background-color: $white;
       border-radius: 3.2rem;
-      padding: 2.4rem;
+      padding: 1.2rem;
       @include soft-shadow;
       display: flex;
       flex-direction: column;
 
-      @media (min-width: $breakpoint-lg) {
-        padding: 3.2rem 2.4rem;
+      @media (min-width: 1240px) {
+        padding: 2.4rem 1.2rem;
         height: 0;
         min-height: 100%;
       }
@@ -218,8 +218,7 @@
       &__title {
         font-size: $font-size-xl;
         font-weight: $font-weight-bold;
-        color: $blue-900;
-        margin-bottom: 2.4rem;
+        padding-bottom: 2.4rem;
         text-align: center;
         flex-shrink: 0;
       }
@@ -245,7 +244,7 @@
           border-radius: 10px;
         }
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: 1240px) {
           flex: 1;
           min-height: 0;
           display: block;
@@ -262,7 +261,7 @@
         gap: 1.2rem;
         width: max-content;
 
-        @media (min-width: $breakpoint-lg) {
+        @media (min-width: 1240px) {
           flex-direction: column;
           width: 100%;
         }
@@ -295,7 +294,7 @@
             background-color: $mint-200;
             border-radius: 5rem;
 
-            @media (min-width: $breakpoint-lg) {
+            @media (min-width: 1240px) {
               border-radius: 0 5rem 5rem 0;
             }
           }

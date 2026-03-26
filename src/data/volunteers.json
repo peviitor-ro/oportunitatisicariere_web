@@ -115,7 +115,7 @@
       },
       {
         "team": "Scraping",
-        "position": "Scraper Developer",
+        "position": "Scraper",
         "teamLead": false,
         "status": true
       },
@@ -1206,7 +1206,7 @@
     "roles": [
       {
         "team": "Scraping",
-        "position": "AI Scraper Developer",
+        "position": "AI Scraper",
         "teamLead": false,
         "status": true
       }

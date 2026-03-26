@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // DOM Elements & State
   const teamNavbar = document.querySelector('#teamNavbar');
   const membersWrapper = document.querySelector('#teamWrapper');
   const loadMoreBtn = document.querySelector('#loadMoreBtn');
@@ -12,12 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const preferredTeam = sessionStorage.getItem('preferredTeam');
 
+  // Path resolver
   const resolvePath = (targetPath) => {
     const depth = window.location.pathname.includes('/html/') ? '../' : './';
     const cleanPath = targetPath.replace(/^(\.\/|\/)/, '');
     return `${depth}${cleanPath}`;
   };
 
+  // Fetch data
   function loadTeamMembers() {
     fetch(resolvePath('data/volunteers.json'))
       .then((response) => response.json())
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch((error) => console.error('Eroare la încărcarea voluntarilor:', error));
   }
 
+  // Initialize teams navigation
   function initializeTeams() {
     const teams = [
       ...new Set(teamMembers.flatMap((member) => member.roles.map((role) => role.team))),
@@ -86,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Filter and sort team members
   function filterAndSortTeam(selectedTeam) {
     const filteredMembers = teamMembers.filter((member) =>
       member.roles.some((role) => role.team === selectedTeam)
@@ -98,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Render members batch
   function renderMembersBatch() {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -159,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Event listeners
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
       currentPage++;
@@ -178,5 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Initialization
   loadTeamMembers();
 });

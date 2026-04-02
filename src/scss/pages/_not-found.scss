@@ -14,7 +14,7 @@
     max-width: 1200px;
 
     @media (min-width: $breakpoint-md) {
-      @include flex(row, space-between, center);
+      @include flex(row, space-evenly, center);
       text-align: left;
     }
   }

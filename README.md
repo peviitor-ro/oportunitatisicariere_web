@@ -1,6 +1,4 @@
-**AoC 2.0**
-
-This is the next generation of the [OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/) website **WIP**
+**[OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/)**
 
 ---
 
@@ -14,11 +12,9 @@ Follow these steps to download and set up the project:
 
 Clone the repository (Get the clone URL from your GitLab project's "Clone" button)
 
-
 `git clone <YOUR_GITLAB_PROJECT_URL>`
 
 Navigate into the project directory (Replace folder-name with the actual name of the cloned folder)
-
 
 `cd folder-name`
 
@@ -54,15 +50,14 @@ This project uses the following development dependencies (devDependencies):
 
 ### 👥 The Team
 
-| Role | Member | GitHub |
-| --- | --- | --- |
-| **Product Owner** | Sebastian Boga | [@sebiboga](https://github.com/sebiboga) |
-| **Project Lead** | Adelina Moroaca | [@AdelinaMoroaca](https://github.com/AdelinaMoroaca) |
-| **Developer** | Andrei Barari | [@AndreiBarari](https://github.com/AndreiBarari) |
+| Role              | Member          | GitHub                                               |
+| ----------------- | --------------- | ---------------------------------------------------- |
+| **Product Owner** | Sebastian Boga  | [@sebiboga](https://github.com/sebiboga)             |
+| **Project Lead**  | Adelina Moroaca | [@AdelinaMoroaca](https://github.com/AdelinaMoroaca) |
+| **Developer**     | Andrei Barari   | [@AndreiBarari](https://github.com/AndreiBarari)     |
 
 ---
 
 ### 🎨 Design Resources
 
-* **Figma:** [View Design Prototype](https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0)
-
+- **Figma:** [View Design Prototype](https://www.figma.com/design/G7RWf3wdZGZDpsKHrP3lu0/AoC-v2?node-id=0-1&p=f&t=mujqlv7nKZZacbww-0)

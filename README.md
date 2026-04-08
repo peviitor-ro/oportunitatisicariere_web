@@ -1,5 +1,4 @@
 **[OPORTUNITĂȚI ȘI CARIERE](https://oportunitatisicariere.ro/)**
-
 ---
 
 **Prerequisites**

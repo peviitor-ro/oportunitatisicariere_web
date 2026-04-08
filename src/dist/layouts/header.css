@@ -5,10 +5,15 @@
   top: 0;
   z-index: 1000;
   box-shadow: none;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .header.scrolled {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+@media (max-width: 576px) {
+  .header.header--hidden {
+    transform: translateY(-100%);
+  }
 }
 .header .nav-container {
   max-width: 1440px;

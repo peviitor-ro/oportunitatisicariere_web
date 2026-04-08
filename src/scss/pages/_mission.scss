@@ -244,11 +244,17 @@
 
         .btn-dark {
           @include primary-btn;
-          background-color: $blue-900;
+          background-color: $black;
           padding: 1.6rem 3.2rem;
+          min-width: 220px;
+          height: 51px;
+          background-image: url('../../assets/Mission/google-play.png');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
 
           &:hover {
-            background-color: $blue-700;
+            background-color: $black;
             box-shadow: 0 0 0 1px $blue-400;
           }
         }

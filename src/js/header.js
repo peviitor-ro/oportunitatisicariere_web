@@ -5,6 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNavigation = document.getElementById('mainNavigation');
   const body = document.body;
   const yearElement = document.getElementById('current-year');
+  let lastScrollY = window.scrollY;
+
+  // Header mobile behavior
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 0 || window.innerWidth > 576) {
+      header.classList.remove('header--hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY && currentScrollY > 10) {
+      header.classList.add('header--hidden');
+    } else if (currentScrollY < lastScrollY) {
+      header.classList.remove('header--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
 
   // Footer copyright
   if (yearElement) {

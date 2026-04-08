@@ -3,11 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('rolesSearch');
   const searchBtn = document.querySelector('.search-icon-btn');
 
-  const resolvePath = (targetPath) => {
-    const depth = window.location.pathname.includes('/html/') ? '../' : './';
-    return `${depth}${targetPath}`;
-  };
-
   let allJobs = [];
   let swiperInstance = null;
 
@@ -30,18 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
 
       breakpoints: {
-        0: {
-          slidesPerView: 1.6,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 1.8,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
+        0: { slidesPerView: 1.25, spaceBetween: 16 },
+        768: { slidesPerView: 2.2, spaceBetween: 24 },
+        1024: { slidesPerView: 3, spaceBetween: 40 },
       },
     });
   }
@@ -67,10 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
 
+      const imageSrc = job.image ? job.image.replace(/^\.\//, '/') : '/assets/placeholder.jpg';
+
       slide.innerHTML = `
-        <a href="./html/job-title.html?id=${job.id}" class="role-card">
+        <a href="/pozitie.html?id=${job.id}" class="role-card">
           <div class="card-img-wrapper">
-            <img src="${job.image || './assets/placeholder.jpg'}" alt="${job.title}">
+            <img src="${imageSrc}" alt="${job.title}">
           </div>
           <div class="card-gradient"></div>
           <div class="card-hover-overlay">
@@ -105,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchAndRenderRoles() {
     try {
-      const response = await fetch(resolvePath('data/positions.json'));
+      const response = await fetch('/data/positions.json');
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
       allJobs = await response.json();

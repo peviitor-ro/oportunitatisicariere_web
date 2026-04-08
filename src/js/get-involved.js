@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         pauseOnMouseEnter: true,
       },
       breakpoints: {
-        0: { slidesPerView: 1.6, spaceBetween: 20 },
-        768: { slidesPerView: 1.8, spaceBetween: 30 },
+        0: { slidesPerView: 1.25, spaceBetween: 16 },
+        768: { slidesPerView: 2.2, spaceBetween: 24 },
         1024: { slidesPerView: 3, spaceBetween: 40 },
       },
     });
@@ -49,13 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     roles.forEach((job) => {
       const slide = document.createElement('div');
       slide.className = 'swiper-slide';
-      let imageSrc = '../assets/placeholder.jpg';
+
+      // ✅ Căi absolute pentru imagini
+      let imageSrc = '/assets/placeholder.jpg';
       if (job.image) {
-        imageSrc = '../' + job.image.replace(/^\.\//, '');
+        imageSrc = job.image.replace(/^\.\//, '/');
       }
 
       slide.innerHTML = `
-        <a href="./job-title.html?id=${job.id}" class="role-card">
+        <a href="/pozitie.html?id=${job.id}" class="role-card">
           <div class="card-img-wrapper">
             <img src="${imageSrc}" alt="${job.title}" loading="lazy">
           </div>
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function fetchAndRenderRoles() {
     try {
-      const response = await fetch('../data/positions.json');
+      const response = await fetch('/data/positions.json');
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
       allJobs = await response.json();

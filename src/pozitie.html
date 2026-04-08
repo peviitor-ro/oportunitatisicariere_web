@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,6 @@
 
     <title>ASOCIAȚIA OPORTUNITĂȚI ȘI CARIERE</title>
     <link rel="icon" type="image/x-icon" href="../assets/OpenGraph/favicon.ico" />
-
     <!-- SEO OPENGRAPH META -->
     <meta
       name="description"
@@ -142,14 +141,14 @@
                     Despre noi <i class="ri-arrow-down-s-line"></i>
                   </div>
                   <div class="dropdown">
-                    <a href="./mission.html" class="dropdown-link">Misiunea noastră</a>
-                    <a href="./get-involved.html" class="dropdown-link">Cum poți tu ajuta?</a>
-                    <a href="./team.html" class="dropdown-link">Echipă</a>
+                    <a href="./misiunea-noastra.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./implica-te.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./echipa.html" class="dropdown-link">Echipă</a>
                   </div>
                 </li>
 
                 <li class="nav-item">
-                  <a href="./success-stories.html" class="nav-link">Povești de succes</a>
+                  <a href="./povesti-de-succes.html" class="nav-link">Povești de succes</a>
                 </li>
                 <!-- <li class="nav-item">
                   <a href="./schedule.html" class="nav-link">Întâlniri</a>
@@ -221,30 +220,139 @@
       </dialog>
     </header>
 
-    <main class="main-stories">
-      <section class="stories-section container">
-        <header class="section-header">
-          <h1 class="title">Povești de succes</h1>
-          <p>
-            Mulți dintre cei care au pus umărul la dezvoltarea platformei și-au folosit experiența
-            acumulată aici ca rampă de lansare în carieră. Iată cum implicarea într-un proiect tech
-            cu impact social le-a influențat parcursul profesional.
-          </p>
-        </header>
+    <main class="main-jobProfile">
+      <div class="container">
+        <div class="back-nav">
+          <a href="/" class="back-nav__link">
+            <i class="ri-arrow-left-s-line"></i>
+            <span class="back-nav__text">Înapoi la Pagina Principală</span>
+          </a>
+        </div>
 
-        <div class="stories-grid">
-          <div class="stories-carousel swiper" id="storiesSwiper">
-            <div class="swiper-wrapper" id="swiperWrapper"></div>
+        <article class="job-card">
+          <div class="job-card__header">
+            <div class="job-card__info">
+              <h1 class="job-card__title" id="job-title"></h1>
+              <div class="job-card__meta">
+                <p id="employer-name">Angajator:&nbsp;</p>
+                <p id="department-name">Departament:&nbsp;</p>
+              </div>
+
+              <div class="job-card__tags">
+                <div class="tag">
+                  <i class="ri-map-pin-2-line"></i>
+                  <span id="job-location"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-building-line"></i>
+                  <span id="job-type"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-briefcase-line"></i>
+                  <span id="job-experience"></span>
+                </div>
+                <div class="tag">
+                  <i class="ri-money-dollar-circle-line"></i>
+                  <span id="job-salary"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="job-card__badge">
+              <img
+                src="../assets/JobProfile/stamp.png"
+                alt="Stampilă Voluntariat"
+                class="badge-img"
+              />
+              <div class="job-card__actions">
+                <button onclick="window.open('./echipa.html', '_self')" class="team-btn">
+                  Vezi echipa
+                </button>
+                <button
+                  class="join-btn"
+                  onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+                >
+                  Aplică
+                </button>
+              </div>
+            </div>
           </div>
 
-          <aside class="stories-nav">
-            <h3 class="stories-nav__title">Voluntarii noștri</h3>
-            <div class="stories-nav__list-wrapper">
-              <ul class="stories-nav__list" id="storiesNavList"></ul>
+          <div class="job-card__body">
+            <section class="details-section">
+              <h2 class="section-title">Descrierea meseriei</h2>
+              <p class="section-text" id="job-description"></p>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Responsabilități</h2>
+              <ul class="section-list" id="job-responsabilities"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Cerințe</h2>
+              <ul class="section-list" id="job-demands"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Ce oferim</h2>
+              <ul class="section-list" id="job-offerings"></ul>
+            </section>
+
+            <section class="details-section">
+              <h2 class="section-title has-border">Alte informații (opțional)</h2>
+              <ul class="section-list" id="job-general-info"></ul>
+            </section>
+
+            <div class="recruiter-card">
+              <div class="recruiter-card__profile">
+                <img id="recruiter-photo" src="" alt="Recrutor" />
+              </div>
+
+              <div class="recruiter-card__info">
+                <h3 class="recruiter-card__label">Date de contact:</h3>
+                <p class="recruiter-card__name" id="recruiter-name"></p>
+                <p class="recruiter-card__role" id="recruiter-role"></p>
+                <ul class="recruiter-card__contacts">
+                  <li id="recruiter-email">Email:&nbsp;</li>
+                  <li id="recruiter-address">Adresă:&nbsp;</li>
+                  <li id="recruiter-country">Țară:&nbsp;</li>
+                </ul>
+
+                <div class="recruiter-card__socials">
+                  <a
+                    id="recruiter-linkedin"
+                    href="https://www.linkedin.com/in/sebastianboga/"
+                    target="_blank"
+                    ><i class="ri-linkedin-fill"></i
+                  ></a>
+                  <a id="recruiter-github" href="https://github.com/sebiboga" target="_blank"
+                    ><i class="ri-github-fill"></i
+                  ></a>
+                  <a
+                    id="recruiter-discord"
+                    href="https://discord.com/users/784091439993847870"
+                    target="_blank"
+                    ><i class="ri-discord-fill"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-          </aside>
-        </div>
-      </section>
+
+            <div class="job-card__footer-actions">
+              <button onclick="window.open('./echipa.html', '_self')" class="team-btn">
+                Vezi echipa
+              </button>
+              <button
+                class="join-btn"
+                onclick="window.open('https://discord.gg/KPMkdUfQNu', '_blank')"
+              >
+                Aplică
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
     </main>
 
     <footer class="footer">
@@ -264,13 +372,13 @@
         </div>
         <nav class="footer__nav" aria-label="Footer Navigation">
           <ul class="footer__links">
-            <li><a href="./mission.html" class="footer__link">Misiunea noastră</a></li>
-            <li><a href="./success-stories.html" class="footer__link">Povești de succes</a></li>
+            <li><a href="./misiunea-noastra.html" class="footer__link">Misiunea noastră</a></li>
+            <li><a href="./povesti-de-succes.html" class="footer__link">Povești de succes</a></li>
             <li>
-              <a href="./get-involved.html" class="footer__link active">Cum poți tu ajuta?</a>
+              <a href="./implica-te.html" class="footer__link active">Cum poți tu ajuta?</a>
             </li>
             <!-- <li><a href="./schedule.html" class="footer__link">Întâlniri</a></li> -->
-            <li><a href="./team.html" class="footer__link">Echipă</a></li>
+            <li><a href="./echipa.html" class="footer__link">Echipă</a></li>
           </ul>
         </nav>
         <div class="footer__social">
@@ -318,6 +426,7 @@
         </div>
         <div class="footer__info-links">
           <ul>
+            <li><a target="_blank" href="https://v1.oportunitatisicariere.ro/">AOC Clasic</a></li>
             <li><a target="_blank" href="https://peviitor.ro/">peViitor</a></li>
             <li><a target="_blank" href="https://onboarding.peviitor.ro/">Onboarding</a></li>
             <li>
@@ -338,10 +447,8 @@
       </div>
     </footer>
 
+    <script src="../js/jobProfile.js" defer></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/schedule.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../js/stories.js" defer></script>
   </body>
-  <./html>
 </html>

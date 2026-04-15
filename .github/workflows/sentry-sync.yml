@@ -30,7 +30,7 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        working-directory: js/sentry-bot
+        working-directory: js/sentry-bot/sentry-bot
         run: npm install
 
       - name: Sync Sentry issues to GitHub

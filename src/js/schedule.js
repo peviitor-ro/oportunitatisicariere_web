@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const liveMeetingTitle = document.getElementById('liveMeetingTitle');
   const liveMeetingLink = document.getElementById('liveMeetingLink');
 
-  const resolvePath = (targetPath) => {
-    const depth = window.location.pathname.includes('/html/') ? '../' : './';
-    return `${depth}${targetPath}`;
-  };
-
   const checkAlertStatus = () => {
     const currentDayIndex = new Date().getDay();
     const isWeekend = currentDayIndex === 0 || currentDayIndex === 6;
@@ -98,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function initApp() {
     try {
-      const response = await fetch(resolvePath('data/schedule.json'));
+      const response = await fetch('/data/schedule.json');
       allScheduleData = await response.json();
 
       renderButtons();

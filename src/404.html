@@ -70,7 +70,7 @@
 
           <a href="/" class="logo-link">
             <img
-              src="/assets/Header/logo.png"
+              src="../assets/Header/logo.png"
               alt="Asociația Oportunităților si Cariere"
               class="logo-img"
             />
@@ -86,13 +86,16 @@
                   class="btn-live-join"
                   id="liveMeetingLink"
                   title="Intră în ședință"
-                  ><i class="ri-video-add-fill"></i
-                ></a>
+                >
+                  <i class="ri-video-add-fill"></i>
+                </a>
               </div>
+
               <button class="btn-calendar" id="openScheduleBtn" aria-label="Calendar">
                 <i class="ri-calendar-event-line"></i>
               </button>
             </div>
+
             <a href="https://discord.gg/KPMkdUfQNu" target="_blank" class="btn-join">Alătură-te</a>
           </div>
         </div>
@@ -101,6 +104,7 @@
           <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
             <i class="ri-menu-line"></i>
           </button>
+
           <nav class="main-nav" id="mainNavigation">
             <div class="nav-content">
               <ul class="nav-menu">
@@ -110,41 +114,89 @@
                     <span class="brand-second">Oportunități și Cariere</span>
                   </a>
                 </li>
+
                 <li class="nav-item has-dropdown">
                   <div class="nav-trigger" tabindex="0">
                     Despre noi <i class="ri-arrow-down-s-line"></i>
                   </div>
                   <div class="dropdown">
-                    <a href="/html/misiunea-noastra.html" class="dropdown-link">Misiunea noastră</a>
-                    <a href="/html/implica-te.html" class="dropdown-link">Cum poți tu ajuta?</a>
-                    <a href="/html/echipa.html" class="dropdown-link">Echipă</a>
+                    <a href="./misiunea-noastra.html" class="dropdown-link">Misiunea noastră</a>
+                    <a href="./implica-te.html" class="dropdown-link">Cum poți tu ajuta?</a>
+                    <a href="./echipa.html" class="dropdown-link">Echipă</a>
                   </div>
                 </li>
+
                 <li class="nav-item">
-                  <a href="/html/povesti-de-succes.html" class="nav-link">Povești de succes</a>
+                  <a href="./povesti-de-succes.html" class="nav-link">Povești de succes</a>
                 </li>
+                <!-- <li class="nav-item">
+                  <a href="./schedule.html" class="nav-link">Întâlniri</a>
+                </li> -->
               </ul>
+
               <div class="social-icons mobile-socials">
-                <a href="https://www.instagram.com/peviitor.ro/" class="social-link" target="_blank"
+                <a
+                  href="https://www.instagram.com/peviitor.ro/"
+                  class="social-link"
+                  target="_blank"
+                  title="Instagram"
                   ><i class="ri-instagram-fill"></i
                 ></a>
                 <a
                   href="https://www.linkedin.com/company/asociatia-oportunitati-si-cariere/"
                   class="social-link"
                   target="_blank"
+                  title="LinkedIn"
                   ><i class="ri-linkedin-fill"></i
                 ></a>
-                <a href="https://discord.gg/KPMkdUfQNu" class="social-link" target="_blank"
+                <a
+                  href="https://discord.gg/KPMkdUfQNu"
+                  class="social-link"
+                  target="_blank"
+                  title="Discord"
                   ><i class="ri-discord-fill"></i
                 ></a>
-                <a href="https://github.com/peviitor-ro" class="social-link" target="_blank"
+                <a
+                  href="https://github.com/peviitor-ro"
+                  class="social-link"
+                  target="_blank"
+                  title="GitHub"
                   ><i class="ri-github-fill"></i
+                ></a>
+                <a
+                  href="https://meet.jit.si/PEVIITOR.RO"
+                  class="social-link"
+                  target="_blank"
+                  title="Jitsi"
+                  ><i class="ri-chat-smile-2-fill"></i
+                ></a>
+                <a
+                  href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+                  class="social-link"
+                  target="_blank"
+                  title="Dev.to"
+                  ><i class="ri-code-box-fill"></i
                 ></a>
               </div>
             </div>
           </nav>
         </div>
       </div>
+
+      <dialog id="scheduleModal" class="schedule-modal">
+        <div class="modal-content">
+          <button class="modal-close-btn" id="closeScheduleModal" aria-label="Închide modalul">
+            <i class="ri-close-line"></i>
+          </button>
+          <div class="schedule-header">
+            <h2 class="title">Întâlniri săptămânale</h2>
+          </div>
+          <div class="schedule-section">
+            <div class="schedule-days"></div>
+            <div class="schedule-cards"></div>
+          </div>
+        </div>
+      </dialog>
     </header>
 
     <main class="main-404">
@@ -181,22 +233,21 @@
             Reunim o comunitate de profesioniști din Tech, QA și HR, dedicată dezvoltării de soluții
             open-source.
           </p>
-          <a href="https://discord.gg/KPMkdUfQNu" target="_blank" class="footer__btn"
-            ><i class="ri-service-line"></i> Să ne cunoaștem</a
-          >
+          <a href="https://discord.gg/KPMkdUfQNu" target="_blank" class="footer__btn">
+            <i class="ri-service-line"></i> Să ne cunoaștem
+          </a>
         </div>
-
         <nav class="footer__nav" aria-label="Footer Navigation">
           <ul class="footer__links">
-            <li><a href="/html/misiunea-noastra.html" class="footer__link">Misiunea noastră</a></li>
+            <li><a href="./misiunea-noastra.html" class="footer__link">Misiunea noastră</a></li>
+            <li><a href="./povesti-de-succes.html" class="footer__link">Povești de succes</a></li>
             <li>
-              <a href="/html/povesti-de-succes.html" class="footer__link">Povești de succes</a>
+              <a href="./implica-te.html" class="footer__link active">Cum poți tu ajuta?</a>
             </li>
-            <li><a href="/html/implica-te.html" class="footer__link">Cum poți tu ajuta?</a></li>
-            <li><a href="/html/echipa.html" class="footer__link">Echipă</a></li>
+            <!-- <li><a href="./schedule.html" class="footer__link">Întâlniri</a></li> -->
+            <li><a href="./echipa.html" class="footer__link">Echipă</a></li>
           </ul>
         </nav>
-
         <div class="footer__social">
           <ul class="social-icons">
             <li>
@@ -222,9 +273,21 @@
                 ><i class="ri-github-fill"></i
               ></a>
             </li>
+            <li>
+              <a href="https://meet.jit.si/PEVIITOR.RO" class="social-link" target="_blank"
+                ><i class="ri-chat-smile-2-fill"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://dev.to/sebiboga/asociatia-oportunitati-si-cariere-viziune-2lal"
+                class="social-link"
+                target="_blank"
+                ><i class="ri-code-box-fill"></i
+              ></a>
+            </li>
           </ul>
         </div>
-
         <div class="footer__info-links">
           <ul>
             <li><a target="_blank" href="https://v1.oportunitatisicariere.ro/">AOC Clasic</a></li>
@@ -242,7 +305,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer__copyright">
           <p id="current-year">&copy; 2025</p>
         </div>

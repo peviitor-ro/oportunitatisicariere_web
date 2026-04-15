@@ -6,7 +6,7 @@ const SENTRY_PROJECT = process.env.SENTRY_PROJECT || '4511224315379792';
 const SENTRY_TOKEN = process.env.SENTRY_TOKEN;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
-const TEMPLATE_FILE = path.join(__dirname, '..', '..', '.github', 'ISSUE_TEMPLATE', 'sentry-bug.md');
+const TEMPLATE_FILE = path.join(__dirname, '..', '..', '..', '.github', 'ISSUE_TEMPLATE', 'sentry-bug.md');
 const API_BASE = `https://sentry.io/api/0/organizations/${SENTRY_ORG}`;
 const GITHUB_REPO = process.env.GITHUB_REPO || 'Theodor Ivascu/sentry';
 

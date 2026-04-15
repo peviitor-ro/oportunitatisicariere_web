@@ -30,11 +30,11 @@ jobs:
           node-version: '24'
 
       - name: Install dependencies
-        working-directory: js/sentry-bot/sentry-bot
+        working-directory: src/js/sentry-bot
         run: npm install
 
       - name: Sync Sentry issues to GitHub
-        working-directory: js/sentry-bot/sentry-bot
+        working-directory: src/js/sentry-bot
         env:
           SENTRY_ORG: 'sebastian-boga'
           SENTRY_PROJECT: '4511224315379792'

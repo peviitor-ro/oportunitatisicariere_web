@@ -331,7 +331,7 @@
     .members-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 2.4rem;
       margin-bottom: 4.8rem;
 
       @media (min-width: $breakpoint-md) {
@@ -363,15 +363,23 @@
         transition: box-shadow 0.3s ease;
 
         @media (min-width: $breakpoint-sm) {
-          max-width: 38rem; 
+          max-width: 48rem; 
           height: auto;
           min-height: 4rem;
           gap: .8rem;
           padding: .6rem;
         } 
 
+          @media (min-width: $breakpoint-smm) {
+          max-width: 50rem; 
+          height: auto;
+          min-height: 14rem;
+          gap: .8rem;
+          padding: .6rem;
+        }
+
         @media (min-width: $breakpoint-md) {
-          max-width: 45rem; 
+          max-width: 55rem; 
           height: auto;
           min-height: 14rem;
           gap: .8rem;
@@ -426,6 +434,26 @@
       transition: transform .4s ease;
       display: block;
     }
+
+    @media (min-width: $breakpoint-sm) {
+      width: 160px;
+      height: 160px;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 160px;
+      height: 160px;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 160px;
+      height: 160px;
+    }
+
+     @media (min-width: $breakpoint-xl) {
+      width: 160px;
+      height: 160px;
+    }
   }
 
   &__content {
@@ -465,9 +493,17 @@
     border: .5px solid $mint-500;
     border-radius: 2rem;
     color: $mint-500;
-    font-size: .9rem;
+    font-size: 1rem;
     text-transform: uppercase;
+    background-color: #F0FDF4;
+    letter-spacing: 1px;
     cursor: help;
+
+    @media (max-width: $breakpoint-sm) {
+        font-size: .8rem;
+        padding: .5rem 1.1rem;
+        letter-spacing: 1px;
+      }
 
     &__tooltip {
       position: absolute;

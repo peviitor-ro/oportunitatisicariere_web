@@ -7,6 +7,11 @@
     <script src="https://browser.sentry-cdn.com/10.48.0/bundle.tracing.replay.feedback.logs.metrics.min.js"
       integrity="sha384-uJoO3NWmIYiqrEA+qduqZuIdLDWBNu9gIL+cnk2T1VigFBiM0Kyo6+xYwhzg+cx2" crossorigin="anonymous"></script>
     <script src="/js/sentry.js"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../dist/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -227,7 +232,7 @@
 
     <main class="main-get-involved">
       <section class="help-intro-section container">
-        <header class="section-header">
+        <header class="section-header" data-aos="fade-up">
           <h1 class="title">Cum poți ajuta?</h1>
           <p>
             Vrei să contribui la un proiect cu impact real în tech? Căutăm voluntari pentru diverse
@@ -235,44 +240,42 @@
           </p>
         </header>
 
-        <div class="roles-overview-grid">
-          <div class="value-card">
-            <div class="value-icon"><i class="ri-code-s-slash-line"></i></div>
-            <h3>PHP <br />Developer</h3>
+          <div class="roles-overview-grid">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="value-icon"><i class="ri-code-s-slash-line"></i></div>
+                <h3>PHP <br />Developer</h3>
+      </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="75">
+        <div class="value-icon"><i class="ri-layout-masonry-line"></i></div>
+                <h3>Front-End <br />Developer</h3>
+      </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="value-icon"><i class="ri-database-2-line"></i></div>
+                <h3>Data <br />Engineer</h3>
+      </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="225">
+                <div class="value-icon"><i class="ri-bug-line"></i></div>
+                <h3>QA Tester</h3>
+      </div>
+        <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="value-icon"><i class="ri-stack-line"></i></div>
+                <h3>DevOps</h3>
           </div>
-          <div class="value-card">
-            <div class="value-icon"><i class="ri-layout-masonry-line"></i></div>
-            <h3>Front-End <br />Developer</h3>
-          </div>
-          <div class="value-card">
-            <div class="value-icon"><i class="ri-database-2-line"></i></div>
-            <h3>Data <br />Engineer</h3>
-          </div>
-          <div class="value-card">
-            <div class="value-icon"><i class="ri-bug-line"></i></div>
-            <h3>QA Tester</h3>
-          </div>
-          <div class="value-card">
-            <div class="value-icon"><i class="ri-stack-line"></i></div>
-            <h3>DevOps</h3>
-          </div>
-          <div class="value-card">
+        <div class="value-card" data-aos="fade-up" data-aos-delay="375">
             <div class="value-icon"><i class="ri-add-line"></i></div>
             <h3>And more</h3>
           </div>
         </div>
-      </section>
-
-      <div class="banner">
-        <div class="banner__overlay"></div>
-        <div class="banner__content">
-          <h2>Vrei să te implici?</h2>
-          <i class="ri-arrow-down-s-line bounce-icon"></i>
+          <div class="banner" data-aos="zoom-in">
+          <div class="banner__overlay"></div>
+          <div class="banner__content">
+            <h2>Vrei să te implici?</h2>
+            <i class="ri-arrow-down-s-line bounce-icon"></i>
+          </div>
         </div>
-      </div>
 
       <section class="roles-section" id="implica-te">
-        <div class="roles-section__header">
+        <div class="roles-section__header" data-aos="fade-up">
           <h2 class="title">Poziții disponibile</h2>
           <p>
             Schimbăm lumea, linie cu linie. Pune-ți talentul în valoare pentru o cauză nobilă!
@@ -300,9 +303,10 @@
           <div class="swiper-wrapper" id="rolesCarousel"></div>
         </div>
       </section>
+      
 
       <section class="support-section container">
-        <div class="support-card">
+        <div class="support-card" data-aos="fade-up">
           <div class="support-card__header">
             <h2 class="title">Susține proiectul</h2>
             <p>
@@ -400,7 +404,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer__container">
         <div class="footer__logo">
           <a href="/" class="footer__logo-link">
@@ -489,6 +493,7 @@
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/js/header.js" defer></script>
     <script src="/js/schedule.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

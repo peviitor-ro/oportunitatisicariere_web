@@ -1,3 +1,15 @@
+
+
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 900,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 60,
+    anchorPlacement: 'top-bottom',
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.header');
   const menuToggleBtn = document.getElementById('menuToggle');

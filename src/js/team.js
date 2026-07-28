@@ -191,7 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const card = document.createElement('article');
       card.classList.add('member-card');
-
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = `opacity 0.6s ease-out ${(membersToRender.indexOf(member) % 3) * 0.12}s, transform 0.6s ease-out ${(membersToRender.indexOf(member) % 3) * 0.12}s`;
       const isLeader = role.teamLead;
       if (isLeader) {
         card.classList.add('member-card--leader');
@@ -262,6 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       membersWrapper.appendChild(card);
     });
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.member-card').forEach((c) => {
+    c.style.opacity = '1';
+    c.style.transform = 'translateY(0)';
+      });
+  });
+
+      if (typeof AOS !== 'undefined') {
+              AOS.refresh();
+        }
 
     if (endIndex >= currentTeamMembers.length) {
       loadMoreBtn.style.display = 'none';

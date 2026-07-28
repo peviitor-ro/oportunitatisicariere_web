@@ -38,6 +38,7 @@
     "stylelint-config-standard-scss": "^14.0.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "remixicon": "^4.9.1"
   }
 }

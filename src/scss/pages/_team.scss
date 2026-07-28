@@ -363,15 +363,23 @@
         transition: box-shadow 0.3s ease;
 
         @media (min-width: $breakpoint-sm) {
-          max-width: 38rem; 
+          max-width: 48rem; 
           height: auto;
           min-height: 4rem;
           gap: .8rem;
           padding: .6rem;
         } 
 
+          @media (min-width: $breakpoint-smm) {
+          max-width: 50rem; 
+          height: auto;
+          min-height: 14rem;
+          gap: .8rem;
+          padding: .6rem;
+        }
+
         @media (min-width: $breakpoint-md) {
-          max-width: 45rem; 
+          max-width: 55rem; 
           height: auto;
           min-height: 14rem;
           gap: .8rem;

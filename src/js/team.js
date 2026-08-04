@@ -270,7 +270,13 @@ document.addEventListener('DOMContentLoaded', () => {
     c.style.transform = 'translateY(0)';
       });
   });
-
+    document.querySelectorAll('.member-card[data-aos]').forEach((el) => {
+  el.style.setProperty(
+    'transition',
+    'opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)',
+    'important'
+  );
+});
       if (typeof AOS !== 'undefined') {
               AOS.refresh();
         }

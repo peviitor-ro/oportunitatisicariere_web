@@ -1,13 +1,19 @@
-
+document.querySelectorAll('[data-aos]').forEach((el) => {
+  el.style.setProperty(
+    'transition',
+    'opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)',
+    'important'
+  );
+});
 
 if (typeof AOS !== 'undefined') {
-  AOS.init({
-    duration: 900,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 60,
-    anchorPlacement: 'top-bottom',
-  });
+ AOS.init({
+  duration: 900,
+  easing: 'ease-out-cubic',
+  once: false,
+  mirror: true,
+  offset: 200,
+});
 }
 
 document.addEventListener('DOMContentLoaded', () => {

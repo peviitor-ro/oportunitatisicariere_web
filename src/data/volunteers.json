@@ -18,8 +18,8 @@
       {
         "team": "QA",
         "position": "QA Manager",
-        "teamLead": true,
-        "status": true
+        "teamLead": false,
+        "status": false
       }
     ],
     "socials": {
@@ -93,7 +93,7 @@
       {
         "team": "UI/UX",
         "position": "UI/UX Lead",
-        "teamLead": true,
+        "teamLead": false,
         "status": true
       }
     ],
@@ -101,7 +101,9 @@
       "linkedin": "https://www.linkedin.com/in/patriciaistrate/",
       "github": "https://sites.google.com/view/patriciaistrateportfolio/home",
       "discord": "https://discord.com/users/1167459382653632643"
-    }
+    },
+    "joinedAt": "2024-01-01",
+    "joinedAtMethod": "first-design"
   },
   {
     "name": "Laurențiu Băluță",
@@ -123,7 +125,7 @@
         "team": "Front-end",
         "position": "Front-end Developer",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Scraping",
@@ -1471,14 +1473,14 @@
     "roles": [
       {
         "team": "Core",
-        "position": "HR Manager",
+        "position": "HR Specialist",
         "teamLead": false,
         "status": false
       },
       {
         "team": "HR",
-        "position": "HR Manager",
-        "teamLead": true,
+        "position": "HR Specialist",
+        "teamLead": false,
         "status": true
       }
     ],

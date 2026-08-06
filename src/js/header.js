@@ -12,7 +12,7 @@ if (typeof AOS !== 'undefined') {
   easing: 'ease-out-cubic',
   once: false,
   mirror: true,
-  offset: 200,
+  offset: 200
 });
 }
 

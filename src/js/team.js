@@ -266,10 +266,10 @@ document.addEventListener('DOMContentLoaded', () => {
       membersWrapper.appendChild(card);
     });
 
-    // 3. Reliable AOS refresh timing for dynamically injected elements
-    if (typeof AOS !== 'undefined') {
+    // 3. Re-register dynamically injected elements for scroll animations
+    if (typeof window.refreshScrollAnimations === 'function') {
       setTimeout(() => {
-        AOS.refresh();
+        window.refreshScrollAnimations(membersWrapper);
       }, 50);
     }
 

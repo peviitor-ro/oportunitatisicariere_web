@@ -1,19 +1,108 @@
-document.querySelectorAll('[data-aos]').forEach((el) => {
-  el.style.setProperty(
-    'transition',
-    'opacity 0.9s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)',
-    'important'
-  );
-});
+const SCROLL_ANIMATION_SELECTOR = '[data-aos]';
+const scrollAnimationObservers = new WeakSet();
+const scrollAnimationTimers = new WeakMap();
 
-if (typeof AOS !== 'undefined') {
- AOS.init({
-  duration: 900,
-  easing: 'ease-out-cubic',
-  once: false,
-  mirror: true,
-  offset: 200
-});
+const scrollAnimationObserver =
+  typeof IntersectionObserver !== 'undefined'
+    ? new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            updateScrollAnimation(entry.target, entry.isIntersecting);
+          });
+        },
+        {
+          root: null,
+          threshold: 0.2,
+        }
+      )
+    : null;
+
+function clearScrollAnimationTimer(element) {
+  const timerId = scrollAnimationTimers.get(element);
+  if (timerId) {
+    clearTimeout(timerId);
+    scrollAnimationTimers.delete(element);
+  }
+}
+
+function getScrollAnimationConfig(element) {
+  const parsedDuration = Number.parseInt(element.getAttribute('data-aos-duration') || '900', 10);
+  const parsedDelay = Number.parseInt(element.getAttribute('data-aos-delay') || '0', 10);
+  const easing = element.getAttribute('data-aos-easing') || 'ease-out-cubic';
+  const easingMap = {
+    'ease-out-cubic': 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    'ease-in-cubic': 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+    'ease-in-out-cubic': 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+    'ease-in-quad': 'cubic-bezier(0.55, 0.085, 0.68, 0.53)',
+    'ease-out-quad': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+    'ease-in-out-quad': 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+  };
+
+  return {
+    duration: Number.isNaN(parsedDuration) ? 900 : parsedDuration,
+    delay: Number.isNaN(parsedDelay) ? 0 : parsedDelay,
+    easing: easingMap[easing] || easing,
+  };
+}
+
+function applyScrollAnimationTransition(element, delay) {
+  const { duration, easing } = getScrollAnimationConfig(element);
+
+  element.style.setProperty('transition-property', 'opacity, transform');
+  element.style.setProperty('transition-duration', `${duration}ms`);
+  element.style.setProperty('transition-timing-function', easing);
+  element.style.setProperty('transition-delay', `${delay}ms`);
+}
+
+function updateScrollAnimation(element, isVisible) {
+  if (!element || !element.matches(SCROLL_ANIMATION_SELECTOR)) return;
+
+  const { delay } = getScrollAnimationConfig(element);
+  element.classList.add('aos-init');
+
+  clearScrollAnimationTimer(element);
+
+  if (isVisible) {
+    applyScrollAnimationTransition(element, delay);
+
+    const timerId = window.setTimeout(() => {
+      element.classList.add('aos-animate');
+      scrollAnimationTimers.delete(element);
+    }, delay);
+
+    scrollAnimationTimers.set(element, timerId);
+    return;
+  }
+
+  applyScrollAnimationTransition(element, 0);
+  element.classList.remove('aos-animate');
+}
+
+function registerScrollAnimations(root = document) {
+  const elements = root.querySelectorAll(SCROLL_ANIMATION_SELECTOR);
+
+  elements.forEach((element) => {
+    if (scrollAnimationObservers.has(element)) return;
+
+    scrollAnimationObservers.add(element);
+    updateScrollAnimation(element, false);
+
+    if (scrollAnimationObserver) {
+      scrollAnimationObserver.observe(element);
+    } else {
+      updateScrollAnimation(element, true);
+    }
+  });
+}
+
+window.refreshScrollAnimations = registerScrollAnimations;
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    registerScrollAnimations();
+  });
+} else {
+  registerScrollAnimations();
 }
 
 document.addEventListener('DOMContentLoaded', () => {

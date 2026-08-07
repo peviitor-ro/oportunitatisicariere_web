@@ -500,13 +500,13 @@
         "team": "QA",
         "position": "Manual Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Data Quality",
         "position": "Data Quality Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -1342,7 +1342,7 @@
         "team": "Scraping",
         "position": "AI Scraper",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {

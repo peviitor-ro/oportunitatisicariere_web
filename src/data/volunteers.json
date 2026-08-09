@@ -1481,7 +1481,7 @@
         "team": "HR",
         "position": "HR Specialist",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -1529,5 +1529,24 @@
     },
     "joinedAt": "2026-07-14",
     "joinedAtMethod": "first-pull-request"
+  },
+  {
+    "name": "Andreea Radu",
+    "avatar": "./assets/contributors/andreea-radu.webp",
+    "roles": [
+      {
+        "team": "HR",
+        "position": "HR Manager",
+        "teamLead": true,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/andreea-radu-379205302/",
+      "github": "https://github.com/andreea1306-R",
+      "discord": "https://discord.com/users/1501959316792676382"
+    },
+    "joinedAt": "2026-06-01",
+    "joinedAtMethod": "first-issue"
   }
 ]

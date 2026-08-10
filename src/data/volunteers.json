@@ -713,12 +713,12 @@
       {
         "team": "QA",
         "position": "Manual Test Lead",
-        "teamLead": true,
+        "teamLead": false,
         "status": true
       },
       {
         "team": "Core",
-        "position": "Manual Test Lead",
+        "position": "Manual Tester",
         "teamLead": false,
         "status": false
       },
@@ -831,8 +831,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Tester",
-        "teamLead": false,
+        "position": "Manual Test Lead",
+        "teamLead": true,
         "status": true
       },
       {
@@ -856,8 +856,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
-        "teamLead": true,
+        "position": "Manual Tester",
+        "teamLead": false,
         "status": true
       },
       {

@@ -712,7 +712,7 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
+        "position": "Manual Tester",
         "teamLead": false,
         "status": true
       },

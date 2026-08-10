@@ -335,8 +335,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
-        "teamLead": true,
+        "position": "Manual Tester",
+        "teamLead": false,
         "status": true
       },
       {
@@ -1106,8 +1106,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Automation Test Lead",
-        "teamLead": true,
+        "position": "Automation Tester",
+        "teamLead": false,
         "status": true
       },
       {

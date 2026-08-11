@@ -1570,6 +1570,8 @@
       "linkedin": "https://www.linkedin.com/in/florin-bighiu/",
       "github": "https://github.com/florinbighiu",
       "discord": "https://discord.com/users/405035333240225792"
-    }
+    },
+    "joinedAt": "2026-07-14",
+    "joinedAtMethod": "first-pull-request"
   }
 ]

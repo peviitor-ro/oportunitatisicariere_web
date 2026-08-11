@@ -1548,5 +1548,28 @@
     },
     "joinedAt": "2026-06-01",
     "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Florin Bighiu",
+    "avatar": "./assets/contributors/florin-bighiu.webp",
+    "roles": [
+      {
+        "team": "Front-end",
+        "position": "Front-end Developer",
+        "teamLead": false,
+        "status": true
+      },
+      {
+        "team": "Scraping",
+        "position": "Scraper",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/florin-bighiu/",
+      "github": "https://github.com/florinbighiu",
+      "discord": "https://discord.com/users/405035333240225792"
+    }
   }
 ]

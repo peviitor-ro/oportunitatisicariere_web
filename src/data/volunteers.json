@@ -335,8 +335,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
-        "teamLead": true,
+        "position": "Manual Tester",
+        "teamLead": false,
         "status": true
       },
       {
@@ -500,13 +500,13 @@
         "team": "QA",
         "position": "Manual Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Data Quality",
         "position": "Data Quality Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -712,13 +712,13 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
-        "teamLead": true,
+        "position": "Manual Tester",
+        "teamLead": false,
         "status": true
       },
       {
         "team": "Core",
-        "position": "Manual Test Lead",
+        "position": "Manual Tester",
         "teamLead": false,
         "status": false
       },
@@ -831,8 +831,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Tester",
-        "teamLead": false,
+        "position": "Manual Test Lead",
+        "teamLead": true,
         "status": true
       },
       {
@@ -856,8 +856,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Manual Test Lead",
-        "teamLead": true,
+        "position": "Manual Tester",
+        "teamLead": false,
         "status": true
       },
       {
@@ -1106,8 +1106,8 @@
     "roles": [
       {
         "team": "QA",
-        "position": "Automation Test Lead",
-        "teamLead": true,
+        "position": "Automation Tester",
+        "teamLead": false,
         "status": true
       },
       {
@@ -1342,7 +1342,7 @@
         "team": "Scraping",
         "position": "AI Scraper",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -1481,7 +1481,7 @@
         "team": "HR",
         "position": "HR Specialist",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -1526,6 +1526,50 @@
       "linkedin": "https://www.linkedin.com/in/pop-daniel-vasile-a0292a373/",
       "github": "https://github.com/danipop-hp",
       "discord": "https://discord.com/users/1052266031630000138"
+    },
+    "joinedAt": "2026-07-14",
+    "joinedAtMethod": "first-pull-request"
+  },
+  {
+    "name": "Andreea Radu",
+    "avatar": "./assets/contributors/andreea-radu.webp",
+    "roles": [
+      {
+        "team": "HR",
+        "position": "HR Manager",
+        "teamLead": true,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/andreea-radu-379205302/",
+      "github": "https://github.com/andreea1306-R",
+      "discord": "https://discord.com/users/1501959316792676382"
+    },
+    "joinedAt": "2026-06-01",
+    "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Florin Bighiu",
+    "avatar": "./assets/contributors/florin-bighiu.webp",
+    "roles": [
+      {
+        "team": "Front-end",
+        "position": "Front-end Developer",
+        "teamLead": false,
+        "status": true
+      },
+      {
+        "team": "Scraping",
+        "position": "Scraper",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/florin-bighiu/",
+      "github": "https://github.com/florinbighiu",
+      "discord": "https://discord.com/users/405035333240225792"
     },
     "joinedAt": "2026-07-14",
     "joinedAtMethod": "first-pull-request"

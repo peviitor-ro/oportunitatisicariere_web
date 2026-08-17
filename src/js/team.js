@@ -200,6 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.setAttribute('data-aos-duration', '700');
       card.setAttribute('data-aos-easing', 'ease-out-cubic');
 
+      // Force exit animation behavior:
+      card.setAttribute('data-aos-once', 'false');
+      card.setAttribute('data-aos-mirror', 'true');
+      card.setAttribute('data-aos-anchor-placement', 'top-center');
       const isLeader = role.teamLead;
       if (isLeader) {
         card.classList.add('member-card--leader');
@@ -264,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
       membersWrapper.appendChild(card);
+      if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
     });
 
     // 3. Re-register dynamically injected elements for scroll animations

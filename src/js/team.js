@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadMoreBtn = document.querySelector('#loadMoreBtn');
 
   const ITEMS_PER_PAGE = 9;
+  const AOS_ANIMATION = 'fade-up';
+  const AOS_DELAY_STEP = 90;
 
   let teamMembers = [];
   let currentTeamMembers = [];
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return monthsOfExp === 1 ? '1 lună' : `${monthsOfExp} luni`;
   }
 
-  // full date for Tooltip
+  // Full date for Tooltip
   function fullJoinDate(joinedAt) {
     if (!joinedAt) return null;
 
@@ -182,34 +184,47 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderMembersBatch() {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
-
     const membersToRender = currentTeamMembers.slice(startIndex, endIndex);
 
-    membersToRender.forEach((member) => {
+    membersToRender.forEach((member, index) => {
       const role = member.roles.find((r) => r.team === currentActiveTeam);
       if (!role) return;
 
-      const card = document.createElement('article');
+      // 1. Fixed element tag to <div> to match main SCSS layout
+      const card = document.createElement('div');
       card.classList.add('member-card');
 
+      // 2. Attach AOS attributes directly on card creation
+      card.setAttribute('data-aos', AOS_ANIMATION);
+      card.setAttribute('data-aos-delay', `${(index % 3) * AOS_DELAY_STEP}`);
+      card.setAttribute('data-aos-duration', '700');
+      card.setAttribute('data-aos-easing', 'ease-out-cubic');
+
+      // Force exit animation behavior:
+      card.setAttribute('data-aos-once', 'false');
+      card.setAttribute('data-aos-mirror', 'true');
+      card.setAttribute('data-aos-anchor-placement', 'top-center');
       const isLeader = role.teamLead;
       if (isLeader) {
         card.classList.add('member-card--leader');
       }
 
+      const socials = member.socials || {};
+
       let socialHTML = '';
-      if (member.socials.linkedin) {
+      if (socials.linkedin) {
         socialHTML += `
-          <a href="${member.socials.linkedin}" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>`;
+          <a href="${socials.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>`;
       }
 
-      if (member.socials.github) {
+      if (socials.github) {
         socialHTML += `
-          <a href="${member.socials.github}" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>`;
+          <a href="${socials.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a>`;
       }
 
-      if (member.socials.discord) {
-        socialHTML += `<a href="${member.socials.discord}" target="_blank" aria-label="Discord"><i class="ri-discord-fill"></i></a>`;
+      if (socials.discord) {
+        socialHTML += `
+          <a href="${socials.discord}" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="ri-discord-fill"></i></a>`;
       }
 
       const avatarPath = resolvePath(member.avatar);
@@ -253,7 +268,17 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
       membersWrapper.appendChild(card);
+      if (typeof window.AOS !== 'undefined') {
+        window.AOS.refresh();
+      }
     });
+
+    // 3. Re-register dynamically injected elements for scroll animations
+    if (typeof window.refreshScrollAnimations === 'function') {
+      setTimeout(() => {
+        window.refreshScrollAnimations(membersWrapper);
+      }, 50);
+    }
 
     if (endIndex >= currentTeamMembers.length) {
       loadMoreBtn.style.display = 'none';

@@ -7,7 +7,8 @@
      <script src="https://browser.sentry-cdn.com/10.48.0/bundle.tracing.replay.feedback.logs.metrics.min.js"
       integrity="sha384-uJoO3NWmIYiqrEA+qduqZuIdLDWBNu9gIL+cnk2T1VigFBiM0Kyo6+xYwhzg+cx2" crossorigin="anonymous"></script>
     <script src="/js/sentry.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/main.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
@@ -231,7 +232,7 @@
       <!-- Hero Section -->
       <section class="hero" id="home-hero">
         <div class="hero__container">
-          <div class="hero__content">
+          <div class="hero__content" data-aos="fade-right">
             <h1 class="hero__title">
               <span class="brand-first font-gelasio">ASOCIAȚIA</span><br />
               <span class="brand-second">OPORTUNITĂȚI ȘI CARIERE</span>
@@ -242,16 +243,16 @@
             </p>
             <a href="./misiunea-noastra.html">Află mai mult</a>
           </div>
-          <div class="hero__illustration">
+          <div class="hero__illustration" data-aos="fade-left">
             <img src="./assets/Header/logo.png" alt="Ilustrație colaborare mâini" />
           </div>
         </div>
 
         <!-- peViitor Section -->
-        <article class="project-showcase">
+        <article class="project-showcase" data-aos="fade-up">
           <div class="project-showcase__card shade">
             <div class="project-showcase__content">
-              <div class="project-showcase__tag">
+              <div class="project-showcase__tag" data-aos="fade-up" data-aos-delay="0">
                 <img
                   src="./assets/Homepage/rocket-peViitor.png"
                   alt="Icon obiectiv"
@@ -259,18 +260,20 @@
                 />
                 <h2 class="title">Obiectivul nostru</h2>
               </div>
-              <h2 class="project-showcase__title">
+              <h2 class="project-showcase__title" data-aos="fade-up" data-aos-delay="100">
                 <span class="highlight-mint">pe</span>
                 <span class="highlight-blue">Viitor.ro </span>
               </h2>
-              <p class="project-showcase__desc">
+              <p class="project-showcase__desc" data-aos="fade-up" data-aos-delay="150">
                 Construim cea mai mare bază de date open-source care agreghează oportunitățile de
                 carieră din toată țara. Simplificăm căutarea, eliminăm barierele și aducem
                 transparență pe piața muncii.
               </p>
-              <a href="https://peviitor.ro" target="_blank">Află cum funcționează</a>
+              <a href="https://peviitor.ro" target="_blank" data-aos="fade-up" data-aos-delay="300">
+                Află cum funcționează
+              </a>
             </div>
-            <div class="project-showcase__image">
+            <div class="project-showcase__image" data-aos="fade-left" data-aos-delay="150" >
               <img src="./assets/Homepage/phone-image.png" alt="Aplicația peViitor pe telefon" />
             </div>
           </div>
@@ -278,7 +281,7 @@
       </section>
 
       <!-- Banner -->
-      <div class="banner">
+      <div class="banner" data-aos="zoom-in">
         <div class="banner__overlay"></div>
         <div class="banner__content">
           <h2>Vrei să te implici?</h2>
@@ -288,7 +291,7 @@
 
       <!-- Cum Poti Ajuta Section -->
       <section class="roles-section" id="implica-te">
-        <div class="roles-section__header">
+        <div class="roles-section__header" data-aos="fade-up">
           <h2 class="title">Cum poți ajuta?</h2>
           <p>
             Schimbăm lumea, linie cu linie. Pune-ți talentul în valoare pentru o cauză nobilă!
@@ -319,19 +322,19 @@
 
       <div class="features-banner">
         <div class="features-banner__container">
-          <div class="feature-item">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="0">
             <i class="ri-eye-line"></i>
             <span>Transparență</span>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="75">
             <i class="ri-git-branch-line"></i>
             <span>Colaborare</span>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
             <i class="ri-global-line"></i>
             <span>Accesibilitate</span>
           </div>
-          <div class="feature-item">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
             <i class="ri-lightbulb-flash-line"></i>
             <span>Inovație</span>
           </div>
@@ -339,7 +342,7 @@
       </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
       <div class="footer__container">
         <div class="footer__logo">
           <a href="#home" class="footer__logo-link">
@@ -462,6 +465,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/schedule.js" defer></script>
     <script src="./js/jobCarousel.js" defer></script>

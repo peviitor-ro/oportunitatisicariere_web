@@ -1,5 +1,19 @@
+@use 'sass:color';
 @use '../base' as *;
 @use '../components/buttons' as *;
+
+// Neon rotating border animation
+@property --neon-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-neon-border {
+  to {
+    --neon-angle: 360deg;
+  }
+}
 
 .main-team {
   background-color: $mint-50;
@@ -264,7 +278,7 @@
         gap: 0.8rem;
         background-color: $white;
         border-radius: 4rem;
-        padding: 0.8rem 0.8rem 1.6rem; // Padding jos mărit pentru a face loc barei de scroll
+        padding: 0.8rem 0.8rem 1.6rem;
         margin: 0 auto;
 
         overflow-x: auto;
@@ -272,7 +286,6 @@
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
 
-        // --- ADĂUGARE BARĂ DE SCROLL ---
         scrollbar-width: thin;
         scrollbar-color: $mint-300 transparent;
 
@@ -286,13 +299,12 @@
           background-color: $mint-300;
           border-radius: 10px;
         }
-        // --------------------------------
 
         @media (min-width: $breakpoint-lg) {
           justify-content: center;
           overflow-x: visible;
           max-width: fit-content;
-          padding-bottom: 0.8rem; // Pe desktop scoatem spațiul extra dacă nu e scroll
+          padding-bottom: 0.8rem;
         }
 
         li {
@@ -358,9 +370,12 @@
       gap: 1.6rem;
       background: $white;
       border-radius: 10rem;
-      overflow: hidden;
+      border: 2.5px solid transparent;
       box-shadow: 1px 1px 6px 0 with-alpha($black, 0.12);
-      transition: box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+      transition:
+        box-shadow 0.3s ease,
+        opacity 0.6s ease,
+        transform 0.3s ease;
 
       &[data-aos] {
         opacity: 0;
@@ -413,7 +428,39 @@
         }
       }
 
+      // 1-Year Anniversary special neon effect
+      &--anniversary {
+        --neon-angle: 0deg;
+        border: 2.5px solid transparent;
+        background:
+          linear-gradient($white, $white) padding-box,
+          conic-gradient(
+              from var(--neon-angle),
+              $mint-300 0deg,
+              $neon-cyan 60deg,
+              $neon-purple 130deg,
+              $rose-300 195deg,
+              $amber-300 260deg,
+              $mint-500 320deg,
+              $mint-300 360deg
+            )
+            border-box;
+        animation: rotate-neon-border 4s linear infinite;
+        box-shadow:
+          0 0 14px with-alpha($neon-cyan, 0.25),
+          0 0 28px with-alpha($neon-purple, 0.15),
+          1px 1px 6px 0 with-alpha($black, 0.08);
+
+        &:hover {
+          box-shadow:
+            0 0 20px with-alpha($neon-cyan, 0.45),
+            0 0 35px with-alpha($neon-purple, 0.3),
+            1px 1px 12px 0 with-alpha($black, 0.15);
+        }
+      }
+
       &__img-wrapper {
+        position: relative;
         width: 10rem;
         height: 100%;
         flex-shrink: 0;
@@ -646,4 +693,3 @@
     }
   }
 }
-

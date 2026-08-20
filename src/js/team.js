@@ -49,6 +49,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.max(yearsOfExp, 0);
   }
 
+  // Helper to check if today is the volunteer's yearly anniversary (same month and day, at least 1 year later)
+  function isAnniversaryToday(joinedAt) {
+    if (!joinedAt) return false;
+
+    const parts = joinedAt.split('-');
+    if (parts.length < 3) return false;
+
+    const joinYear = parseInt(parts[0], 10);
+    const joinMonth = parseInt(parts[1], 10) - 1;
+    const joinDay = parseInt(parts[2], 10);
+
+    if (Number.isNaN(joinYear) || Number.isNaN(joinMonth) || Number.isNaN(joinDay)) {
+      return false;
+    }
+
+    const todayDate = new Date();
+    if (todayDate.getFullYear() <= joinYear) {
+      return false;
+    }
+
+    return todayDate.getMonth() === joinMonth && todayDate.getDate() === joinDay;
+  }
+
   function calculateMonthsOfExp(joinedAt) {
     if (!joinedAt) return null;
 
@@ -240,6 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const experienceLabel = yearsOfExpeLabel(yearsOfExperience, monthsOfExperience);
       const join = fullJoinDate(member.joinedAt);
 
+      const isAnniversary = isAnniversaryToday(member.joinedAt);
+      if (isAnniversary) {
+        card.classList.add('member-card--anniversary');
+      }
+
       const experienceBadgeHTML =
         experienceLabel && join
           ? `
@@ -250,9 +278,28 @@ document.addEventListener('DOMContentLoaded', () => {
           `
           : '';
 
+      const cakeHTML = isAnniversary
+        ? `
+        <div class="cake" aria-hidden="true">
+          <div class="plate"></div>
+          <div class="layer layer-bottom"></div>
+          <div class="layer layer-middle"></div>
+          <div class="layer layer-top"></div>
+          <div class="icing"></div>
+          <div class="drip drip1"></div>
+          <div class="drip drip2"></div>
+          <div class="drip drip3"></div>
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+        </div>
+        `
+        : '';
+
       card.innerHTML = `
       <div class="member-card__img-wrapper">
         <img src="${avatarPath}" alt="${member.name}" loading="lazy" />
+        ${cakeHTML}
       </div>
       <div class="member-card__content">
         ${leaderBadgeHTML}

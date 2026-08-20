@@ -1573,5 +1573,24 @@
     },
     "joinedAt": "2026-07-14",
     "joinedAtMethod": "first-pull-request"
+  },
+  {
+    "name": "Maria Deaconu",
+    "avatar": "./assets/contributors/maria-deaconu.webp",
+    "roles": [
+      {
+        "team": "HR",
+        "position": "HR Generalist",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/maria-deaconu-3a32ba3b7/",
+      "github": "https://github.com/maria26d",
+      "discord": "https://discord.com/users/1296499710395285608"
+    },
+    "joinedAt": "2026-07-21",
+    "joinedAtMethod": "first-pull-request"
   }
 ]

@@ -268,9 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
       membersWrapper.appendChild(card);
-      if (typeof AOS !== 'undefined') {
-          AOS.refresh();
-        }
+      if (typeof window.AOS !== 'undefined') {
+        window.AOS.refresh();
+      }
     });
 
     // 3. Re-register dynamically injected elements for scroll animations

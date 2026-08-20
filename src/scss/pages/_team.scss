@@ -360,7 +360,18 @@
       border-radius: 10rem;
       overflow: hidden;
       box-shadow: 1px 1px 6px 0 with-alpha($black, 0.12);
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+
+      &[data-aos] {
+        opacity: 0;
+        transition-property: box-shadow, opacity, transform;
+        transition-duration: 0.7s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &.aos-animate {
+          opacity: 1;
+        }
+      }
 
       @media (min-width: $breakpoint-sm) {
         max-width: 48rem;
@@ -635,3 +646,4 @@
     }
   }
 }
+

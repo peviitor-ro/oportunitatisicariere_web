@@ -24,13 +24,6 @@
     "meeting": [
       {
         "active": true,
-        "for": "Întâlnire generală",
-        "team": "TOȚI MEMBRII",
-        "hour": "18:00",
-        "url": "https://meet.jit.si/PEVIITOR.RO"
-      },
-      {
-        "active": true,
         "for": "Echipa de",
         "team": "BACK-END",
         "hour": "18:30",
@@ -64,6 +57,13 @@
         "for": "Echipa",
         "team": "CORE",
         "hour": "18:00",
+        "url": "https://meet.jit.si/PEVIITOR.RO"
+      },
+      {
+        "active": true,
+        "for": "Întâlnire generală",
+        "team": "TOȚI MEMBRII",
+        "hour": "19:00",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]

@@ -12,6 +12,13 @@
         "team": "CYBERSECURITY",
         "hour": "18:30",
         "url": "https://meet.jit.si/PEVIITOR.RO"
+      },
+      {
+        "active": true,
+        "for": "Întâlnire cu",
+        "team": "PRODUCT OWNER",
+        "hour": "19:00",
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   },

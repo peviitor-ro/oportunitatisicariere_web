@@ -92,8 +92,15 @@
       {
         "active": true,
         "for": "Echipa de",
-        "team": "HR",
+        "team": "Embeding",
         "hour": "19:00",
+        "url": "https://meet.jit.si/PEVIITOR.RO"
+      },
+      {
+        "active": true,
+        "for": "Echipa de",
+        "team": "HR",
+        "hour": "19:30",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]

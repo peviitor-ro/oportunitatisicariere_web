@@ -42,7 +42,7 @@
       },
       {
         "team": "HR",
-        "position": "Project Manager",
+        "position": "Community Manager",
         "teamLead": false,
         "status": true
       }
@@ -337,19 +337,25 @@
         "team": "QA",
         "position": "Manual Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "HR",
         "position": "Project Manager",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Core",
         "position": "Project Manager",
         "teamLead": false,
         "status": false
+      },
+      {
+        "team": "Delivery",
+        "position": "Project Manager",
+        "teamLead": false,
+        "status": true
       }
     ],
     "socials": {
@@ -1592,5 +1598,41 @@
     },
     "joinedAtMethod": "account-creation",
     "joinedAt": "2026-08-11"
+  },
+  {
+    "name": "Cristian Alexutan",
+    "avatar": "./assets/contributors/cristian-alexutan.webp",
+    "joinedAt": "2026-05-19",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/cristian-alexu%C8%9Ban-954513217/",
+      "github": "https://github.com/cristian-alexutan",
+      "discord": "https://discord.com/users/627122818831876101"
+    },
+    "roles": [
+      {
+        "team": "Embed",
+        "position": "Software Engineer",
+        "status": true,
+        "teamLead": false
+      }
+    ]
+  },
+  {
+    "name": "Sofia Balaci",
+    "avatar": "./assets/contributors/sofia-balaci.webp",
+    "joinedAt": "2026-05-19",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/sofia-balaci/",
+      "github": "https://github.com/BalaciSofia",
+      "discord": "https://discord.com/users/721476939650564116"
+    },
+    "roles": [
+      {
+        "team": "Embed",
+        "position": "Software Engineer",
+        "status": true,
+        "teamLead": false
+      }
+    ]
   }
 ]

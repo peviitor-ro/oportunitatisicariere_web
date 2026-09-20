@@ -337,7 +337,7 @@
         "team": "QA",
         "position": "Manual Tester",
         "teamLead": false,
-        "status": false
+        "status": true
       },
       {
         "team": "HR",
@@ -355,7 +355,7 @@
         "team": "Delivery",
         "position": "Project Manager",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {

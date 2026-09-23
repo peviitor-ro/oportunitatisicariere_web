@@ -1,0 +1,695 @@
+@use 'sass:color';
+@use '../base' as *;
+@use '../components/buttons' as *;
+
+// Neon rotating border animation
+@property --neon-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-neon-border {
+  to {
+    --neon-angle: 360deg;
+  }
+}
+
+.main-team {
+  background-color: $mint-50;
+  padding: 4rem 0 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 6rem 0 0;
+  }
+
+  // Layout & Utility
+  .container {
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .mt-section {
+    margin-top: 6rem;
+    @media (min-width: $breakpoint-md) {
+      margin-top: 10rem;
+    }
+  }
+
+  .pb-section {
+    padding-bottom: 6rem;
+    @media (min-width: $breakpoint-md) {
+      padding-bottom: 10rem;
+    }
+  }
+
+  // Header section
+  .section-header {
+    @include flex(column, center, center);
+    gap: 1.6rem;
+    max-width: 800px;
+    margin: 0 auto 4.8rem;
+    text-align: center;
+
+    h1.title,
+    h2.title {
+      font-size: 3.2rem;
+      font-weight: $font-weight-bold;
+      color: $blue-900;
+      line-height: 1.2;
+      margin: 0 auto;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 4rem;
+      }
+    }
+
+    p {
+      font-size: $font-size-base;
+      line-height: 1.6;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  // Founders section
+  .founders-section {
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.2rem;
+      max-width: 1024px;
+      margin: 0 auto;
+
+      @media (min-width: $breakpoint-sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .founder-card {
+        background-color: $white;
+        border-radius: 2.6rem;
+        overflow: hidden;
+        @include soft-shadow;
+        transition: all 0.2s ease;
+        @include flex(column);
+
+        &:hover {
+          .founder-card__img-wrapper img {
+            transform: scale(1.1);
+          }
+          .founder-card__content h3 {
+            color: $blue-500;
+          }
+        }
+
+        &__img-wrapper {
+          width: 100%;
+          aspect-ratio: 4 / 4.5;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+          }
+        }
+
+        &__content {
+          padding: 3.2rem 2.4rem;
+          @include flex(column, center, flex-start);
+          text-align: center;
+          gap: 0.8rem;
+
+          h3 {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-bold;
+            color: $blue-900;
+            line-height: 1.3;
+          }
+
+          .role {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-bold;
+            color: $neutral-800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+          .social-links {
+            @include flex(row, center, center);
+            gap: 1.2rem;
+            margin-top: 1.6rem;
+
+            a {
+              background-color: $neutral-100;
+              @include icon-animation;
+
+              &:first-child:hover {
+                background-color: $linkedin-blue;
+                color: $white;
+              }
+
+              &:nth-child(2):hover {
+                background-color: $black;
+                color: $white;
+              }
+              &:nth-child(3):hover {
+                background-color: $discord-purple;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Story section
+  .story-section {
+    .story-card {
+      background-color: $white;
+      border-radius: 3.2rem;
+      padding: 4rem 2.4rem;
+      @include wrapping-shadow;
+      width: 100%;
+      margin: 0 auto;
+
+      @media (min-width: $breakpoint-md) {
+        padding: 6rem;
+      }
+
+      &__content {
+        max-width: 1024px;
+        margin: 0 auto;
+
+        .title {
+          font-size: 3.2rem;
+          font-weight: $font-weight-bold;
+          color: $blue-900;
+          text-align: center;
+          margin-bottom: 3.2rem;
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 4rem;
+            margin-bottom: 4.8rem;
+          }
+        }
+
+        .story-lead {
+          font-size: 1.6rem;
+          line-height: 1.8;
+          color: $blue-900;
+          font-weight: 500;
+          margin-bottom: 4rem;
+          padding-bottom: 4rem;
+          border-bottom: 1px solid $neutral-200;
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 1.8rem;
+            line-height: 1.9;
+          }
+        }
+
+        .story-chapters {
+          @include flex(column, flex-start, flex-start);
+          gap: 4rem;
+
+          .story-chapter {
+            h3 {
+              @include flex(row, flex-start, center);
+              gap: 1.2rem;
+              font-size: 2rem;
+              font-weight: $font-weight-bold;
+              color: $blue-900;
+              margin-bottom: 1.6rem;
+              line-height: 1.3;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 2.4rem;
+              }
+
+              i {
+                color: $mint-500;
+                font-size: 2.4rem;
+                background-color: $mint-50;
+                width: 4.4rem;
+                height: 4.4rem;
+                @include flex(row, center, center);
+                border-radius: 1.2rem;
+                flex-shrink: 0;
+              }
+            }
+
+            p {
+              font-size: $font-size-base;
+              color: $neutral-800;
+              line-height: 1.8;
+
+              @media (min-width: $breakpoint-md) {
+                font-size: 1.7rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Teams section
+  .teams-section {
+    // Team navigation
+    .team-nav {
+      margin-bottom: 4.8rem;
+      width: 100%;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+
+      &__list {
+        @include flex(row, flex-start, center);
+        gap: 0.8rem;
+        background-color: $white;
+        border-radius: 4rem;
+        padding: 0.8rem 0.8rem 1.6rem;
+        margin: 0 auto;
+
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: thin;
+        scrollbar-color: $mint-300 transparent;
+
+        &::-webkit-scrollbar {
+          height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: $mint-300;
+          border-radius: 10px;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          justify-content: center;
+          overflow-x: visible;
+          max-width: fit-content;
+          padding-bottom: 0.8rem;
+        }
+
+        li {
+          scroll-snap-align: center;
+          flex-shrink: 0;
+        }
+
+        .team-btn {
+          background-color: $neutral-100;
+          color: $black;
+          font-family: inherit;
+          font-size: $font-size-base;
+          font-weight: $font-weight-semibold;
+          padding: 1rem 2rem;
+          border-radius: 3rem;
+          border: none;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $mint-50;
+            color: $mint-700;
+          }
+
+          &.active {
+            background-color: $mint-500;
+            color: $white;
+            box-shadow: 0 2px 8px with-alpha($mint-500, 0.2);
+          }
+        }
+      }
+    }
+
+    // Members grid
+    .members-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.4rem;
+      margin-bottom: 4.8rem;
+
+      @media (min-width: $breakpoint-md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: $breakpoint-xl) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .member-card:not(.member-card--leader) .badge-leader {
+      visibility: hidden;
+    }
+
+    .member-card {
+      max-width: 38rem;
+      width: 100%;
+      height: 15rem;
+      margin: 0 auto;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      background: $white;
+      border-radius: 10rem;
+      border: 2.5px solid transparent;
+      box-shadow: 1px 1px 6px 0 with-alpha($black, 0.12);
+      transition:
+        box-shadow 0.3s ease,
+        opacity 0.6s ease,
+        transform 0.3s ease;
+
+      &[data-aos] {
+        opacity: 0;
+        transition-property: box-shadow, opacity, transform;
+        transition-duration: 0.7s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &.aos-animate {
+          opacity: 1;
+        }
+      }
+
+      @media (min-width: $breakpoint-sm) {
+        max-width: 48rem;
+        height: auto;
+        min-height: 4rem;
+        gap: 0.8rem;
+        padding: 0.6rem;
+      }
+
+      @media (min-width: $breakpoint-smm) {
+        max-width: 50rem;
+        height: auto;
+        min-height: 14rem;
+        gap: 0.8rem;
+        padding: 0.6rem;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        max-width: 55rem;
+        height: auto;
+        min-height: 14rem;
+        gap: 0.8rem;
+        padding: 0.6rem;
+      }
+
+      &:hover {
+        box-shadow: 1px 1px 12px 0 with-alpha($black, 0.2);
+
+        .member-card__img-wrapper img {
+          transform: scale(1.05);
+        }
+
+        .name {
+          color: $blue-500;
+        }
+
+        .badge-leader {
+          background: $blue-500;
+        }
+      }
+
+      // 1-Year Anniversary special neon effect
+      &--anniversary {
+        --neon-angle: 0deg;
+        border: 2.5px solid transparent;
+        background:
+          linear-gradient($white, $white) padding-box,
+          conic-gradient(
+              from var(--neon-angle),
+              $mint-300 0deg,
+              $neon-cyan 60deg,
+              $neon-purple 130deg,
+              $rose-300 195deg,
+              $amber-300 260deg,
+              $mint-500 320deg,
+              $mint-300 360deg
+            )
+            border-box;
+        animation: rotate-neon-border 4s linear infinite;
+        box-shadow:
+          0 0 14px with-alpha($neon-cyan, 0.25),
+          0 0 28px with-alpha($neon-purple, 0.15),
+          1px 1px 6px 0 with-alpha($black, 0.08);
+
+        &:hover {
+          box-shadow:
+            0 0 20px with-alpha($neon-cyan, 0.45),
+            0 0 35px with-alpha($neon-purple, 0.3),
+            1px 1px 12px 0 with-alpha($black, 0.15);
+        }
+      }
+
+      &__img-wrapper {
+        position: relative;
+        width: 10rem;
+        height: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 5rem 1rem 1rem 5rem;
+
+        @media (min-width: $breakpoint-xs) {
+          width: 11rem;
+          height: 14rem;
+          border-radius: 7rem 0.2rem 1rem 7rem;
+        }
+
+        @media (min-width: $breakpoint-sm) {
+          width: 14rem;
+          height: 14rem;
+          border-radius: 7rem 0.2rem 1rem 7rem;
+        }
+
+        @media (min-width: $breakpoint-md) {
+          width: 14rem;
+          height: 14rem;
+          border-radius: 10rem 1rem 1rem 10rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+          display: block;
+        }
+
+        @media (min-width: $breakpoint-sm) {
+          width: 160px;
+          height: 160px;
+        }
+
+        @media (min-width: $breakpoint-md) {
+          width: 160px;
+          height: 160px;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          width: 160px;
+          height: 160px;
+        }
+
+        @media (min-width: $breakpoint-xl) {
+          width: 160px;
+          height: 160px;
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        gap: 0.5rem;
+      }
+
+      @media (min-width: $breakpoint-sm) {
+        gap: 2rem;
+      }
+
+      .badge-leader {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        width: fit-content;
+        padding: 0.5rem 1.2rem;
+        background: $mint-500;
+        color: $white;
+        border-radius: 2rem;
+        font-size: 0.9rem;
+        line-height: 1;
+        transition: background 0.3s;
+      }
+
+      .badge-experience {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        width: fit-content;
+        padding: 0.3rem 1.2rem;
+        border: 0.5px solid $mint-500;
+        border-radius: 2rem;
+        color: $mint-500;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background-color: #f0fdf4;
+        letter-spacing: 1px;
+        cursor: help;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: 0.8rem;
+          padding: 0.5rem 1.1rem;
+          letter-spacing: 1px;
+        }
+
+        &__tooltip {
+          position: absolute;
+          font-size: 1rem;
+          left: 0;
+          bottom: calc(100% + 0.8rem);
+          padding: 0.8rem 2rem;
+          background: $blue-900;
+          color: $white;
+          border-radius: 1.6rem;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          transform: translateY(4px);
+          transition: 0.2s;
+          z-index: 100;
+
+          @media (min-width: $breakpoint-xs) {
+            font-size: 0.8rem;
+            padding: 0.6rem 2rem;
+          }
+
+          @media (min-width: $breakpoint-md) {
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 1.6rem;
+            border: 6px solid transparent;
+            border-top-color: $blue-900;
+          }
+        }
+
+        &:hover .badge-experience__tooltip {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+
+      &__name-position {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .name {
+        font-size: 1.55rem;
+        font-weight: $font-weight-medium;
+        color: $black;
+        line-height: 1.2;
+        transition: color 0.2s;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .role {
+        font-size: 1.15rem;
+        font-weight: $font-weight-semibold;
+        color: $neutral-900;
+      }
+
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.4rem;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          transition: 0.2s;
+          border-radius: 50%;
+        }
+
+        a:first-child {
+          width: 3rem;
+          height: 3rem;
+          font-size: $h2-font-size;
+          color: $black;
+
+          &:hover {
+            background: $linkedin-blue;
+            color: $white;
+            border-radius: 50%;
+          }
+        }
+
+        a:nth-child(2),
+        a:nth-child(3) {
+          width: 3.2rem;
+          height: 3.2rem;
+          border-radius: 50%;
+          background: $neutral-100;
+          color: $black;
+          font-size: $h3-font-size;
+        }
+
+        a:nth-child(2):hover {
+          background: $black;
+          color: $white;
+        }
+
+        a:nth-child(3):hover {
+          background: $discord-purple;
+          color: $white;
+        }
+      }
+    }
+
+    // Load more
+    .load-more-wrapper {
+      @include flex(row, center, center);
+
+      button {
+        @include primary-btn;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

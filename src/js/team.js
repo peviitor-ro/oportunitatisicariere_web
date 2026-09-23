@@ -138,11 +138,34 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch((error) => console.error('Eroare la încărcarea voluntarilor:', error));
   }
 
-  // Initialize teams navigation
   function initializeTeams() {
+    const desiredOrder = [
+      'HR',
+      'Scraping',
+      'Back-end',
+      'DevOps',
+      'Front-end',
+      'UI/UX',
+      'Data Quality',
+      'QA',
+      'Marketing',
+      'Delivery',
+      'Cybersecurity',
+      'Embed',
+    ];
+    const teamLabels = {
+      Scraping: 'Scraping',
+      DevOps: 'DevOps',
+      'UI/UX': 'UI/UX',
+    };
+
     const teams = [
       ...new Set(teamMembers.flatMap((member) => member.roles.map((role) => role.team))),
-    ];
+    ].sort((a, b) => {
+      const indexA = desiredOrder.indexOf(a);
+      const indexB = desiredOrder.indexOf(b);
+      return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+    });
 
     let firstButton = null;
     let hasActiveBtn = false;
@@ -153,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       button.type = 'button';
       button.classList.add('team-btn');
-      button.textContent = team;
+      button.textContent = teamLabels[team] || team;
 
       if (!firstButton) firstButton = button;
 

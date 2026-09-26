@@ -94,7 +94,7 @@
         "team": "UI/UX",
         "position": "UI/UX Lead",
         "teamLead": false,
-        "status": true
+        "status": false
       }
     ],
     "socials": {
@@ -689,7 +689,7 @@
         "team": "UI/UX",
         "position": "UI/UX Designer",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Front-end",

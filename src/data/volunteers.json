@@ -56,31 +56,6 @@
     "joinedAtMethod": "first-issue"
   },
   {
-    "name": "Talida Ganciu",
-    "avatar": "./assets/contributors/talida-ganciu.webp",
-    "roles": [
-      {
-        "team": "Front-end",
-        "position": "Front-end Developer",
-        "teamLead": false,
-        "status": true
-      },
-      {
-        "team": "UI/UX",
-        "position": "UI/UX Designer",
-        "teamLead": false,
-        "status": true
-      }
-    ],
-    "socials": {
-      "linkedin": "https://www.linkedin.com/in/mihaela-talida-g-66532716a/",
-      "github": "https://github.com/talidag",
-      "discord": "https://discord.com/users/1123986908914139147"
-    },
-    "joinedAt": "2024-03-25",
-    "joinedAtMethod": "first-pull-request"
-  },
-  {
     "name": "Patricia Istrate",
     "avatar": "./assets/contributors/patricia-istrate.webp",
     "roles": [
@@ -579,31 +554,6 @@
     },
     "joinedAt": "2024-07-31",
     "joinedAtMethod": "first-issue"
-  },
-  {
-    "name": "Adelina Moroacă",
-    "avatar": "./assets/contributors/adelina-moroaca.webp",
-    "roles": [
-      {
-        "team": "Front-end",
-        "position": "Front-end Developer",
-        "teamLead": false,
-        "status": true
-      },
-      {
-        "team": "Core",
-        "position": "Front-end Lead",
-        "teamLead": false,
-        "status": false
-      }
-    ],
-    "socials": {
-      "linkedin": "https://www.linkedin.com/in/adelina-moroaca/",
-      "github": "https://github.com/AdelinaMoroaca",
-      "discord": "https://discordapp.com/users/940937990551785543"
-    },
-    "joinedAt": "2024-05-01",
-    "joinedAtMethod": "first-pull-request"
   },
   {
     "name": "Marian Ciobanu",

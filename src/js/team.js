@@ -153,11 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
       'Cybersecurity',
       'Embed',
     ];
-    const teamLabels = {
-      Scraping: 'Scraping',
-      DevOps: 'DevOps',
-      'UI/UX': 'UI/UX',
-    };
 
     const teams = [
       ...new Set(teamMembers.flatMap((member) => member.roles.map((role) => role.team))),
@@ -176,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       button.type = 'button';
       button.classList.add('team-btn');
-      button.textContent = teamLabels[team] || team;
+      button.textContent = team;
 
       if (!firstButton) firstButton = button;
 

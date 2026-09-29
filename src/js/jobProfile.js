@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      document.querySelectorAll('.volunteer-sheet-btn').forEach((btn) => {
+        if (job.volunteerSheet) {
+          btn.addEventListener('click', () => window.open(job.volunteerSheet, '_blank'));
+        } else {
+          btn.remove();
+        }
+      });
+
       preferredTeam = job.team;
 
       document.getElementById('job-title').textContent = job.title;

@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const jobs = await response.json();
       const isHomepage = rolesContainer?.closest('[data-hot-topics]');
-      allJobs = isHomepage ? jobs.filter((job) => job.isHotTopic) : jobs;
+      const hotJobs = jobs.filter((job) => job.isHotTopic);
+      allJobs = isHomepage && hotJobs.length > 0 ? hotJobs : jobs;
 
       renderRoles(allJobs);
     } catch (error) {

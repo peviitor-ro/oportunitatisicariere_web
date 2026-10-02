@@ -1937,6 +1937,31 @@ p {
   margin-bottom: 3rem;
   text-wrap: pretty;
 }
+.main-home .roles-section__header p a {
+  position: relative;
+  color: #2f7973;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+.main-home .roles-section__header p a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+.main-home .roles-section__header p a:hover {
+  color: #2b6e69;
+}
+.main-home .roles-section__header p a:hover::after {
+  transform: scaleX(1);
+}
 
 .main-home .roles-section__filter {
   display: flex;

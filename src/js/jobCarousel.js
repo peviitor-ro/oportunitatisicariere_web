@@ -96,7 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/data/positions.json');
       if (!response.ok) throw new Error(`Eroare HTTP! Status: ${response.status}`);
 
-      allJobs = await response.json();
+      const jobs = await response.json();
+      const isHomepage = rolesContainer?.closest('[data-hot-topics]');
+      allJobs = isHomepage ? jobs.filter((job) => job.isHotTopic) : jobs;
+
       renderRoles(allJobs);
     } catch (error) {
       console.error('Eroare:', error);

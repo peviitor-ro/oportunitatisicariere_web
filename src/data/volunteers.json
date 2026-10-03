@@ -1634,5 +1634,43 @@
         "teamLead": false
       }
     ]
+  },
+  {
+    "name": "Cristian Mihalcea",
+    "avatar": "./assets/contributors/cristian-mihalcea.webp",
+    "roles": [
+      {
+        "team": "Front-end",
+        "position": "Front-end Developer",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/cristian-mihalcea-7976092a9/",
+      "github": "https://github.com/CristiMih",
+      "discord": "#"
+    },
+    "joinedAt": "2026-08-31",
+    "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Maria-Daiana Mutilică",
+    "avatar": "./assets/contributors/daiana-mutilica.webp",
+    "roles": [
+      {
+        "team": "Front-end",
+        "position": "Front-end Developer",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/maria-daiana-mutilica/",
+      "github": "https://github.com/mariadaiana47",
+      "discord": "https://discord.com/users/486293634807889941"
+    },
+    "joinedAt": "2026-09-25",
+    "joinedAtMethod": "first-issue"
   }
 ]

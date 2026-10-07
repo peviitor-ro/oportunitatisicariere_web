@@ -64,11 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <i class="ri-file-copy-line copy-icon" id="copy-email" title="Copiază adresa"></i>
       `;
 
-      document
-        .getElementById('recruiter-linkedin')
-        .setAttribute('href', job.aboutEmployer.linkedin);
-      document.getElementById('recruiter-github').setAttribute('href', job.aboutEmployer.github);
-      document.getElementById('recruiter-discord').setAttribute('href', job.aboutEmployer.discord);
+      // Hide social icons whose link is missing, empty or "#"
+      ['linkedin', 'github', 'discord'].forEach((network) => {
+        const link = document.getElementById(`recruiter-${network}`);
+        const url = job.aboutEmployer[network];
+
+        if (typeof url === 'string' && url.trim() !== '' && url.trim() !== '#') {
+          link.setAttribute('href', url);
+        } else {
+          link.remove();
+        }
+      });
 
       const copyEmailBtn = document.getElementById('copy-email');
       if (copyEmailBtn) {

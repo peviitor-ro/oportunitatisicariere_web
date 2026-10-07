@@ -120,6 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${depth}${cleanPath}`;
   };
 
+  // A social link is shown only if it's not missing, empty or "#"
+  const hasLink = (url) => typeof url === 'string' && url.trim() !== '' && url.trim() !== '#';
+
   // Fetch data
   function loadTeamMembers() {
     fetch(resolvePath('data/volunteers.json'))
@@ -253,17 +256,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const socials = member.socials || {};
 
       let socialHTML = '';
-      if (socials.linkedin) {
+      if (hasLink(socials.linkedin)) {
         socialHTML += `
           <a href="${socials.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>`;
       }
 
-      if (socials.github) {
+      if (hasLink(socials.github)) {
         socialHTML += `
           <a href="${socials.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a>`;
       }
 
-      if (socials.discord) {
+      if (hasLink(socials.discord)) {
         socialHTML += `
           <a href="${socials.discord}" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="ri-discord-fill"></i></a>`;
       }

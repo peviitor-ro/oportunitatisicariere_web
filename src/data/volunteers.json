@@ -1672,5 +1672,22 @@
     },
     "joinedAt": "2026-09-25",
     "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Mihai Tatu",
+    "avatar": "./assets/contributors/tatu-mihai.webp",
+    "roles": [
+      {
+        "team": "Scraping",
+        "position": "Team Lead Scrapers (Python / JavaScript)",
+        "teamLead": true,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/mihai-tatu655",
+      "github": "https://github.com/thetatu13",
+      "discord": "https://discord.com/users/266189369495257088"
+    }
   }
 ]

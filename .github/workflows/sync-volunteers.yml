@@ -39,7 +39,7 @@ jobs:
           if [[ -n $(git status --porcelain src/data/volunteers.json) ]]; then
             git add src/data/volunteers.json
             git commit -m "chore: auto-sync volunteer joined date [skip ci]"
-            git push
+            git push origin main
           else
             echo "No changes to src/data/volunteers.json detected."
           fi

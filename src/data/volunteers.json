@@ -1114,7 +1114,7 @@
         "team": "QA",
         "position": "Automation Tester",
         "teamLead": false,
-        "status": true
+        "status": false
       },
       {
         "team": "Core",
@@ -1649,7 +1649,7 @@
     "socials": {
       "linkedin": "https://www.linkedin.com/in/cristian-mihalcea-7976092a9/",
       "github": "https://github.com/CristiMih",
-      "discord": "#"
+      "discord": "https://discord.com/users/322378409470590986"
     },
     "joinedAt": "2026-08-31",
     "joinedAtMethod": "first-issue"
@@ -1689,5 +1689,43 @@
       "github": "https://github.com/thetatu13",
       "discord": "https://discord.com/users/266189369495257088"
     }
+  },
+  {
+    "name": "Bogdan Zaharia",
+    "avatar": "./assets/contributors/zaharia-bogdan.webp",
+    "roles": [
+      {
+        "team": "Mobile",
+        "position": "Mobile Developer",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/bogdan-d-zaharia",
+      "github": "https://github.com/bogdan-d-zaharia",
+      "discord": "https://discord.com/users/445915008585695232"
+    },
+    "joinedAt": "2026-10-04",
+    "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Sorin-Andrei Toacsan",
+    "avatar": "./assets/contributors/person-placeholder.webp",
+    "roles": [
+      {
+        "team": "Mobile",
+        "position": "Mobile QA Engineer",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/sorin-andrei-toacsan",
+      "github": "https://github.com/AndrewToacsan",
+      "discord": "https://discord.com/users/381473110970466304"
+    },
+    "joinedAt": "2026-10-14",
+    "joinedAtMethod": "first-issue"
   }
 ]

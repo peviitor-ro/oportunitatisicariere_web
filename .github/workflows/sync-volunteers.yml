@@ -1,0 +1,45 @@
+name: Sync Volunteers Joined Date
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/data/volunteers.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-volunteers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.SYNC_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Run sync script
+        env:
+          GITHUB_TOKEN: ${{ secrets.SYNC_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          NODE_NO_WARNINGS: '1'
+        run: node src/js/sync.js
+
+      - name: Commit and push changes if updated
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status --porcelain src/data/volunteers.json) ]]; then
+            git add src/data/volunteers.json
+            git commit -m "chore: auto-sync volunteer joined date [skip ci]"
+            git push
+          else
+            echo "No changes to src/data/volunteers.json detected."
+          fi

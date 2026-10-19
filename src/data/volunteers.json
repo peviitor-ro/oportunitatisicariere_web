@@ -1688,7 +1688,9 @@
       "linkedin": "https://www.linkedin.com/in/mihai-tatu655",
       "github": "https://github.com/thetatu13",
       "discord": "https://discord.com/users/266189369495257088"
-    }
+    },
+    "joinedAt": "2025-08-10",
+    "joinedAtMethod": "account-creation"
   },
   {
     "name": "Bogdan Zaharia",

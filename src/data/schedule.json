@@ -30,10 +30,10 @@
     },
     "meeting": [
       {
-        "active": true,
+        "active": false,
         "for": "Echipa de",
-        "team": "TESTARE",
-        "hour": "19:00",
+        "team": "FRONT-END",
+        "hour": "18:30",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
@@ -101,6 +101,13 @@
         "for": "Echipa de",
         "team": "DEVOPS",
         "hour": "19:45",
+        "url": "https://meet.jit.si/PEVIITOR.RO"
+      },
+      {
+        "active": true,
+        "for": "Echipa de",
+        "team": "TESTARE",
+        "hour": "20:00",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]

@@ -11,14 +11,14 @@
         "for": "Echipa de",
         "team": "CYBERSECURITY",
         "hour": "18:30",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Întâlnire cu",
         "team": "PRODUCT OWNER",
         "hour": "19:00",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   },
@@ -34,7 +34,7 @@
         "for": "Echipa de",
         "team": "TESTARE",
         "hour": "19:00",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   },
@@ -50,21 +50,21 @@
         "for": "Echipa",
         "team": "CORE",
         "hour": "18:00",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Întâlnire generală",
         "team": "TOȚI MEMBRII",
         "hour": "19:00",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
         "team": "HR",
         "hour": "19:30",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   },
@@ -80,28 +80,28 @@
         "for": "Echipa de",
         "team": "FRONT-END",
         "hour": "18:30",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
         "team": "EMBED",
         "hour": "19:00",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
         "team": "BACK-END",
         "hour": "19:30",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
         "team": "DEVOPS",
         "hour": "19:45",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   },
@@ -117,7 +117,7 @@
         "for": "Echipa de",
         "team": "SCRAPING",
         "hour": "18:30",
-        "url": "https://barfa.peviitor.ro/Peviitor"
+        "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
   }

@@ -30,10 +30,10 @@
     },
     "meeting": [
       {
-        "active": false,
+        "active": true,
         "for": "Echipa de",
-        "team": "FRONT-END",
-        "hour": "18:30",
+        "team": "EMBED",
+        "hour": "18:00",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]
@@ -79,35 +79,21 @@
         "active": true,
         "for": "Echipa de",
         "team": "FRONT-END",
-        "hour": "18:30",
+        "hour": "18:45",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
-        "team": "EMBED",
-        "hour": "19:00",
-        "url": "https://meet.jit.si/PEVIITOR.RO"
-      },
-      {
-        "active": true,
-        "for": "Echipa de",
-        "team": "BACK-END",
-        "hour": "19:30",
-        "url": "https://meet.jit.si/PEVIITOR.RO"
-      },
-      {
-        "active": true,
-        "for": "Echipa de",
-        "team": "DEVOPS",
-        "hour": "19:45",
+        "team": "BACK-END & DEVOPS",
+        "hour": "19:15",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       },
       {
         "active": true,
         "for": "Echipa de",
         "team": "TESTARE",
-        "hour": "20:00",
+        "hour": "19:45",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       }
     ]

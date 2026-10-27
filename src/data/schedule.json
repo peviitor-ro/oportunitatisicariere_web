@@ -35,7 +35,14 @@
         "team": "EMBED",
         "hour": "18:00",
         "url": "https://meet.jit.si/PEVIITOR.RO"
-      }
+      },      
+      {
+        "active": true,
+        "for": "Echipa de",
+        "team": "DEVOPS",
+        "hour": "18:45",
+        "url": "https://meet.jit.si/PEVIITOR.RO"
+      },
     ]
   },
   {
@@ -85,7 +92,7 @@
       {
         "active": true,
         "for": "Echipa de",
-        "team": "BACK-END & DEVOPS",
+        "team": "BACK-END",
         "hour": "19:15",
         "url": "https://meet.jit.si/PEVIITOR.RO"
       },

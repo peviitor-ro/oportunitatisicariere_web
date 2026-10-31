@@ -694,8 +694,8 @@
       {
         "team": "Front-end",
         "position": "Front-end Lead",
-        "teamLead": true,
-        "status": true
+        "teamLead": false,
+        "status": false
       },
       {
         "team": "Core",
@@ -1726,6 +1726,31 @@
       "discord": "https://discord.com/users/381473110970466304"
     },
     "joinedAt": "2026-10-14",
+    "joinedAtMethod": "first-issue"
+  },
+  {
+    "name": "Răzvan Constantin Pană",
+    "avatar": "./assets/contributors/razvan-constantin-pana.webp",
+    "roles": [
+      {
+        "team": "Front-end",
+        "position": "Front-end Lead",
+        "teamLead": true,
+        "status": true
+      },
+      {
+        "team": "Back-end",
+        "position": "Back-end Developer",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/pana-razvan-constantin/",
+      "github": "https://github.com/constantinrazvan",
+      "discord": "https://discord.com/users/393498735646212096"
+    },
+    "joinedAt": "2026-10-1",
     "joinedAtMethod": "first-issue"
   }
 ]

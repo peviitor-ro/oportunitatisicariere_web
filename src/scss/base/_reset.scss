@@ -12,6 +12,7 @@
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
 
   min-height: 100dvh;
   margin: 0 auto;
+  overflow-x: clip;
   font-family: 'Roboto', sans-serif;
   background-color: $mint-50;
 }

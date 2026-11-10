@@ -8,6 +8,7 @@
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
   align-items: center;
   min-height: 100dvh;
   margin: 0 auto;
+  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
   background-color: #eaf2f1;
 }
@@ -1719,7 +1721,7 @@ p {
 }
 .main-home .hero .project-showcase {
   position: relative;
-  width: clamp(300px, 100%, 1024px);
+  width: min(100%, 1024px);
   margin: 0 auto;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
 }
@@ -1832,7 +1834,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: clamp(300px, 100%, 596px);
+  width: min(100%, 596px);
 }
 .main-home .hero .project-showcase__image img {
   width: 100%;

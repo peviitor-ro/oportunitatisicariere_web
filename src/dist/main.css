@@ -8,7 +8,7 @@
 html {
   font-size: 10px;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
   align-items: center;
   min-height: 100dvh;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-family: "Roboto", sans-serif;
   background-color: #eaf2f1;
 }

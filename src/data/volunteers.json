@@ -1689,5 +1689,23 @@
       "github": "https://github.com/thetatu13",
       "discord": "https://discord.com/users/266189369495257088"
     }
+  },
+  {
+    "name": "Amalia Tănase",
+    "avatar": "./assets/contributors/tanase-amalia.webp",
+    "roles": [
+      {
+        "team": "Scraping",
+        "position": "Python Scraper",
+        "teamLead": false,
+        "status": true
+      }
+    ],
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/amalia-tanase-0017743ba",
+      "github": "https://github.com/amaliatanase",
+      "discord": "https://discord.com/users/1402278490518323250"
+    },
+    "joinedAt": "2026-10-06"
   }
 ]
